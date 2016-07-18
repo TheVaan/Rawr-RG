@@ -76,6 +76,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\WpfControls\System.Windows.Controls.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Controls.DataVisualization.Toolkit.4.0.0.0\lib\net40-Client\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Windows.Controls.Input">
       <HintPath>..\WpfControls\System.Windows.Controls.Input.dll</HintPath>
     </Reference>
@@ -294,7 +298,7 @@
       <Project>{E9AE8EB0-ABC4-41A4-AEDA-735A272887C1}</Project>
       <Name>Rawr.Healadin.WPF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Rawr.HolyPriest\Rawr.HolyPriest.WPF.csproj">
+    <ProjectReference Include="..\Rawr.HealPriest\Rawr.HealPriest.WPF.csproj">
       <Project>{6B85524B-DB76-48EC-9999-A01A92E07CA4}</Project>
       <Name>Rawr.HolyPriest.WPF</Name>
     </ProjectReference>
@@ -680,6 +684,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Rawr.Splash.2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

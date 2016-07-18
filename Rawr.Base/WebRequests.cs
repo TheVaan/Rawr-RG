@@ -433,7 +433,7 @@ namespace Rawr
             XmlDocument doc = null;
             if (!string.IsNullOrEmpty(id))
             {
-                doc = DownloadXml(string.Format("http://www.wowhead.com/?item={0}", id), true, true);
+                doc = DownloadXml(string.Format("https://db.rising-gods.de/?item={0}", id), true, true);
             }
             return doc;
         }
@@ -443,7 +443,7 @@ namespace Rawr
             XmlDocument doc = null;
             if (!string.IsNullOrEmpty(id))
             {
-                doc = DownloadXml(string.Format("http://www.wowhead.com/?quest={0}", id), true, true);
+                doc = DownloadXml(string.Format("https://db.rising-gods.de/?quest={0}", id), true, true);
             }
             return doc;
         }
@@ -818,7 +818,7 @@ namespace Rawr
             {
                 WebClient webClient = CreateWebClient();
 
-                string URI = string.Format("http://{0}.wowarmory.com/item-tooltip.xml?i={1}", site, id);    //item-info.xml would be twice bigger
+                string URI = string.Format("https://arsenal.rising-gods.de/item-tooltip.xml?i={1}", site, id);    //item-info.xml would be twice bigger
                 if (site.Equals("tw"))
                     webClient.Headers.Add("Accept-Language", "zh-tw");
                 if (site.Equals("cn"))

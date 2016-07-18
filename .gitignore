@@ -27,3 +27,14 @@
 *.exe
 *.out
 *.app
+
+# bin Folder
+bin/
+obj/
+
+Rawr3/Backup/
+.vs/Rawr/v14/.suo
+*.suo
+
+# Rawr3 erstmal
+Rawr3
