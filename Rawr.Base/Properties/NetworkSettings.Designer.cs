@@ -85,7 +85,7 @@ namespace Rawr.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.wowarmory.com/wow-icons/_images/64x64/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://arsenal.rising-gods.de/wow-icons/_images/64x64/")]
         public string WoWItemIconURI {
             get {
                 return ((string)(this["WoWItemIconURI"]));
@@ -186,7 +186,7 @@ namespace Rawr.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.wowarmory.com/item-tooltip.xml?i={0}")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://arsenal.rising-gods.de/item-tooltip.xml?i={0}")]
         public string ItemToolTipSheetURI {
             get {
                 return ((string)(this["ItemToolTipSheetURI"]));
@@ -213,7 +213,7 @@ namespace Rawr.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.wowarmory.com/item-info.xml?i={0}")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://arsenal.rising-gods.de/item-info.xml?i={0}")]
         public string ItemInfoURI {
             get {
                 return ((string)(this["ItemInfoURI"]));
@@ -297,7 +297,7 @@ namespace Rawr.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.wowarmory.com/wow-icons/_images/_talents31x31/{0}")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://arsenal.rising-gods.de/wow-icons/_images/_talents31x31/{0}")]
         public string ArmoryTalentIconURI {
             get {
                 return ((string)(this["ArmoryTalentIconURI"]));

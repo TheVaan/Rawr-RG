@@ -62,7 +62,7 @@ namespace Rawr
 			_menuItemEdit = new ToolStripMenuItem("Edit...");
 			_menuItemEdit.Click += new EventHandler(_menuItemEdit_Click);
 
-			_menuItemWowhead = new ToolStripMenuItem("Open in Wowhead");
+			_menuItemWowhead = new ToolStripMenuItem("Open in Rising-Gods Database");
 			_menuItemWowhead.Click += new EventHandler(_menuItemWowhead_Click);
 
             _menuItemArmory = new ToolStripMenuItem("Open in Armory");
@@ -430,18 +430,20 @@ namespace Rawr
 		void _menuItemWowhead_Click(object sender, EventArgs e)
 		{
             string site = Properties.GeneralSettings.Default.Locale;
-            if (site == "en")
+            // TODO remove
+            /* if (site == "en")
             {
                 if (FormMain.Instance.IsUsingPTR())
                     site = "ptr";
                 else
                     site = "www";
-            }
-            Help.ShowHelp(null, "http://" + site + ".wowhead.com/?item=" + _item.Id);
+            }*/
+            Help.ShowHelp(null, "http://db.rising-gods.de/?item=" + _item.Id);
 		}
         void _menuItemArmory_Click(object sender, EventArgs e)
         {
-            string site = "www";
+            // TODO Remove
+            /*string site = "www";
             switch (_character.Region) {
                 case CharacterRegion.CN:
                     site = "cn";
@@ -455,8 +457,8 @@ namespace Rawr
                 case CharacterRegion.TW:
                     site = "tw";
                     break;
-            }
-            Help.ShowHelp(null, "http://" + site + ".wowarmory.com/item-info.xml?i=" + _item.Id);
+            }*/
+            Help.ShowHelp(null, "https://arsenal.rising-gods.de/item-info.xml?i=" + _item.Id);
         }
 
 		void _menuItemEdit_Click(object sender, EventArgs e)

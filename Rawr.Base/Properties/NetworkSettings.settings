@@ -18,7 +18,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="WoWItemIconURI" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://www.wowarmory.com/wow-icons/_images/64x64/</Value>
+      <Value Profile="(Default)">https://arsenal.rising-gods.de/wow-icons/_images/64x64/</Value>
     </Setting>
     <Setting Name="MaxHttpRequests" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>
@@ -48,7 +48,7 @@
       <Value Profile="(Default)">https://arsenal.rising-gods.de/character-sheet.xml?r={1}&amp;cn={2}</Value>
     </Setting>
     <Setting Name="ItemToolTipSheetURI" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://www.wowarmory.com/item-tooltip.xml?i={0}</Value>
+      <Value Profile="(Default)">https://arsenal.rising-gods.de/item-tooltip.xml?i={0}</Value>
     </Setting>
     <Setting Name="ItemUpgradeURI" Type="System.String" Scope="Application">
       <Value Profile="(Default)">https://arsenal.rising-gods.de/search.xml?searchType=items&amp;pr={1}&amp;pn={2}&amp;pi={3}</Value>
@@ -57,7 +57,7 @@
       <Value Profile="(Default)">http://www.worldofwarcraft.com/shared/global/talents/{0}/images/{1}/{2}.jpg</Value>
     </Setting>
     <Setting Name="ItemInfoURI" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://www.wowarmory.com/item-info.xml?i={0}</Value>
+      <Value Profile="(Default)">https://arsenal.rising-gods.de/item-info.xml?i={0}</Value>
     </Setting>
     <Setting Name="DownloadItemInfo" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -81,7 +81,7 @@
       <Value Profile="(Default)">https://db.rising-gods.dem/?items&amp;filter={1}</Value>
     </Setting>
     <Setting Name="ArmoryTalentIconURI" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://www.wowarmory.com/wow-icons/_images/_talents31x31/{0}</Value>
+      <Value Profile="(Default)">https://arsenal.rising-gods.de/wow-icons/_images/_talents31x31/{0}</Value>
     </Setting>
     <Setting Name="QuestWowheadURI" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://db.rising-gods.de/?quest={0}</Value>
