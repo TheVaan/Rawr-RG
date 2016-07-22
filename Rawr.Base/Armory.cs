@@ -576,11 +576,15 @@ namespace Rawr
 				// this help out to determine if we even need to do the bonus armor work below.
 				// flag for if the armor value contains Bonus Armor.
 				bool bBonusArmor = false;
-				foreach (XmlNode node in docItem.SelectNodes("page/itemTooltips/itemTooltip/armor")) 
+				foreach (XmlElement node in docItem.SelectNodes("page/itemTooltips/itemTooltip/armor")) 
 				{ 
 					stats.Armor = int.Parse(node.InnerText);
-					XmlNode nodeAttribute = node.Attributes.GetNamedItem("armorBonus");
-					bBonusArmor = (int.Parse(nodeAttribute.Value) > 0);
+                    if(node.HasAttribute("armorBonus"))
+                    {
+                        bBonusArmor = true;
+                    }
+					//XmlElement nodeAttribute = node.Attributes.GetNamedItem("armorBonus");
+					//bBonusArmor = (int.Parse(nodeAttribute.Value) > 0);
 				}
 				// for the following slots there is normally no armor, so we know it has to be bonus armor
 				if (slot == ItemSlot.Finger ||
