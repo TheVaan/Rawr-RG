@@ -332,35 +332,35 @@ namespace Rawr
             return DownloadText(string.Format(NetworkSettingsProvider.ClassTalentURI, characterClass.ToString().ToLower()));
 		}*/
 
-		public XmlDocument DownloadCharacterTalentTree(string characterName, CharacterRegion region, string realm)
+		public XmlDocument DownloadCharacterTalentTree(string characterName)
 		{
-			//https://arsenal.rising-gods.de/character-talents.xml?r={0}&cn={1}
+			//https://arsenal.rising-gods.de/character-talents.xml?r=Rising-Gods&cn={0}
 			XmlDocument doc = null;
 			if (!String.IsNullOrEmpty(characterName))
 			{
-                doc = DownloadXml(string.Format(NetworkSettingsProvider.CharacterTalentURI, realm, characterName));
+                doc = DownloadXml(string.Format(NetworkSettingsProvider.CharacterTalentURI, characterName));
 			}
 			return doc;
 		}
 
-        public XmlDocument DownloadCharacterSheet(string characterName, CharacterRegion region, string realm)
+        public XmlDocument DownloadCharacterSheet(string characterName)
 		{
-            //https://arsenal.rising-gods.de/character-sheet.xml?r={0}&cn={1}
-			XmlDocument doc = null;
+            //https://arsenal.rising-gods.de/character-sheet.xml?r=Rising-Gods&cn={0}
+            XmlDocument doc = null;
 			if (!String.IsNullOrEmpty(characterName))
 			{
-                doc = DownloadXml(string.Format(NetworkSettingsProvider.CharacterSheetURI, realm, characterName));
+                doc = DownloadXml(string.Format(NetworkSettingsProvider.CharacterSheetURI, characterName));
 			}
 			return doc;
 		}
 
-		public XmlDocument DownloadUpgrades(string characterName, CharacterRegion region, string realm, int itemId)
+		public XmlDocument DownloadUpgrades(string characterName, int itemId)
 		{
-            //https://arsenal.rising-gods.de/search.xml?searchType=items&pr={1}&pn={2}&pi={3}
+            //https://arsenal.rising-gods.de/search.xml?searchType=items&pr=Rising-Gods&pn={0}&pi={1}
 			XmlDocument doc = null;
 			if (!String.IsNullOrEmpty(characterName))
 			{
-                doc = DownloadXml(string.Format(NetworkSettingsProvider.ItemUpgradeURI, realm, characterName, itemId.ToString()));
+                doc = DownloadXml(string.Format(NetworkSettingsProvider.ItemUpgradeURI, characterName, itemId.ToString()));
 			}
 			return doc;
 		}
@@ -470,9 +470,9 @@ namespace Rawr
 		public string DownloadTalentIcon(CharacterClass charClass, string talentTree, string talentName, string icon)
 		{
             string uri = "null";
-            string codepath = "null";
+            //string codepath = "null";
             string origin = "null";
-            try {
+            /*try {*/
                 //foreach (string illegalCharacter in new string[] { " ", "'" })
                 talentTree = talentTree.Replace(" ", "");
                 talentName = talentName.Replace(" ", "");
@@ -481,7 +481,7 @@ namespace Rawr
 
                 if (icon != null)
                 {
-                    codepath = "icon != null";
+                    //codepath = "icon != null";
                     string imageName = icon.Replace("/", "_").Replace(".jpg", ".gif");
 
                     fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + Path.DirectorySeparatorChar + talentTree + Path.DirectorySeparatorChar + imageName);
@@ -493,7 +493,7 @@ namespace Rawr
                 }
                 else
                 {
-                    codepath = "icon == null";
+                    //codepath = "icon == null";
 
                     fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + Path.DirectorySeparatorChar + talentTree + Path.DirectorySeparatorChar + talentName + ".jpg");
 
@@ -515,7 +515,7 @@ namespace Rawr
                     fullPathToSave = null;
                 }
                 return fullPathToSave;
-            }
+            /*}
             catch (Exception ex) {
                 Rawr.Base.ErrorBox eb = new Rawr.Base.ErrorBox("Error Downloading Talent Icon",
                     ex.Message, "DownloadTalentIcon(...)",
@@ -526,7 +526,7 @@ namespace Rawr
             finally
             {
                 Console.WriteLine(string.Format("\r\n- Talent Tree: {0}\r\n- Talent Name: {1}\r\n- Icon: {2}\r\n- Origin: {3}\r\n- URI: {4}\r\n- CodePath: {5}", talentTree, talentName, icon, origin, uri, codepath));
-            }
+            }*/
         }
 
 		/// <summary>

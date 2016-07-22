@@ -430,34 +430,10 @@ namespace Rawr
 		void _menuItemWowhead_Click(object sender, EventArgs e)
 		{
             string site = Properties.GeneralSettings.Default.Locale;
-            // TODO remove
-            /* if (site == "en")
-            {
-                if (FormMain.Instance.IsUsingPTR())
-                    site = "ptr";
-                else
-                    site = "www";
-            }*/
             Help.ShowHelp(null, "http://db.rising-gods.de/?item=" + _item.Id);
 		}
         void _menuItemArmory_Click(object sender, EventArgs e)
         {
-            // TODO Remove
-            /*string site = "www";
-            switch (_character.Region) {
-                case CharacterRegion.CN:
-                    site = "cn";
-                    break;
-                case CharacterRegion.EU:
-                    site = "eu";
-                    break;
-                case CharacterRegion.KR:
-                    site = "kr";
-                    break;
-                case CharacterRegion.TW:
-                    site = "tw";
-                    break;
-            }*/
             Help.ShowHelp(null, "https://arsenal.rising-gods.de/item-info.xml?i=" + _item.Id);
         }
 

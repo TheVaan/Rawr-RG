@@ -11,13 +11,13 @@ namespace Rawr
 {
 	public static class Armory
 	{
-		public static Character GetCharacter(CharacterRegion region, string realm, string name)
+		public static Character GetCharacter(string name)
 		{
 			string[] ignore;
-			return GetCharacter(region, realm, name, out ignore);
+			return GetCharacter(name, out ignore);
 		}
 
-		public static Character GetCharacter(CharacterRegion region, string realm, string name, out string[] itemsOnCharacter)
+		public static Character GetCharacter(string name, out string[] itemsOnCharacter)
 		{
 			string AddInfoMsg = "No Additional Info";
 			XmlDocument docCharacter = null;
@@ -27,7 +27,7 @@ namespace Rawr
 				XmlNode node = null;
 				XmlAttribute attr = null;
 				WebRequestWrapper wrw = new WebRequestWrapper();
-				docCharacter = wrw.DownloadCharacterSheet(name, region, realm);
+				docCharacter = wrw.DownloadCharacterSheet(name);
 				if (docCharacter == null)
 				{
 					StatusMessaging.ReportError("Get Character", null, "No character returned from the Armory. The Armory may be down.");
@@ -42,7 +42,7 @@ namespace Rawr
 				}
 				else if (((node = docCharacter.SelectSingleNode("page/characterInfo")) != null) && (attr = node.Attributes["errCode"]) != null && attr.Value == "noCharacter")
 				{
-					StatusMessaging.ReportError("Get Character", null, "The character " + name + "@" + region + "-" + realm + " does not exist.");
+					StatusMessaging.ReportError("Get Character", null, "The character " + name + " does not exist.");
 					itemsOnCharacter = null;
 					return null;
 				}
@@ -67,12 +67,12 @@ namespace Rawr
 				Dictionary<CharacterSlot, string> items = new Dictionary<CharacterSlot, string>();
 				//Dictionary<CharacterSlot, int> enchants = new Dictionary<CharacterSlot, int>();
 
-				foreach (XmlNode itemNode in docCharacter.SelectNodes("page/characterInfo/characterTab/items/item"))
+				foreach (XmlElement itemNode in docCharacter.SelectNodes("page/characterInfo/characterTab/items/item"))
 				{
 					int slot = int.Parse(itemNode.Attributes["slot"].Value) + 1;
 					CharacterSlot cslot = Character.GetCharacterSlotFromId(slot);
 					items[cslot] = string.Format("{0}.{1}.{2}.{3}.{4}", itemNode.Attributes["id"].Value,
-						itemNode.Attributes["gem0Id"].Value, itemNode.Attributes["gem1Id"].Value, itemNode.Attributes["gem2Id"].Value, itemNode.Attributes["permanentenchant"].Value);
+						(itemNode.HasAttribute("gem0Id") ? itemNode.Attributes["gem0Id"].Value : "0"), (itemNode.HasAttribute("gem1Id") ? itemNode.Attributes["gem1Id"].Value : "0"), (itemNode.HasAttribute("gem2Id") ? itemNode.Attributes["gem2Id"].Value : "0"), itemNode.Attributes["permanentenchant"].Value);
 					//enchants[cslot] = int.Parse(itemNode.Attributes["permanentenchant"].Value);
 				}
 				#endregion
@@ -161,7 +161,7 @@ namespace Rawr
 				AddInfoMsg = "Generating a Rawr Character";
 				itemsOnCharacter = new string[items.Values.Count];
 				items.Values.CopyTo(itemsOnCharacter, 0);
-				Character character = new Character(name, realm, region, race, new BossOptions(),
+				Character character = new Character(name, race, new BossOptions(),
 					items.ContainsKey(CharacterSlot.Head) ? items[CharacterSlot.Head] : null,
 					items.ContainsKey(CharacterSlot.Neck) ? items[CharacterSlot.Neck] : null,
 					items.ContainsKey(CharacterSlot.Shoulders) ? items[CharacterSlot.Shoulders] : null,
@@ -193,7 +193,7 @@ namespace Rawr
 
 				#region Process Talents and Glyphs
 				AddInfoMsg = "Processing Talents & Glyphs";
-				XmlNode activeTalentGroup = wrw.DownloadCharacterTalentTree(character.Name, character.Region, character.Realm)
+				XmlNode activeTalentGroup = wrw.DownloadCharacterTalentTree(character.Name)
 					.SelectSingleNode("page/characterInfo/talents/talentGroup[@active='1']");
 				if (activeTalentGroup == null)
 				{
@@ -293,7 +293,7 @@ namespace Rawr
 				if (character.Class == CharacterClass.Hunter) {
 					AddInfoMsg = "Processing Hunter Pets";
 					// Pull Pet(s) Info if you are a Hunter
-					List<ArmoryPet> pets = GetPet(region, realm, name);
+					List<ArmoryPet> pets = GetPet(name);
 					if (pets != null) { character.ArmoryPets = pets; }
 				}
 				#endregion
@@ -304,7 +304,7 @@ namespace Rawr
 			}
 			catch (Exception ex)
 			{
-				StatusMessaging.ReportError("Get Character", ex, "Rawr encountered an error retrieving the Character - " + name + "@" + region.ToString() + "-" + realm + " from the armory" + (AddInfoMsg != "" && AddInfoMsg != "No Additional Info" ? ".\r\nAdd'l Info: " + AddInfoMsg : ""));
+				StatusMessaging.ReportError("Get Character", ex, "Rawr encountered an error retrieving the Character - " + name + " from the armory" + (AddInfoMsg != "" && AddInfoMsg != "No Additional Info" ? ".\r\nAdd'l Info: " + AddInfoMsg : ""));
 				itemsOnCharacter = null;
 				return null;
 			}
@@ -317,12 +317,12 @@ namespace Rawr
 		/// <param name="realm">The character's Realm</param>
 		/// <param name="name">The character's Name</param>
 		/// <returns>The list of Hunter Pets in form of List(ArmoryPet)</returns>
-		public static List<ArmoryPet> GetPet(CharacterRegion region, string realm, string name) {
+		public static List<ArmoryPet> GetPet(string name) {
 			XmlDocument docTalents = null;
 			List<ArmoryPet> ArmoryPets = new List<ArmoryPet>() { };
 			try {
 				WebRequestWrapper wrw = new WebRequestWrapper();
-				docTalents = wrw.DownloadCharacterTalentTree(name, region, realm);
+				docTalents = wrw.DownloadCharacterTalentTree(name);
 				if (docTalents == null) {
 					StatusMessaging.ReportError("Get Pet", null, "No character returned from the Armory. Is the Armory down?");
 					return null;
@@ -1364,7 +1364,7 @@ namespace Rawr
 
 		public static void LoadUpgradesFromArmory(Character character, CharacterSlot slot, Wowhead.UpgradeCancelCheck cancel )
 		{
-			if (!string.IsNullOrEmpty(character.Realm) && !string.IsNullOrEmpty(character.Name))
+			if (!string.IsNullOrEmpty(character.Name))
 			{
 				WebRequestWrapper.ResetFatalErrorIndicator();
 				List<ComparisonCalculationBase> gemCalculations = new List<ComparisonCalculationBase>();
@@ -1469,7 +1469,7 @@ namespace Rawr
 				if ((object)itemToUpgrade != null)
 				{
 					WebRequestWrapper wrw = new WebRequestWrapper();
-					docUpgradeSearch = wrw.DownloadUpgrades(character.Name, character.Region,character.Realm,itemToUpgrade.Id);
+					docUpgradeSearch = wrw.DownloadUpgrades(character.Name, itemToUpgrade.Id);
 
 					ComparisonCalculationBase currentCalculation = Calculations.GetItemCalculations(itemToUpgrade, character, slot);
 					if (docUpgradeSearch != null)

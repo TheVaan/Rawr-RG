@@ -1239,7 +1239,7 @@ namespace Rawr
         {
             StringBuilder stats = new StringBuilder();
             stats.AppendFormat("Character:\t\t{0}@{1}-{2}\r\nRace:\t\t{3}",
-                character.Name, character.Region, character.Realm, character.Race);
+                character.Name, character.Race);
 
             foreach (KeyValuePair<string, string> kvp in GetCharacterCalculations(character, null, false, false, true).GetCharacterDisplayCalculationValues())
             {

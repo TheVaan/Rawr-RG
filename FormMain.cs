@@ -240,8 +240,6 @@ namespace Rawr
                     _loadingCharacter = true;
 
                     textBoxName.Text = Character.Name;
-                    textBoxRealm.Text = Character.Realm;
-                    comboBoxRegion.Text = Character.Region.ToString();
                     comboBoxRace.Text = Character.Race.ToString();
                     comboBoxProfession1.Text = Character.PrimaryProfession.ToString();
                     comboBoxProfession2.Text = Character.SecondaryProfession.ToString();
@@ -988,18 +986,13 @@ Please remember that it's still a beta, though, so lots of things are likely to 
                     if (Rawr.Properties.Recent.Default.RecentChars.Contains(form.textBoxName.Text)) {
                         Rawr.Properties.Recent.Default.RecentChars.Remove(form.textBoxName.Text);
                     }
-                    if (Rawr.Properties.Recent.Default.RecentServers.Contains(form.textBoxRealm.Text)) {
-                        Rawr.Properties.Recent.Default.RecentServers.Remove(form.textBoxRealm.Text);
-                    }
                     Rawr.Properties.Recent.Default.RecentChars.Add(form.textBoxName.Text);
-                    Rawr.Properties.Recent.Default.RecentServers.Add(form.textBoxRealm.Text);
-                    Rawr.Properties.Recent.Default.RecentRegion = form.comboBoxRegion.Text;
                     //
                     StartProcessing();
                     BackgroundWorker bw = new BackgroundWorker();
                     bw.DoWork += new DoWorkEventHandler(bw_ArmoryGetCharacter);
                     bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_ArmoryGetCharacterComplete);
-                    bw.RunWorkerAsync(new string[] { form.CharacterName, form.Realm, form.ArmoryRegion.ToString() });
+                    bw.RunWorkerAsync(new string[] { form.CharacterName });
                     ret = true;
                 }
                 form.Dispose();
@@ -1010,9 +1003,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         void bw_ArmoryGetCharacter(object sender, DoWorkEventArgs e)
         {
             string[] args = e.Argument as string[];
-            //just accessing the UI elements from off thread is ok, its changing them thats bad.
-            CharacterRegion region = (CharacterRegion)Enum.Parse(typeof(CharacterRegion),args[2]);
-            e.Result = this.GetCharacterFromArmory(args[1], args[0], region);
+            e.Result = this.GetCharacterFromArmory(args[0]);
             _characterPath = "";  
         }
 
@@ -1034,13 +1025,12 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
         private void reloadCurrentCharacterFromArmoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CharacterRegion region = (CharacterRegion)Enum.Parse(typeof(CharacterRegion), comboBoxRegion.SelectedItem.ToString());
-            if (String.IsNullOrEmpty(Character.Name) || String.IsNullOrEmpty(Character.Realm))
+            if (String.IsNullOrEmpty(Character.Name))
             {
                 MessageBox.Show("A valid character has not been loaded, unable to reload.", 
                     "No Character Loaded", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (MessageBox.Show("Confirm reloading " + textBoxName.Text + " from the " + textBoxRealm.Text + "@" + region + " realm ",
+            else if (MessageBox.Show("Confirm reloading " + textBoxName.Text,
                 "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 StartProcessing();
@@ -1188,29 +1178,11 @@ Please remember that it's still a beta, though, so lots of things are likely to 
             }
         }
 
-        private void comboBoxRegion_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!_loadingCharacter)
-            {
-                Character.Region = (CharacterRegion)Enum.Parse(typeof(CharacterRegion), comboBoxRegion.Text);
-                Character.OnCalculationsInvalidated();
-            }
-        }
-
         private void textBoxName_TextChanged(object sender, EventArgs e)
         {
             if (!_loadingCharacter)
             {
                 Character.Name = textBoxName.Text;
-                _unsavedChanges = true;
-            }
-        }
-
-        private void textBoxRealm_TextChanged(object sender, EventArgs e)
-        {
-            if (!_loadingCharacter)
-            {
-                Character.Realm = textBoxRealm.Text;
                 _unsavedChanges = true;
             }
         }
@@ -1904,7 +1876,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         public Character ReloadCharacterFromArmory(Character character)
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            Character reload = GetCharacterFromArmory(character.Realm, character.Name, character.Region);
+            Character reload = GetCharacterFromArmory(character.Name);
             if (reload != null)
             {
                 this.Invoke(new ReloadCharacterFromArmoryUpdateDelegate(this.ReloadCharacterFromCharacterProfilerUpdate), character, reload);
@@ -1920,14 +1892,14 @@ Please remember that it's still a beta, though, so lots of things are likely to 
             character.AssignAllTalentsFromCharacter(reload, false);
         }
 
-        public Character GetCharacterFromArmory(string realm, string name, CharacterRegion region)
+        public Character GetCharacterFromArmory(string name)
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
             StatusMessaging.UpdateStatus("Get Character From Armory", " Downloading Character Definition");
             StatusMessaging.UpdateStatus("Update Item Cache", "Queued");
             StatusMessaging.UpdateStatus("Cache Item Icons", "Queued");
             string[] itemsOnChar;
-            Character character = Armory.GetCharacter(region, realm, name, out itemsOnChar);
+            Character character = Armory.GetCharacter(name, out itemsOnChar);
             StatusMessaging.UpdateStatusFinished("Get Character From Armory");
             if (itemsOnChar != null) {
                 _loadingCharacter = true; // suppress item changed event
@@ -2143,8 +2115,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
         private void reloadInvetoryFromCharacterProfilerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CharacterRegion region = (CharacterRegion)Enum.Parse(typeof(CharacterRegion), comboBoxRegion.SelectedItem.ToString());
-            if (String.IsNullOrEmpty(Character.Name) || String.IsNullOrEmpty(Character.Realm)) {
+            if (String.IsNullOrEmpty(Character.Name)) {
                 MessageBox.Show("A valid character has not been loaded, unable to reload.",
                     "No Character Loaded", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else {
@@ -2159,11 +2130,11 @@ Please remember that it's still a beta, though, so lots of things are likely to 
                         CharacterProfilerData characterList = new CharacterProfilerData(dialog.FileName);
 
                         bool found_character = false;
-                        for (int r=0; r<characterList.Realms.Count; r++)
+                        for (int r = 0; r < characterList.Realms.Count; r++)
                         {
-                            if (characterList.Realms[r].Name == this.Character._realm)
+                            if (characterList.Realms[r].Name == "Rising-Gods")
                             {
-                                for (int c=0; c<characterList.Realms[r].Characters.Count; c++)
+                                for (int c = 0; c < characterList.Realms[r].Characters.Count; c++)
                                 {
                                     if (characterList.Realms[r].Characters[c].Name == this.Character._name)
                                     {
@@ -2185,7 +2156,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
                         if (!found_character)
                         {
-                            string error_msg = string.Format("{0} of {1} was not found in the Character Profiler Data.", this.Character._name, this.Character._realm);
+                            string error_msg = string.Format("{0} of {1} was not found in the Character Profiler Data.", this.Character._name);
                             MessageBox.Show(error_msg, "Character Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -2254,7 +2225,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
             if (character.Class == CharacterClass.Hunter)
             {
                 // Pull Pet(s) Info if you are a Hunter
-                List<ArmoryPet> pets = Armory.GetPet(character.Region, character.Realm, character.Name);
+                List<ArmoryPet> pets = Armory.GetPet(character.Name);
                 if (pets != null) { character.ArmoryPets = pets; }
             }
             #endregion

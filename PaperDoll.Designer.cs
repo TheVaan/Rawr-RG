@@ -30,12 +30,10 @@
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBoxEnforceGemRequirements = new System.Windows.Forms.CheckBox();
-            this.comboBoxRegion = new System.Windows.Forms.ComboBox();
             this.comboBoxModel = new System.Windows.Forms.ComboBox();
             this.comboBoxClass = new System.Windows.Forms.ComboBox();
             this.comboBoxRace = new System.Windows.Forms.ComboBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
-            this.textBoxRealm = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -72,12 +70,10 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.checkBoxEnforceGemRequirements);
-            this.groupBox3.Controls.Add(this.comboBoxRegion);
             this.groupBox3.Controls.Add(this.comboBoxModel);
             this.groupBox3.Controls.Add(this.comboBoxClass);
             this.groupBox3.Controls.Add(this.comboBoxRace);
             this.groupBox3.Controls.Add(this.textBoxName);
-            this.groupBox3.Controls.Add(this.textBoxRealm);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label21);
@@ -101,22 +97,6 @@
             this.checkBoxEnforceGemRequirements.TabIndex = 5;
             this.checkBoxEnforceGemRequirements.Text = "Enforce Gem Requirements*";
             this.checkBoxEnforceGemRequirements.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxRegion
-            // 
-            this.comboBoxRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxRegion.Enabled = false;
-            this.comboBoxRegion.FormattingEnabled = true;
-            this.comboBoxRegion.Items.AddRange(new object[] {
-            "US",
-            "EU",
-            "KR",
-            "TW",
-            "CN"});
-            this.comboBoxRegion.Location = new System.Drawing.Point(243, 27);
-            this.comboBoxRegion.Name = "comboBoxRegion";
-            this.comboBoxRegion.Size = new System.Drawing.Size(42, 21);
-            this.comboBoxRegion.TabIndex = 4;
             // 
             // comboBoxModel
             // 
@@ -178,14 +158,6 @@
             this.textBoxName.Size = new System.Drawing.Size(135, 20);
             this.textBoxName.TabIndex = 3;
             // 
-            // textBoxRealm
-            // 
-            this.textBoxRealm.Enabled = false;
-            this.textBoxRealm.Location = new System.Drawing.Point(147, 27);
-            this.textBoxRealm.Name = "textBoxRealm";
-            this.textBoxRealm.Size = new System.Drawing.Size(90, 20);
-            this.textBoxRealm.TabIndex = 3;
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -206,16 +178,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Model:";
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(145, 16);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(35, 12);
-            this.label21.TabIndex = 1;
-            this.label21.Text = "Realm:";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -225,16 +187,6 @@
             this.label1.Size = new System.Drawing.Size(32, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "Class:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(241, 16);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(37, 12);
-            this.label23.TabIndex = 1;
-            this.label23.Text = "Region:";
             // 
             // label25
             // 
@@ -651,12 +603,10 @@
         private ItemButtonWithEnchant itemButtonWrist;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox checkBoxEnforceGemRequirements;
-        private System.Windows.Forms.ComboBox comboBoxRegion;
         private System.Windows.Forms.ComboBox comboBoxModel;
         private System.Windows.Forms.ComboBox comboBoxClass;
         private System.Windows.Forms.ComboBox comboBoxRace;
         private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.TextBox textBoxRealm;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label21;
