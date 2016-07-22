@@ -225,7 +225,7 @@ namespace Rawr
         {
             if (site.Equals("en")) site = "www";
             WebRequestWrapper wrw = new WebRequestWrapper();
-            XmlDocument docItem = wrw.DownloadItemWowhead(site, query);
+            XmlDocument docItem = wrw.DownloadItemWowhead(query);
             if (docItem == null || docItem.InnerXml.Contains("Item not found!")) return null;
             // the id from above can now be a name as well as the item number, so we regrab it from the data wowhead returned
             int id = 0;
@@ -827,7 +827,7 @@ namespace Rawr
                             if (!_tokenDropMap.ContainsKey(tokenIds[i]))
                             {
                                 #region We *really* haven't seen this before so we need to pull the data
-                                XmlDocument docToken = wrw.DownloadItemWowhead(site, tokenIds[i]);
+                                XmlDocument docToken = wrw.DownloadItemWowhead(tokenIds[i]);
                                 if (docToken != null)
                                 {
                                     tokenNames[i] = docToken.SelectSingleNode("wowhead/item/name").InnerText;
@@ -2592,7 +2592,7 @@ namespace Rawr
                 string site = usePTR ? "ptr" : "www";
                 StatusMessaging.UpdateStatus("ImportWowheadFilter", "Downloading Item List");
                 WebRequestWrapper wrw = new WebRequestWrapper();
-                docUpgradeSearch = wrw.DownloadUpgradesWowhead(site, filter);
+                docUpgradeSearch = wrw.DownloadUpgradesWowhead(filter);
                 if (docUpgradeSearch != null)
                 {
                     // at this stage have an HTML doc that has upgrades in a <div class="listview-void"> block
@@ -2655,7 +2655,7 @@ namespace Rawr
                     string minLevel = "minle=" + itemToUpgrade.Item.ItemLevel.ToString() + ";";
                     string filter = getWowheadSlotFilter(slot) + minLevel + getWowheadClassFilter(character.Class) + 
                                     getWowheadWeightFilter(character); 
-                    docUpgradeSearch = wrw.DownloadUpgradesWowhead(site, filter);
+                    docUpgradeSearch = wrw.DownloadUpgradesWowhead(filter);
                     ComparisonCalculationBase currentCalculation = Calculations.GetItemCalculations(itemToUpgrade, character, slot);
                     if (docUpgradeSearch != null)
                     {
