@@ -215,5 +215,10 @@ namespace Rawr
 		{
 			Properties.Recent.Default.ShowStartPage = checkBoxShowAtLaunch.Checked;
 		}
-	}
+
+        private void FormStart_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

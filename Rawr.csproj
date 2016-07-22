@@ -414,6 +414,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>FormSplash.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormStart.de.resx">
+      <DependentUpon>FormStart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormStart.resx">
       <DependentUpon>FormStart.cs</DependentUpon>
       <SubType>Designer</SubType>
