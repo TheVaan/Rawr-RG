@@ -966,6 +966,8 @@ namespace Rawr
                             newItem.LocalizedName = wrw.GetNameFromArmory(id, "cn");
                         else if (locale.Equals("kr"))
                             newItem.LocalizedName = wrw.GetNameFromArmory(id, "kr");
+                        else if (locale.Equals("de"))
+                            newItem.LocalizedName = wrw.GetNameFromArmory(id, "de");
                         else
                         {
                             Item localItem = Wowhead.GetItem(id, false, locale);

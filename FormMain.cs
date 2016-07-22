@@ -1680,17 +1680,17 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
         public static string UpdateCacheStatusKey( CharacterSlot slot, bool bWowhead )
         {
-            return string.Format("Update {0} from {1}",
-                                 slot == CharacterSlot.None ? "All Items" : slot.ToString(),
-                                 bWowhead ? "Wowhead" : "Armory"
+            return string.Format("Aktualisiere {0} von {1}",
+                                 slot == CharacterSlot.None ? "Alle Items" : slot.ToString(),
+                                 bWowhead ? "RG-Datenbank" : "Arsenal"
                 );
         }
 
         public void UpdateItemCacheArmory( CharacterSlot slot, bool bOnlyNonLocalized )
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, false), "Beginning Update");
-            StatusMessaging.UpdateStatus("Cache Item Icons", "Not Started");
+            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, false), "Starte Aktualisierung");
+            StatusMessaging.UpdateStatus("Item Symbole zwischenspeichern", "Nicht gestartet");
             StringBuilder sbChanges = new StringBuilder();
             ItemUpdater updater = new ItemUpdater(Rawr.Properties.GeneralSettings.Default.UseMultithreading, true, false, 1, UpgradeCancelPending );
             int skippedItems = 0;
@@ -1720,7 +1720,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
             while (!updater.Done)
             {
-                StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, false), "Updating " + (skippedItems + updater.ItemsDone) + " of " + updater.ItemsToDo + " items");
+                StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, false), "Aktualisiere " + (skippedItems + updater.ItemsDone) + " von " + updater.ItemsToDo + " Items");
                 Thread.Sleep(1000);
             }
 
@@ -1736,8 +1736,8 @@ Please remember that it's still a beta, though, so lots of things are likely to 
                     if (before != after)
                     {
                         sbChanges.AppendFormat("[{0}] {1}\r\n", item.Id, item.Name);
-                        sbChanges.AppendFormat("BEFORE: {0}\r\n", before);
-                        sbChanges.AppendFormat("AFTER: {0}\r\n\r\n", after);
+                        sbChanges.AppendFormat("Davor: {0}\r\n", before);
+                        sbChanges.AppendFormat("Danach: {0}\r\n\r\n", after);
                     }
                 }
             }
@@ -1782,8 +1782,8 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         public void UpdateItemCacheWowhead(CharacterSlot slot, bool bOnlyNonLocalized )
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Beginning Update");
-            StatusMessaging.UpdateStatus("Cache Item Icons", "Not Started");
+            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Starte Aktualisierung");
+            StatusMessaging.UpdateStatus("Item Symbole zwischenspeichern", "Nicht gestartet");
             StringBuilder sbChanges = new StringBuilder();
 
             bool multithreaded = Rawr.Properties.GeneralSettings.Default.UseMultithreading;
@@ -1805,7 +1805,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
                         updater.AddItem(addedItems++, item);
                         if (!multithreaded)
                         {
-                            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Updating " + (skippedItems + addedItems) + " of " + allItems.Length + " items");
+                            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Aktualisiere " + (skippedItems + addedItems) + " von " + allItems.Length + " Items");
                             if (UpgradeCancelPending())
                             {
                                 break;
@@ -1823,7 +1823,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
             while (!updater.Done)
             {
-                StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Updating " + (skippedItems + updater.ItemsDone) + " of " + updater.ItemsToDo + " items");
+                StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Aktualisiere " + (skippedItems + updater.ItemsDone) + " von " + updater.ItemsToDo + " Items");
                 Thread.Sleep(1000);
             }
             
@@ -1839,8 +1839,8 @@ Please remember that it's still a beta, though, so lots of things are likely to 
                     if (before != after)
                     {
                         sbChanges.AppendFormat("[{0}] {1}\r\n", item.Id, item.Name);
-                        sbChanges.AppendFormat("BEFORE: {0}\r\n", before);
-                        sbChanges.AppendFormat("AFTER: {0}\r\n\r\n", after);
+                        sbChanges.AppendFormat("Davor: {0}\r\n", before);
+                        sbChanges.AppendFormat("Danach: {0}\r\n\r\n", after);
                     }
                 }
             }
@@ -1863,16 +1863,16 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         public void ImportWowheadFilter(string filter, bool usePTR)
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus("ImportWowheadFilter", "Importing Items From Wowhead");
+            StatusMessaging.UpdateStatus("ImportRGDBFilter", "Importiere Items aus RG-Datenbank");
             Wowhead.ImportItemsFromWowhead(filter, usePTR);
             ItemCache.OnItemsChanged();
-            StatusMessaging.UpdateStatusFinished("ImportWowheadFilter");
+            StatusMessaging.UpdateStatusFinished("ImportRGDBFilter");
         }
 
         public void GetArmoryUpgrades( CharacterSlot slot )
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot, false), "Getting Armory Updates");
+            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot, false), "Erhalte Arsenal Aktualisierungen");
             Armory.LoadUpgradesFromArmory( Character, slot, UpgradeCancelPending );
             ItemCache.OnItemsChanged();
             StatusMessaging.UpdateStatusFinished(LoadUpgradesStatusKey(slot, false));
@@ -1885,16 +1885,16 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
         public static string LoadUpgradesStatusKey(CharacterSlot slot, bool bWowhead)
         {
-            return string.Format("Loading {0} Upgrades from {1}",
+            return string.Format("Lade {0} Verbesserungen von {1}",
                                  slot == CharacterSlot.None ? "All Items" : slot.ToString(),
-                                 bWowhead ? "Wowhead" : "Armory"
+                                 bWowhead ? "RG-Datenbank" : "Arsenal"
                 );
         }
 
         public void GetWowheadUpgrades(CharacterSlot slot, bool usePTR)
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot,true), "Getting Wowhead Updates");
+            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot,true), "Erhalte Arsenal Aktualisierungen");
             Wowhead.LoadUpgradesFromWowhead(Character, slot, usePTR, UpgradeCancelPending);
             ItemCache.OnItemsChanged();
             StatusMessaging.UpdateStatusFinished(LoadUpgradesStatusKey(slot, true));
