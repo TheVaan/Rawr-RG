@@ -206,7 +206,7 @@ namespace Rawr.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/ExternalResources/talent" +
-            "s/{0}/{1}.jpg")]
+            "s/{0}/{1}")]
         public string TalentIconURI {
             get {
                 return ((string)(this["TalentIconURI"]));

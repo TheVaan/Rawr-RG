@@ -479,38 +479,36 @@ namespace Rawr
                 talentName = talentName.Replace(":", "");
                 string fullPathToSave;
 
-                /*if (icon != null)
+                if (icon != null)
                 {
                     codepath = "icon != null";
-                    //string imageName = icon;
-                    string imageName = icon.Replace("/", "_");
+                    string imageName = icon.Replace("/", "_").Replace(".jpg", ".gif");
+
                     fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + Path.DirectorySeparatorChar + talentTree + Path.DirectorySeparatorChar + imageName);
-                    //uri = string.Format(NetworkSettingsProvider.ArmoryTalentIconURI, icon);
-                    //origin = NetworkSettingsProvider.ArmoryTalentIconURI;
-                    //DownloadFile(uri, fullPathToSave, CONTENT_JPG);
                     origin = NetworkSettingsProvider.TalentIconURI;
                     //0 = class, 1=tree/ability - all lowercase
-                    //@"https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/ExternalResources/talents/{0}/{1}.jpg";
-                    uri = string.Format(NetworkSettingsProvider.TalentIconURI, charClass.ToString().ToLower(), talentTree.ToLower(), talentName.ToLower());
-                    DownloadFile(uri, fullPathToSave, CONTENT_JPG);
+                    //@"https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/ExternalResources/talents/{0}/{1}";
+                    uri = string.Format(NetworkSettingsProvider.TalentIconURI, charClass.ToString().ToLower(), imageName);
+                    DownloadFile(uri, fullPathToSave, CONTENT_GIF);
                 }
                 else
-                {*/
+                {
                     codepath = "icon == null";
-                    //string imageName = talentName + ".jpg";
+
+                    fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + Path.DirectorySeparatorChar + talentTree + Path.DirectorySeparatorChar + talentName + ".jpg");
+
                     if (talentName.Equals("background"))
                         talentName = talentTree;
 
-                    fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + Path.DirectorySeparatorChar + talentTree + Path.DirectorySeparatorChar + talentName + ".jpg");
                     if (!String.IsNullOrEmpty(talentTree) && !String.IsNullOrEmpty(talentName))
                     {
                         origin = NetworkSettingsProvider.TalentIconURI;
                         //0 = class, 1=tree/ability - all lowercase
-                        //@"https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/ExternalResources/talents/{0}/{1}.jpg";
-                        uri = string.Format(NetworkSettingsProvider.TalentIconURI, charClass.ToString().ToLower(), talentName);
+                        //@"https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/ExternalResources/talents/{0}/{1}";
+                        uri = string.Format(NetworkSettingsProvider.TalentIconURI, charClass.ToString().ToLower(), talentName + ".jpg");
                         DownloadFile(uri, fullPathToSave, CONTENT_JPG);
                     }
-                /*}*/
+                }
                 
                 if (!File.Exists(fullPathToSave))
                 {
