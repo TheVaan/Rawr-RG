@@ -134,7 +134,7 @@ namespace Rawr
                 }
                 else
                 {
-                    i = Item.LoadFromId(info.item.Id, true, false, true, Rawr.Properties.GeneralSettings.Default.Locale, usePTR ? "ptr" : "www");
+                    i = Item.LoadFromId(info.item.Id, true, false, true, Properties.GeneralSettings.Default.Locale, usePTR ? "ptr" : "www");
                 }
             }
             catch (Exception ex)
@@ -170,7 +170,7 @@ namespace Rawr
                     }
                     else
                     {
-                        i = Item.LoadFromId(item.Id, true, false, true, Rawr.Properties.GeneralSettings.Default.Locale, usePTR ? "ptr" : "www");
+                        i = Item.LoadFromId(item.Id, true, false, true, Properties.GeneralSettings.Default.Locale, usePTR ? "ptr" : "www");
                     }
                 }
                 catch (Exception ex)

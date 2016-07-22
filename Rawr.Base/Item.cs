@@ -130,7 +130,7 @@ namespace Rawr
 		{
 			get 
             {
-                if (_localizedName != null && !Rawr.Properties.GeneralSettings.Default.Locale.Equals("en"))
+                if (_localizedName != null && !Properties.GeneralSettings.Default.Locale.Equals("en"))
                 {
                     return _localizedName;
                 }
@@ -919,7 +919,7 @@ namespace Rawr
 
 
 		public static Item LoadFromId(int id) { return LoadFromId(id, false, true, false); }
-        public static Item LoadFromId(int id, bool forceRefresh, bool raiseEvent, bool useWowhead) { return LoadFromId(id, forceRefresh, raiseEvent, useWowhead, Rawr.Properties.GeneralSettings.Default.Locale); }
+        public static Item LoadFromId(int id, bool forceRefresh, bool raiseEvent, bool useWowhead) { return LoadFromId(id, forceRefresh, raiseEvent, useWowhead, Properties.GeneralSettings.Default.Locale); }
         public static Item LoadFromId(int id, bool forceRefresh, bool raiseEvent, bool useWowhead, string locale) { return LoadFromId(id, forceRefresh, raiseEvent, useWowhead, locale, "www"); }
         public static Item LoadFromId(int id, bool forceRefresh, bool raiseEvent, bool useWowhead, string locale, string wowheadSite)
 		{
@@ -1003,7 +1003,7 @@ namespace Rawr
                     string newItemSource = newItem.LocationInfo[0].Description
                         + (newItem.LocationInfo[1] != null ? " and" + newItem.LocationInfo[1].Description.Replace("Purchasable with", "") : "");
 
-                    if (!Rawr.Properties.GeneralSettings.Default.UseMultithreading
+                    if (!Properties.GeneralSettings.Default.UseMultithreading
                         && (oldItemStats != newItemStats || oldItemSource != newItemSource))
                     {
                         int locationCreated = oldItemSource.IndexOf("Created via");

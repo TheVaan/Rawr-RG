@@ -88,142 +88,142 @@ namespace Rawr
 
             public int MaxHttpRequests
             {
-                get { return Rawr.Properties.NetworkSettings.Default.MaxHttpRequests; }
+                get { return Properties.NetworkSettings.Default.MaxHttpRequests; }
             }
 
             public string ArmoryTalentIconURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ArmoryTalentIconURI; }
+                get { return Properties.NetworkSettings.Default.ArmoryTalentIconURI; }
             }
 
             public bool UseDefaultProxySettings
             {
-                get { return Rawr.Properties.NetworkSettings.Default.UseDefaultProxySettings; }
+                get { return Properties.NetworkSettings.Default.UseDefaultProxySettings; }
             }
 
             public string ProxyServer
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ProxyServer; }
+                get { return Properties.NetworkSettings.Default.ProxyServer; }
             }
 
             public int ProxyPort
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ProxyPort; }
+                get { return Properties.NetworkSettings.Default.ProxyPort; }
             }
 
             public string ProxyUserName
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ProxyUserName; }
+                get { return Properties.NetworkSettings.Default.ProxyUserName; }
             }
 
             public string ProxyPassword
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ProxyPassword; }
+                get { return Properties.NetworkSettings.Default.ProxyPassword; }
             }
 
             public string ProxyDomain
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ProxyDomain; }
+                get { return Properties.NetworkSettings.Default.ProxyDomain; }
             }
 
             public string ProxyType
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ProxyType; }
+                get { return Properties.NetworkSettings.Default.ProxyType; }
             }
 
             public string UserAgent
             {
-                get { return Rawr.Properties.NetworkSettings.Default.UserAgent; }
+                get { return Properties.NetworkSettings.Default.UserAgent; }
             }
 
             public bool DownloadItemInfo
             {
-                get { return Rawr.Properties.NetworkSettings.Default.DownloadItemInfo; }
+                get { return Properties.NetworkSettings.Default.DownloadItemInfo; }
             }
 
             public bool ProxyRequiresAuthentication
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ProxyRequiresAuthentication; }
+                get { return Properties.NetworkSettings.Default.ProxyRequiresAuthentication; }
             }
 
             public bool UseDefaultAuthenticationForProxy
             {
-                get { return Rawr.Properties.NetworkSettings.Default.UseDefaultAuthenticationForProxy; }
+                get { return Properties.NetworkSettings.Default.UseDefaultAuthenticationForProxy; }
             }
 
             public string WoWItemIconURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.WoWItemIconURI; }
+                get { return Properties.NetworkSettings.Default.WoWItemIconURI; }
             }
 
             public string UserAgent_IE7
             {
-                get { return Rawr.Properties.NetworkSettings.Default.UserAgent_IE7; }
+                get { return Properties.NetworkSettings.Default.UserAgent_IE7; }
             }
 
             public string UserAgent_IE6
             {
-                get { return Rawr.Properties.NetworkSettings.Default.UserAgent_IE6; }
+                get { return Properties.NetworkSettings.Default.UserAgent_IE6; }
             }
 
             public string UserAgent_FireFox2
             {
-                get { return Rawr.Properties.NetworkSettings.Default.UserAgent_FireFox2; }
+                get { return Properties.NetworkSettings.Default.UserAgent_FireFox2; }
             }
 
             public string ClassTalentURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ClassTalentURI; }
+                get { return Properties.NetworkSettings.Default.ClassTalentURI; }
             }
 
             public string CharacterTalentURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.CharacterTalentURI; }
+                get { return Properties.NetworkSettings.Default.CharacterTalentURI; }
             }
 
             public string CharacterSheetURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.CharacterSheetURI; }
+                get { return Properties.NetworkSettings.Default.CharacterSheetURI; }
             }
 
             public string ItemToolTipSheetURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ItemToolTipSheetURI; }
+                get { return Properties.NetworkSettings.Default.ItemToolTipSheetURI; }
             }
 
             public string ItemUpgradeURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ItemUpgradeURI; }
+                get { return Properties.NetworkSettings.Default.ItemUpgradeURI; }
 			}
 
 			public string ItemWowheadURI
 			{
-				get { return Rawr.Properties.NetworkSettings.Default.ItemWowheadURI; }
+				get { return Properties.NetworkSettings.Default.ItemWowheadURI; }
 			}
 
             public string ItemWowheadUpgradeURI
 			{
-                get { return Rawr.Properties.NetworkSettings.Default.ItemWowheadUpgradeURI; }
+                get { return Properties.NetworkSettings.Default.ItemWowheadUpgradeURI; }
 			}
             
             public string QuestWowheadURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.QuestWowheadURI; }
+                get { return Properties.NetworkSettings.Default.QuestWowheadURI; }
             }
 
             public string TalentIconURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.TalentIconURI; }
+                get { return Properties.NetworkSettings.Default.TalentIconURI; }
 			}
 
             public string ItemInfoURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ItemInfoURI; }
+                get { return Properties.NetworkSettings.Default.ItemInfoURI; }
             }
 
             public string ItemSearchURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ItemSearchURI; }
+                get { return Properties.NetworkSettings.Default.ItemSearchURI; }
             }
 
             #endregion
@@ -235,12 +235,12 @@ namespace Rawr
 
             public string RelativeItemImageCache
             {
-				get { return Rawr.Properties.CacheSettings.Default.RelativeItemImageCache.Replace('/', System.IO.Path.DirectorySeparatorChar); }
+				get { return Properties.CacheSettings.Default.RelativeItemImageCache.Replace('/', Path.DirectorySeparatorChar); }
             }
 
             public string RelativeTalentImageCache
             {
-				get { return Rawr.Properties.CacheSettings.Default.RelativeTalentImageCache.Replace('/', System.IO.Path.DirectorySeparatorChar); }
+				get { return Properties.CacheSettings.Default.RelativeTalentImageCache.Replace('/', Path.DirectorySeparatorChar); }
             }
 
             #endregion
@@ -471,6 +471,7 @@ namespace Rawr
 		{
             string uri = "null";
             string codepath = "null";
+            string origin = "null";
             try {
                 //foreach (string illegalCharacter in new string[] { " ", "'" })
                 talentTree = talentTree.Replace(" ", "");
@@ -478,25 +479,39 @@ namespace Rawr
                 talentName = talentName.Replace(":", "");
                 string fullPathToSave;
 
-                if (icon != null) {
+                /*if (icon != null)
+                {
                     codepath = "icon != null";
-                    string imageName = icon;
-                    fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + System.IO.Path.DirectorySeparatorChar + talentTree + System.IO.Path.DirectorySeparatorChar + imageName.Replace("/", "_"));
-                    uri = string.Format(NetworkSettingsProvider.ArmoryTalentIconURI, icon);
+                    //string imageName = icon;
+                    string imageName = icon.Replace("/", "_");
+                    fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + Path.DirectorySeparatorChar + talentTree + Path.DirectorySeparatorChar + imageName);
+                    //uri = string.Format(NetworkSettingsProvider.ArmoryTalentIconURI, icon);
+                    //origin = NetworkSettingsProvider.ArmoryTalentIconURI;
+                    //DownloadFile(uri, fullPathToSave, CONTENT_JPG);
+                    origin = NetworkSettingsProvider.TalentIconURI;
+                    //0 = class, 1=tree/ability - all lowercase
+                    //@"https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/ExternalResources/talents/{0}/{1}.jpg";
+                    uri = string.Format(NetworkSettingsProvider.TalentIconURI, charClass.ToString().ToLower(), talentTree.ToLower(), talentName.ToLower());
                     DownloadFile(uri, fullPathToSave, CONTENT_JPG);
-                } else {
+                }
+                else
+                {*/
                     codepath = "icon == null";
-                    string imageName = talentName + ".jpg";
-                    fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + System.IO.Path.DirectorySeparatorChar + talentTree + System.IO.Path.DirectorySeparatorChar + imageName);
+                    //string imageName = talentName + ".jpg";
+                    if (talentName.Equals("background"))
+                        talentName = talentTree;
+
+                    fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + Path.DirectorySeparatorChar + talentTree + Path.DirectorySeparatorChar + talentName + ".jpg");
                     if (!String.IsNullOrEmpty(talentTree) && !String.IsNullOrEmpty(talentName))
                     {
-                        //0 = class, 1=tree, 2=talentname - all lowercase
-                        //@"http://www.worldofwarcraft.com/shared/global/talents/{0}/images/{1}/{2}.jpg";
-                        //http://www.worldofwarcraft.com/shared/global/talents//wrath/druid/images/balance/brambles.jpg
-                        uri = string.Format(NetworkSettingsProvider.TalentIconURI, charClass.ToString().ToLower(), talentTree.ToLower(), talentName.ToLower());
+                        origin = NetworkSettingsProvider.TalentIconURI;
+                        //0 = class, 1=tree/ability - all lowercase
+                        //@"https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/ExternalResources/talents/{0}/{1}.jpg";
+                        uri = string.Format(NetworkSettingsProvider.TalentIconURI, charClass.ToString().ToLower(), talentName);
                         DownloadFile(uri, fullPathToSave, CONTENT_JPG);
                     }
-                }
+                /*}*/
+                
                 if (!File.Exists(fullPathToSave))
                 {
                     fullPathToSave = null;
@@ -506,11 +521,15 @@ namespace Rawr
             catch (Exception ex) {
                 Rawr.Base.ErrorBox eb = new Rawr.Base.ErrorBox("Error Downloading Talent Icon",
                     ex.Message, "DownloadTalentIcon(...)",
-                    string.Format("\r\n- Talent Tree: {0}\r\n- Talent Name: {1}\r\n- Icon: {2}\r\n- URI: {3}\r\n- CodePath: {4}", talentTree, talentName, icon, uri, codepath),
+                    string.Format("\r\n- Talent Tree: {0}\r\n- Talent Name: {1}\r\n- Icon: {2}\r\n- Origin: {3}\r\n- URI: {4}\r\n- CodePath: {5}", talentTree, talentName, icon, origin, uri, codepath),
                     ex.StackTrace);
                 return null;
             }
+            finally
+            {
+                Console.WriteLine(string.Format("\r\n- Talent Tree: {0}\r\n- Talent Name: {1}\r\n- Icon: {2}\r\n- Origin: {3}\r\n- URI: {4}\r\n- CodePath: {5}", talentTree, talentName, icon, origin, uri, codepath));
             }
+        }
 
 		/// <summary>
 		/// Downloads the temp image for use as an icon.

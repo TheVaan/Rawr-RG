@@ -39,7 +39,7 @@
       <Value Profile="(Default)">Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4</Value>
     </Setting>
     <Setting Name="ClassTalentURI" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://www.worldofwarcraft.com/shared/global/talents/{0}/data.js</Value>
+      <Value Profile="(Default)">https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/ExternalResources/talents/{0}/data.js</Value>
     </Setting>
     <Setting Name="CharacterTalentURI" Type="System.String" Scope="Application">
       <Value Profile="(Default)">https://arsenal.rising-gods.de/character-talents.xml?r={0}&amp;cn={1}</Value>
@@ -54,7 +54,7 @@
       <Value Profile="(Default)">https://arsenal.rising-gods.de/search.xml?searchType=items&amp;pr={0}&amp;pn={1}&amp;pi={2}</Value>
     </Setting>
     <Setting Name="TalentIconURI" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://www.worldofwarcraft.com/shared/global/talents/{0}/images/{1}/{2}.jpg</Value>
+      <Value Profile="(Default)">https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/ExternalResources/talents/{0}/{1}.jpg</Value>
     </Setting>
     <Setting Name="ItemInfoURI" Type="System.String" Scope="Application">
       <Value Profile="(Default)">https://arsenal.rising-gods.de/item-info.xml?i={0}</Value>

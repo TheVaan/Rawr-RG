@@ -159,7 +159,8 @@ namespace Rawr.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.worldofwarcraft.com/shared/global/talents/{0}/data.js")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/ExternalResources/talent" +
+            "s/{0}/data.js")]
         public string ClassTalentURI {
             get {
                 return ((string)(this["ClassTalentURI"]));
@@ -204,7 +205,8 @@ namespace Rawr.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.worldofwarcraft.com/shared/global/talents/{0}/images/{1}/{2}.jpg")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/ExternalResources/talent" +
+            "s/{0}/{1}.jpg")]
         public string TalentIconURI {
             get {
                 return ((string)(this["TalentIconURI"]));

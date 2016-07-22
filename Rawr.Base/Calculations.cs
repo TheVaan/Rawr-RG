@@ -1279,7 +1279,7 @@ namespace Rawr
         {
             try
             {
-                if (character != null && Rawr.Properties.GeneralSettings.Default.HideProfEnchants && !character.HasProfession(buff.Professions))
+                if (character != null && Properties.GeneralSettings.Default.HideProfEnchants && !character.HasProfession(buff.Professions))
                     return false;
                 return HasRelevantStats(buff.GetTotalStats());
             }
@@ -1310,7 +1310,7 @@ namespace Rawr
             try {
                 #region Enchants related to Professions to Hide/Show
                 string name = enchant.Name;
-                if (Rawr.Properties.GeneralSettings.Default.HideProfEnchants) {
+                if (Properties.GeneralSettings.Default.HideProfEnchants) {
                     if (!character.HasProfession(Profession.Enchanting)) 
                     {
                         if (enchant.Slot == ItemSlot.Finger)

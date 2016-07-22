@@ -180,7 +180,7 @@ namespace Rawr
 
         static Wowhead()
         {
-            switch (Rawr.Properties.GeneralSettings.Default.Locale)
+            switch (Properties.GeneralSettings.Default.Locale)
             {
                 case "fr":
                     _pvpTokenMap["20560"] = "Marque d'honneur de la vallée d'Alterac";
@@ -1139,7 +1139,7 @@ namespace Rawr
                                     if (sourcemore.TryGetValue("s", out tmp))
                                     {
                                         string profession = "";
-                                        switch (Rawr.Properties.GeneralSettings.Default.Locale)
+                                        switch (Properties.GeneralSettings.Default.Locale)
                                         {
                                             case "fr":
                                                 switch (tmp.ToString())
@@ -1814,7 +1814,7 @@ namespace Rawr
                     if (item.LocationInfo[0] is CraftedItem)
                     {
                         string profession = "";
-                        switch (Rawr.Properties.GeneralSettings.Default.Locale)
+                        switch (Properties.GeneralSettings.Default.Locale)
                         {
                             case "fr":
                                 switch (value)
@@ -1885,7 +1885,7 @@ namespace Rawr
 
         private static string GetZoneName(string zoneId)
         {
-            switch (Rawr.Properties.GeneralSettings.Default.Locale)
+            switch (Properties.GeneralSettings.Default.Locale)
             {
                 #region French Translations
                 case "fr": {
