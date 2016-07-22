@@ -164,14 +164,15 @@ namespace Rawr
                 if (!string.IsNullOrEmpty(latestVersion))
                 {
                     string currentVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                    Console.WriteLine(currentVersion);
                     if (currentVersion != latestVersion)
                     {
                         _checkForUpdatesEnabled = false;
-                        DialogResult result = MessageBox.Show(string.Format("A new version of Rawr has been released, version {0}! Would you like to go to the Rawr site to download the new version?",
-                            latestVersion), "New Version Released!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        DialogResult result = MessageBox.Show(string.Format("Eine neue Version von Rawr-RG wurde veröffentlicht: Version {0}! Möchtest du zur Download-Seite weitergeleitet werden?",
+                            latestVersion), "Neue Version verfügbar!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         if (result == DialogResult.Yes)
                         {
-                            Help.ShowHelp(null, "http://rawr.codeplex.com/");
+                            Help.ShowHelp(null, "https://github.com/TheVaan/Rawr-RG/");
                         }
                     }
                 }
@@ -1680,16 +1681,16 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
         public static string UpdateCacheStatusKey( CharacterSlot slot, bool bWowhead )
         {
-            return string.Format("Update {0} from {1}",
-                                 slot == CharacterSlot.None ? "All Items" : slot.ToString(),
-                                 bWowhead ? "Wowhead" : "Armory"
+            return string.Format("Update {0} von {1}",
+                                 slot == CharacterSlot.None ? "Alle Items" : slot.ToString(),
+                                 bWowhead ? "RG Datenbank" : "RG Arsenal"
                 );
         }
 
         public void UpdateItemCacheArmory( CharacterSlot slot, bool bOnlyNonLocalized )
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, false), "Beginning Update");
+            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, false), "Beginne Update");
             StatusMessaging.UpdateStatus("Cache Item Icons", "Not Started");
             StringBuilder sbChanges = new StringBuilder();
             ItemUpdater updater = new ItemUpdater(Rawr.Properties.GeneralSettings.Default.UseMultithreading, true, false, 1, UpgradeCancelPending );
@@ -1720,7 +1721,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
             while (!updater.Done)
             {
-                StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, false), "Updating " + (skippedItems + updater.ItemsDone) + " of " + updater.ItemsToDo + " items");
+                StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, false), "Aktuallisiere " + (skippedItems + updater.ItemsDone) + " von " + updater.ItemsToDo + " Items");
                 Thread.Sleep(1000);
             }
 
@@ -1782,7 +1783,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         public void UpdateItemCacheWowhead(CharacterSlot slot, bool bOnlyNonLocalized )
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Beginning Update");
+            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Beginne Update");
             StatusMessaging.UpdateStatus("Cache Item Icons", "Not Started");
             StringBuilder sbChanges = new StringBuilder();
 
@@ -1805,7 +1806,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
                         updater.AddItem(addedItems++, item);
                         if (!multithreaded)
                         {
-                            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Updating " + (skippedItems + addedItems) + " of " + allItems.Length + " items");
+                            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Aktuallisiere " + (skippedItems + addedItems) + " von " + allItems.Length + " Items");
                             if (UpgradeCancelPending())
                             {
                                 break;
@@ -1823,7 +1824,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
             while (!updater.Done)
             {
-                StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Updating " + (skippedItems + updater.ItemsDone) + " of " + updater.ItemsToDo + " items");
+                StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Aktuallisiere " + (skippedItems + updater.ItemsDone) + " von " + updater.ItemsToDo + " Items");
                 Thread.Sleep(1000);
             }
             
@@ -1863,7 +1864,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         public void ImportWowheadFilter(string filter, bool usePTR)
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus("ImportWowheadFilter", "Importing Items From Wowhead");
+            StatusMessaging.UpdateStatus("ImportWowheadFilter", "Importiere Items von RG-Datenbank");
             Wowhead.ImportItemsFromWowhead(filter, usePTR);
             ItemCache.OnItemsChanged();
             StatusMessaging.UpdateStatusFinished("ImportWowheadFilter");
@@ -1872,7 +1873,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         public void GetArmoryUpgrades( CharacterSlot slot )
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot, false), "Getting Armory Updates");
+            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot, false), "Hole RG-Arsenal Updates");
             Armory.LoadUpgradesFromArmory( Character, slot, UpgradeCancelPending );
             ItemCache.OnItemsChanged();
             StatusMessaging.UpdateStatusFinished(LoadUpgradesStatusKey(slot, false));
@@ -1885,16 +1886,16 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
         public static string LoadUpgradesStatusKey(CharacterSlot slot, bool bWowhead)
         {
-            return string.Format("Loading {0} Upgrades from {1}",
+            return string.Format("Lade {0} Upgrades von {1}",
                                  slot == CharacterSlot.None ? "All Items" : slot.ToString(),
-                                 bWowhead ? "Wowhead" : "Armory"
+                                 bWowhead ? "RG Datenbank" : "RG Arsenal"
                 );
         }
 
         public void GetWowheadUpgrades(CharacterSlot slot, bool usePTR)
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot,true), "Getting Wowhead Updates");
+            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot,true), "Hole RG-Datenbank Updates");
             Wowhead.LoadUpgradesFromWowhead(Character, slot, usePTR, UpgradeCancelPending);
             ItemCache.OnItemsChanged();
             StatusMessaging.UpdateStatusFinished(LoadUpgradesStatusKey(slot, true));
@@ -2327,6 +2328,9 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         private void itemFilteringToolStripMenuItem_Click(object sender, EventArgs e)
         { Help.ShowHelp(null, "http://www.codeplex.com/Rawr/Wiki/View.aspx?title=ItemFiltering"); }
 
+        private void rawrRGWebsiteToolStripMenuItem_Click(object sender, EventArgs e)
+        { Help.ShowHelp(null, "https://github.com/TheVaan/Rawr-RG/"); }
+
         private void rawrWebsiteToolStripMenuItem_Click(object sender, EventArgs e)
         { Help.ShowHelp(null, "http://rawr.codeplex.com/"); }
 
@@ -2605,10 +2609,10 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         private void ShowWowhead3DModelURL(Character character, bool maleModel)
         {
             bool missingDisplayID = false;
-            StringBuilder URL = new StringBuilder("http://static.wowhead.com/modelviewer/ModelView.swf?model=");
+            StringBuilder URL = new StringBuilder("https://db.rising-gods.de/static/modelviewer/ModelView.swf?model=");
             URL.Append(character.Race.ToString().ToLower());
             URL.Append(maleModel ? "male" : "female");
-            URL.Append("&modelType=16&ha=0&hc=0&fa=0&sk=0&fh=0&fc=0&contentPath=http://static.wowhead.com/modelviewer/&blur=1&equipList=");
+            URL.Append("&modelType=16&ha=0&hc=0&fa=0&sk=0&fh=0&fc=0&contentPath=https://db.rising-gods.de/static/modelviewer/&blur=1&equipList=");
             foreach (ItemInstance item in character.GetItems())
             {
                 if (item != null && (item.Slot != ItemSlot.Neck && item.Slot != ItemSlot.Shirt && item.Slot != ItemSlot.Tabard &&
@@ -2633,12 +2637,12 @@ Please remember that it's still a beta, though, so lots of things are likely to 
             StringBuilder URL = new StringBuilder("<html><head><title>Wowhead 3D Character Model in Java</title></head><body>");
             URL.Append("<applet id=\"3dviewer-java\" code=\"org.jdesktop.applet.util.JNLPAppletLauncher\" ");
             URL.Append("width=\"600\" height=\"400\" ");
-            URL.Append("archive=\"http://static.wowhead.com/modelviewer/applet-launcher.jar,");
+            URL.Append("archive=\"https://db.rising-gods.de/static/modelviewer/applet-launcher.jar,");
             URL.Append("http://download.java.net/media/jogl/builds/archive/jsr-231-webstart-current/jogl.jar,");
             URL.Append("http://download.java.net/media/gluegen/webstart/gluegen-rt.jar,");
             URL.Append("http://download.java.net/media/java3d/webstart/release/vecmath/latest/vecmath.jar,");
-            URL.Append("http://static.wowhead.com/modelviewer/ModelView510.jar\">");
-            URL.Append("<param name=\"jnlp_href\" value=\"http://static.wowhead.com/modelviewer/ModelView.jnlp\">");
+            URL.Append("https://db.rising-gods.de/static/modelviewer/ModelView510.jar\">");
+            URL.Append("<param name=\"jnlp_href\" value=\"https://db.rising-gods.de/static/modelviewer/ModelView.jnlp\">");
             URL.Append("<param name=\"codebase_lookup\" value=\"false\">");
             URL.Append("<param name=\"cache_option\" value=\"no\">");
             URL.Append("<param name=\"subapplet.classname\" value=\"modelview.ModelViewerApplet\">");
@@ -2646,7 +2650,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
             URL.Append("<param name=\"progressbar\" value=\"true\">");
             URL.Append("<param name=\"jnlpNumExtensions\" value=\"1\">");
             URL.Append("<param name=\"jnlpExtension1\" value=\"http://download.java.net/media/jogl/builds/archive/jsr-231-webstart-current/jogl.jnlp\">");
-            URL.Append("<param name=\"contentPath\" value=\"http://static.wowhead.com/modelviewer/\">");
+            URL.Append("<param name=\"contentPath\" value=\"https://db.rising-gods.de/static/modelviewer/\">");
             URL.Append("<param name=\"model\" value=\"");
             URL.Append(character.Race.ToString().ToLower());
             URL.Append(maleModel ? "male" : "female");

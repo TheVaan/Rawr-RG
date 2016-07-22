@@ -78,7 +78,7 @@
 			this.checkBoxShowAtLaunch.Name = "checkBoxShowAtLaunch";
 			this.checkBoxShowAtLaunch.Size = new System.Drawing.Size(157, 17);
 			this.checkBoxShowAtLaunch.TabIndex = 2;
-			this.checkBoxShowAtLaunch.Text = "Show Start Page at Launch";
+			this.checkBoxShowAtLaunch.Text = "Zeige Startseite beim Start";
 			this.checkBoxShowAtLaunch.UseVisualStyleBackColor = false;
 			this.checkBoxShowAtLaunch.CheckedChanged += new System.EventHandler(this.checkBoxShowAtLaunch_CheckedChanged);
 			// 
@@ -94,7 +94,7 @@
 			this.linkLabelLoadArmory.Size = new System.Drawing.Size(116, 13);
 			this.linkLabelLoadArmory.TabIndex = 4;
 			this.linkLabelLoadArmory.TabStop = true;
-			this.linkLabelLoadArmory.Text = "Load from the Armory...";
+			this.linkLabelLoadArmory.Text = "Lade aus RG-Arsenal...";
 			this.linkLabelLoadArmory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLoadArmory_LinkClicked);
 			// 
 			// panelCharacters
@@ -122,7 +122,7 @@
 			this.labelRecentCharacters.Name = "labelRecentCharacters";
 			this.labelRecentCharacters.Size = new System.Drawing.Size(96, 13);
 			this.labelRecentCharacters.TabIndex = 5;
-			this.labelRecentCharacters.Text = "Recent Characters";
+			this.labelRecentCharacters.Text = "Letzte Charaktere:";
 			// 
 			// linkLabelRecentCharacter5
 			// 
@@ -211,7 +211,7 @@
 			this.linkLabelCreateNew.Size = new System.Drawing.Size(121, 13);
 			this.linkLabelCreateNew.TabIndex = 4;
 			this.linkLabelCreateNew.TabStop = true;
-			this.linkLabelCreateNew.Text = "Create New Character...";
+			this.linkLabelCreateNew.Text = "Erstelle neuen Charakter...";
 			this.linkLabelCreateNew.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelCreateNew_LinkClicked);
 			// 
 			// linkLabelOpenSaved
@@ -226,7 +226,7 @@
 			this.linkLabelOpenSaved.Size = new System.Drawing.Size(125, 13);
 			this.linkLabelOpenSaved.TabIndex = 4;
 			this.linkLabelOpenSaved.TabStop = true;
-			this.linkLabelOpenSaved.Text = "Open Saved Character...";
+			this.linkLabelOpenSaved.Text = "Öffne Charakter...";
 			this.linkLabelOpenSaved.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelOpenSaved_LinkClicked);
 			// 
 			// labelVersion
@@ -260,7 +260,7 @@
 			this.labelDidYouKnow.Padding = new System.Windows.Forms.Padding(4);
 			this.labelDidYouKnow.Size = new System.Drawing.Size(393, 317);
 			this.labelDidYouKnow.TabIndex = 6;
-			this.labelDidYouKnow.Text = "Loading Did You Know...";
+			this.labelDidYouKnow.Text = "Lade Did You Know...";
 			// 
 			// panel1
 			// 
@@ -443,7 +443,7 @@
 			this.labelKnownIssues.Padding = new System.Windows.Forms.Padding(4);
 			this.labelKnownIssues.Size = new System.Drawing.Size(393, 317);
 			this.labelKnownIssues.TabIndex = 6;
-			this.labelKnownIssues.Text = "Loading Known Issues...";
+			this.labelKnownIssues.Text = "Lade Known Issues...";
 			// 
 			// panelVersionHistory
 			// 
@@ -499,7 +499,7 @@
 			this.MinimizeBox = false;
 			this.Name = "FormStart";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-			this.Text = "Rawr Start Page";
+			this.Text = "Rawr-RG Startseite";
 			this.panelCharacters.ResumeLayout(false);
 			this.panelCharacters.PerformLayout();
 			this.panelDidYouKnow.ResumeLayout(false);

@@ -266,9 +266,9 @@ namespace Rawr
 
 		public string GetLatestVersionString()
 		{
-			string html = DownloadText("http://www.codeplex.com/Rawr");
-			if (html == null || !html.Contains("{Current Version: ")) return string.Empty;
-			html = html.Substring(html.IndexOf("{Current Version: ") + "{Current Version: ".Length);
+			string html = DownloadText("https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/README.md");
+			if (html == null || !html.Contains("{Aktuelle Version: ")) return string.Empty;
+			html = html.Substring(html.IndexOf("{Aktuelle Version: ") + "{Aktuelle Version: ".Length);
 			if (!html.Contains("}")) return string.Empty;
 			html = html.Substring(0, html.IndexOf("}"));
 			return html;
@@ -276,7 +276,7 @@ namespace Rawr
 
 		public string GetBetaVersionString()
 		{
-			string html = DownloadText("http://www.codeplex.com/Rawr");
+			string html = DownloadText("https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/README.md");
 			if (html == null || !html.Contains("{Beta Version: ")) return string.Empty;
 			html = html.Substring(html.IndexOf("{Beta Version: ") + "{Beta Version: ".Length);
 			if (!html.Contains("}")) return string.Empty;
@@ -286,7 +286,7 @@ namespace Rawr
 
 		public string GetRandomDidYouKnow()
 		{
-			string html = DownloadText("http://rawr.codeplex.com/Wiki/View.aspx?title=DidYouKnow");
+			/*string html = DownloadText("http://rawr.codeplex.com/Wiki/View.aspx?title=DidYouKnow");
             if (html == null || !html.Contains("-------<br />") || 
                 !(html.Contains("&nbsp;by&nbsp;<a id=\"wikiEditByLink\" href=\"http://www.codeplex.com/site/users/view/Astrylian\">Astrylian</a>") || 
                   html.Contains("&nbsp;by&nbsp;<a id=\"wikiEditByLink\" href=\"http://www.codeplex.com/site/users/view/Kavan\">Kavan</a>") ||
@@ -304,18 +304,26 @@ namespace Rawr
 				string dyk = dyks[r.Next(dyks.Length)];
 				if (!randomDyks.Contains(dyk)) randomDyks.Add(dyk);
 			}
-			return string.Join("\r\n\r\n", randomDyks.ToArray());
-		}
+			return string.Join("\r\n\r\n", randomDyks.ToArray()); */
+            return string.Empty;
+        }
 
 		public string GetKnownIssues()
 		{
-			string html = DownloadText("http://rawr.codeplex.com/Wiki/View.aspx?title=KnownIssues");
-            if (html == null || !html.Contains("-------<br />") || !(html.Contains("&nbsp;by&nbsp;<a id=\"wikiEditByLink\" href=\"http://www.codeplex.com/site/users/view/Astrylian\">Astrylian</a>") || html.Contains("&nbsp;by&nbsp;<a id=\"wikiEditByLink\" href=\"http://www.codeplex.com/site/users/view/Kavan\">Kavan</a>"))) return string.Empty;
-			html = html.Substring(html.IndexOf("-------<br />") + 13);
-			if (!html.Contains("<br />-------")) return string.Empty;
+            /*string html = DownloadText("https://github.com/TheVaan/Rawr-RG/issues");
+
+            if (html == null || !html.Contains("<title>Issues · TheVaan/Rawr-RG</title>"))
+                return string.Empty;
+
+            html = html.Substring(html.IndexOf("-------<br />") + 13);
+
+            if (!html.Contains("<br />-------"))
+                return string.Empty;
+
 			html = html.Substring(0, html.IndexOf("<br />-------"));
 			html = html.Replace("<br />", "\r\n");
-			return html;
+			return html;*/
+            return string.Empty;
 		}
 
 		/*public string DownloadClassTalentTree(CharacterClass characterClass)
@@ -377,30 +385,28 @@ namespace Rawr
             XmlDocument doc = null;
             if (item.Length > 0)
             {
-                // http://{0}.wowarmory.com/search.xml?searchQuery={1}&searchType=items
-                doc = DownloadXml(string.Format(NetworkSettingsProvider.ItemSearchURI, "www", item));
+                // https://arsenal.rising-gods.de/search.xml?searchQuery={0}&searchType=items
+                doc = DownloadXml(string.Format(NetworkSettingsProvider.ItemSearchURI, item));
             }
             return doc;
         }
 
-        public XmlDocument DownloadItemWowhead(string id) { return DownloadItemWowhead("www", id); }
-        public XmlDocument DownloadItemWowhead(string site, string id)
-		{
+        public XmlDocument DownloadItemWowhead(string id) {
 			XmlDocument doc = null;
-            if (!string.IsNullOrEmpty(site) && !string.IsNullOrEmpty(id))
+            if (!string.IsNullOrEmpty(id))
 			{
-				doc = DownloadXml(string.Format(NetworkSettingsProvider.ItemWowheadURI, site, id), true, false);
+				doc = DownloadXml(string.Format(NetworkSettingsProvider.ItemWowheadURI, id), true, false);
 			}
 			return doc;
 		}
 
 
-        public string DownloadUpgradesWowhead(string site, string filter)
+        public string DownloadUpgradesWowhead(string filter)
         {
             string doc = null;
-            if (!string.IsNullOrEmpty(site) && !string.IsNullOrEmpty(filter))
+            if (!string.IsNullOrEmpty(filter))
             {
-                doc = DownloadText(string.Format(NetworkSettingsProvider.ItemWowheadUpgradeURI, site, filter));
+                doc = DownloadText(string.Format(NetworkSettingsProvider.ItemWowheadUpgradeURI, filter));
             }
             return doc;
         }
@@ -464,8 +470,8 @@ namespace Rawr
 		public string DownloadTalentIcon(CharacterClass charClass, string talentTree, string talentName, string icon)
 		{
             string uri = "null";
-            //string codepath = "null";
-            //try {
+            string codepath = "null";
+            try {
                 //foreach (string illegalCharacter in new string[] { " ", "'" })
                 talentTree = talentTree.Replace(" ", "");
                 talentName = talentName.Replace(" ", "");
@@ -473,13 +479,13 @@ namespace Rawr
                 string fullPathToSave;
 
                 if (icon != null) {
-                    //codepath = "icon != null";
+                    codepath = "icon != null";
                     string imageName = icon;
                     fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + System.IO.Path.DirectorySeparatorChar + talentTree + System.IO.Path.DirectorySeparatorChar + imageName.Replace("/", "_"));
                     uri = string.Format(NetworkSettingsProvider.ArmoryTalentIconURI, icon);
                     DownloadFile(uri, fullPathToSave, CONTENT_JPG);
                 } else {
-                    //codepath = "icon == null";
+                    codepath = "icon == null";
                     string imageName = talentName + ".jpg";
                     fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + System.IO.Path.DirectorySeparatorChar + talentTree + System.IO.Path.DirectorySeparatorChar + imageName);
                     if (!String.IsNullOrEmpty(talentTree) && !String.IsNullOrEmpty(talentName))
@@ -487,25 +493,24 @@ namespace Rawr
                         //0 = class, 1=tree, 2=talentname - all lowercase
                         //@"http://www.worldofwarcraft.com/shared/global/talents/{0}/images/{1}/{2}.jpg";
                         //http://www.worldofwarcraft.com/shared/global/talents//wrath/druid/images/balance/brambles.jpg
-                        uri = string.Format(NetworkSettingsProvider.TalentIconURI, charClass.ToString().ToLower(),
-                                                        talentTree.ToLower(), talentName.ToLower());
+                        uri = string.Format(NetworkSettingsProvider.TalentIconURI, charClass.ToString().ToLower(), talentTree.ToLower(), talentName.ToLower());
                         DownloadFile(uri, fullPathToSave, CONTENT_JPG);
                     }
                 }
-			    if (!File.Exists(fullPathToSave))
-			    {
+                if (!File.Exists(fullPathToSave))
+                {
                     fullPathToSave = null;
                 }
                 return fullPathToSave;
-            /*}
+            }
             catch (Exception ex) {
-                /*Rawr.Base.ErrorBox eb = new Rawr.Base.ErrorBox("Error Downloading Talent Icon",
+                Rawr.Base.ErrorBox eb = new Rawr.Base.ErrorBox("Error Downloading Talent Icon",
                     ex.Message, "DownloadTalentIcon(...)",
                     string.Format("\r\n- Talent Tree: {0}\r\n- Talent Name: {1}\r\n- Icon: {2}\r\n- URI: {3}\r\n- CodePath: {4}", talentTree, talentName, icon, uri, codepath),
-                    ex.StackTrace);*//*
+                    ex.StackTrace);
                 return null;
-            }*/
-		}
+            }
+            }
 
 		/// <summary>
 		/// Downloads the temp image for use as an icon.

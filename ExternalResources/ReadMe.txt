@@ -1,0 +1,1 @@
+Never ever include this folder to Rawr build path! This is ONYL for external access from Rawr over HTTP!

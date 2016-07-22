@@ -17,7 +17,7 @@ namespace Rawr.Forms
 	/// </summary>
 	public partial class Options : Form
 	{
-		public const string NETWORK_SETTINGS = "Network Settings";
+		public const string NETWORK_SETTINGS = "Netzwerk Einstellungen";
 		public const char MENU_DELIMETER = '|';
 
 		private Dictionary<string, UserControl> _lookupTable;

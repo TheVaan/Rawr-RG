@@ -90,7 +90,7 @@ namespace Rawr
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 25);
             this.cancelButton.TabIndex = 1;
-            this.cancelButton.Text = "Cancel";
+            this.cancelButton.Text = "Abbrechen";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // bindingSourceItemFilter

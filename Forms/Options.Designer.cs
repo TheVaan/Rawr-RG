@@ -64,10 +64,10 @@
             // 
             this.Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Cancel.Location = new System.Drawing.Point(388, 406);
-            this.Cancel.Name = "Cancel";
+            this.Cancel.Name = "Abbrechen";
             this.Cancel.Size = new System.Drawing.Size(75, 23);
             this.Cancel.TabIndex = 3;
-            this.Cancel.Text = "Cancel";
+            this.Cancel.Text = "Abbrechen";
             this.Cancel.UseVisualStyleBackColor = true;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 

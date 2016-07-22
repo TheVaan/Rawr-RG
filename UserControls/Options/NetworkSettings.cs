@@ -98,7 +98,7 @@ namespace Rawr.UserControls.Options
 
 		public string DisplayName
 		{
-			get { return "Http Settings"; }
+			get { return "Http Einstellungen"; }
 		}
 
 

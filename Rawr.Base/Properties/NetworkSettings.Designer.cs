@@ -270,7 +270,7 @@ namespace Rawr.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://db.rising-gods.de/?item={1}&xml")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://db.rising-gods.de/?item={0}&xml")]
         public string ItemWowheadURI {
             get {
                 return ((string)(this["ItemWowheadURI"]));

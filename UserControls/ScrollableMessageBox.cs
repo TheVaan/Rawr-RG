@@ -134,7 +134,7 @@ namespace Rawr.UserControls
             this.AcceptButton = btnOK;
 
             Button btnCancel = new Button();
-            btnCancel.Text = "Cancel";
+            btnCancel.Text = "Abbrechen";
             this.Controls.Add(btnCancel);
             btnCancel.Location = new Point(this.Width / 2 + 5, this.txtMessage.Bottom + 5);
             btnCancel.Size = new Size(70, 20);

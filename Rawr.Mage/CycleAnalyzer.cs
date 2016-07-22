@@ -65,13 +65,13 @@ namespace Rawr.Mage
             {
                 return;
             }
-            if (buttonOptimal.Text == "Cancel")
+            if (buttonOptimal.Text == "Abbrechen")
             {
                 backgroundWorker.CancelAsync();
             }
             else
             {
-                buttonOptimal.Text = "Cancel";
+                buttonOptimal.Text = "Abbrechen";
                 backgroundWorker.RunWorkerAsync();
             }
         }
