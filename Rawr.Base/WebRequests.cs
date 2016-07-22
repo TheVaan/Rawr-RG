@@ -43,7 +43,6 @@ namespace Rawr
 		
 		private static Exception _fatalError = null;
         private static Exception _error = null;
-		private Dictionary<CharacterRegion, string> _domains = new Dictionary<CharacterRegion,string>();
 
         public interface INetworkSettingsProvider
         {
@@ -263,11 +262,6 @@ namespace Rawr
             _proxyUserName = NetworkSettingsProvider.ProxyUserName;
             _proxyPassword = NetworkSettingsProvider.ProxyPassword;
             _proxyDomain = NetworkSettingsProvider.ProxyDomain;
-			_domains.Add(CharacterRegion.US, "www");
-			_domains.Add(CharacterRegion.EU, "eu");
-			_domains.Add(CharacterRegion.KR, "kr");
-			_domains.Add(CharacterRegion.TW, "tw");
-			_domains.Add(CharacterRegion.CN, "cn");
 		}
 
 		public string GetLatestVersionString()
@@ -324,47 +318,41 @@ namespace Rawr
 			return html;
 		}
 
-		public string DownloadClassTalentTree(CharacterClass characterClass)
+		/*public string DownloadClassTalentTree(CharacterClass characterClass)
 		{
 			//http://www.worldofwarcraft.com/shared/global/talents/{0}/data.js
             return DownloadText(string.Format(NetworkSettingsProvider.ClassTalentURI, characterClass.ToString().ToLower()));
-		}
+		}*/
 
 		public XmlDocument DownloadCharacterTalentTree(string characterName, CharacterRegion region, string realm)
 		{
-			//http://{0}.wowarmory.com/character-talents.xml?r={1}&cn={2}
-			string domain = _domains[region];
+			//https://arsenal.rising-gods.de/character-talents.xml?r={0}&cn={1}
 			XmlDocument doc = null;
 			if (!String.IsNullOrEmpty(characterName))
 			{
-                doc = DownloadXml(string.Format(NetworkSettingsProvider.CharacterTalentURI,
-													domain, realm, characterName));
+                doc = DownloadXml(string.Format(NetworkSettingsProvider.CharacterTalentURI, realm, characterName));
 			}
 			return doc;
 		}
 
         public XmlDocument DownloadCharacterSheet(string characterName, CharacterRegion region, string realm)
 		{
-			//http://{0}.wowarmory.com/character-sheet.xml?r={1}&cn={2}
-			string domain = _domains[region];
+            //https://arsenal.rising-gods.de/character-sheet.xml?r={0}&cn={1}
 			XmlDocument doc = null;
 			if (!String.IsNullOrEmpty(characterName))
 			{
-                doc = DownloadXml(string.Format(NetworkSettingsProvider.CharacterSheetURI,
-													domain, realm, characterName));
+                doc = DownloadXml(string.Format(NetworkSettingsProvider.CharacterSheetURI, realm, characterName));
 			}
 			return doc;
 		}
 
 		public XmlDocument DownloadUpgrades(string characterName, CharacterRegion region, string realm, int itemId)
 		{
-			//http://{0}.wowarmory.com/search.xml?searchType=items&pr={1}&pn={2}&pi={3}
-			string domain = _domains[region];
+            //https://arsenal.rising-gods.de/search.xml?searchType=items&pr={1}&pn={2}&pi={3}
 			XmlDocument doc = null;
 			if (!String.IsNullOrEmpty(characterName))
 			{
-                doc = DownloadXml(string.Format(NetworkSettingsProvider.ItemUpgradeURI,
-													domain, realm, characterName, itemId.ToString()));
+                doc = DownloadXml(string.Format(NetworkSettingsProvider.ItemUpgradeURI, realm, characterName, itemId.ToString()));
 			}
 			return doc;
 		}

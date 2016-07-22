@@ -168,7 +168,7 @@ namespace Rawr.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://arsenal.rising-gods.de/character-talents.xml?r={1}&cn={2}")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://arsenal.rising-gods.de/character-talents.xml?r={0}&cn={1}")]
         public string CharacterTalentURI {
             get {
                 return ((string)(this["CharacterTalentURI"]));
@@ -177,7 +177,7 @@ namespace Rawr.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://arsenal.rising-gods.de/character-sheet.xml?r={1}&cn={2}")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://arsenal.rising-gods.de/character-sheet.xml?r={0}&cn={1}")]
         public string CharacterSheetURI {
             get {
                 return ((string)(this["CharacterSheetURI"]));
@@ -195,7 +195,7 @@ namespace Rawr.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://arsenal.rising-gods.de/search.xml?searchType=items&pr={1}&pn={2}&pi={3}")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://arsenal.rising-gods.de/search.xml?searchType=items&pr={0}&pn={1}&pi={2}")]
         public string ItemUpgradeURI {
             get {
                 return ((string)(this["ItemUpgradeURI"]));
@@ -279,7 +279,7 @@ namespace Rawr.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://arsenal.rising-gods.de/search.xml?searchQuery={1}&searchType=items")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://arsenal.rising-gods.de/search.xml?searchQuery={0}&searchType=items")]
         public string ItemSearchURI {
             get {
                 return ((string)(this["ItemSearchURI"]));
@@ -288,7 +288,7 @@ namespace Rawr.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://db.rising-gods.dem/?items&filter={1}")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://db.rising-gods.dem/?items&filter={0}")]
         public string ItemWowheadUpgradeURI {
             get {
                 return ((string)(this["ItemWowheadUpgradeURI"]));
