@@ -44,7 +44,6 @@ namespace Rawr
         private SortedDictionary<int, Item> newItems;
 
         private bool useArmory;
-        private bool usePTR;
         private bool multiThreaded;
     	private Wowhead.UpgradeCancelCheck cancel;
 
@@ -55,7 +54,7 @@ namespace Rawr
         private Queue<ItemToUpdate> itemQueue;
         private int itemsPerSecond;
 
-        public ItemUpdater(bool multiThreaded, bool useArmory, bool usePTR, int itemsPerSecond, Wowhead.UpgradeCancelCheck check )
+        public ItemUpdater(bool multiThreaded, bool useArmory, int itemsPerSecond, Wowhead.UpgradeCancelCheck check)
         {
             this.itemsDone = 0;
             this.itemsToDo = 0;
@@ -65,7 +64,6 @@ namespace Rawr
             this.multiThreaded = multiThreaded;
 			this.cancel = check;
             this.useArmory = useArmory;
-            this.usePTR = usePTR;
             this.eventDone = new AutoResetEvent(false);
             this.lockObject = new Object();
             this.itemsPerSecond = itemsPerSecond;
@@ -134,7 +132,7 @@ namespace Rawr
                 }
                 else
                 {
-                    i = Item.LoadFromId(info.item.Id, true, false, true, Properties.GeneralSettings.Default.Locale, usePTR ? "ptr" : "www");
+                    i = Item.LoadFromId(info.item.Id, true, false, true, Properties.GeneralSettings.Default.Locale);
                 }
             }
             catch (Exception ex)
@@ -170,7 +168,7 @@ namespace Rawr
                     }
                     else
                     {
-                        i = Item.LoadFromId(item.Id, true, false, true, Properties.GeneralSettings.Default.Locale, usePTR ? "ptr" : "www");
+                        i = Item.LoadFromId(item.Id, true, false, true, Properties.GeneralSettings.Default.Locale);
                     }
                 }
                 catch (Exception ex)

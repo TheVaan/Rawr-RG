@@ -120,9 +120,7 @@
       <DependentUpon>DG_BossSitChanges.cs</DependentUpon>
     </Compile>
     <Compile Include="Buff.cs" />
-    <Compile Include="Calculations.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Calculations.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CharacterProfilerData.cs" />
     <Compile Include="BaseStats.cs" />

@@ -1495,12 +1495,7 @@ namespace Rawr
 
         void bw_GetWowheadUpgrades(object sender, DoWorkEventArgs e)
         {
-            this.GetWowheadUpgrades((CharacterSlot)e.Argument, usePTRDataToolStripMenuItem.Checked);
-        }
-
-        public bool IsUsingPTR()
-        {
-            return usePTRDataToolStripMenuItem.Checked;
+            this.GetWowheadUpgrades((CharacterSlot)e.Argument);
         }
 
         private void StartProcessing()
@@ -1601,7 +1596,7 @@ namespace Rawr
 
         void bw_ImportWowheadFilter(object sender, DoWorkEventArgs e)
         {
-            this.ImportWowheadFilter((string)e.Argument, usePTRDataToolStripMenuItem.Checked);
+            this.ImportWowheadFilter((string)e.Argument);
         }
 
         void bw_StatusCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -1646,7 +1641,7 @@ namespace Rawr
             StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, false), "Starte Aktualisierung");
             StatusMessaging.UpdateStatus("Item Symbole zwischenspeichern", "Nicht gestartet");
             StringBuilder sbChanges = new StringBuilder();
-            ItemUpdater updater = new ItemUpdater(Rawr.Properties.GeneralSettings.Default.UseMultithreading, true, false, 1, UpgradeCancelPending );
+            ItemUpdater updater = new ItemUpdater(Rawr.Properties.GeneralSettings.Default.UseMultithreading, true, 1, UpgradeCancelPending );
             int skippedItems = 0;
 
             // get list of the items to be updated
@@ -1741,7 +1736,7 @@ namespace Rawr
             StringBuilder sbChanges = new StringBuilder();
 
             bool multithreaded = Rawr.Properties.GeneralSettings.Default.UseMultithreading;
-            ItemUpdater updater = new ItemUpdater(multithreaded, false, usePTRDataToolStripMenuItem.Checked, 20, UpgradeCancelPending);
+            ItemUpdater updater = new ItemUpdater(multithreaded, false, 20, UpgradeCancelPending);
             int skippedItems = 0;
 
             // get list of the items to be updated
@@ -1814,11 +1809,11 @@ namespace Rawr
             SaveSettingsAndCaches();
         }
 
-        public void ImportWowheadFilter(string filter, bool usePTR)
+        public void ImportWowheadFilter(string filter)
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
             StatusMessaging.UpdateStatus("ImportRGDBFilter", "Importiere Items aus RG-Datenbank");
-            Wowhead.ImportItemsFromWowhead(filter, usePTR);
+            Wowhead.ImportItemsFromWowhead(filter);
             ItemCache.OnItemsChanged();
             StatusMessaging.UpdateStatusFinished("ImportRGDBFilter");
         }
@@ -1845,11 +1840,11 @@ namespace Rawr
                 );
         }
 
-        public void GetWowheadUpgrades(CharacterSlot slot, bool usePTR)
+        public void GetWowheadUpgrades(CharacterSlot slot)
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
             StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot,true), "Erhalte RG-Datenbank Aktualisierungen");
-            Wowhead.LoadUpgradesFromWowhead(Character, slot, usePTR, UpgradeCancelPending);
+            Wowhead.LoadUpgradesFromWowhead(Character, slot, UpgradeCancelPending);
             ItemCache.OnItemsChanged();
             StatusMessaging.UpdateStatusFinished(LoadUpgradesStatusKey(slot, true));
         }

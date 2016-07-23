@@ -2486,7 +2486,7 @@ namespace Rawr
 
         public delegate bool UpgradeCancelCheck();
 
-        public static void LoadUpgradesFromWowhead(Character character, CharacterSlot slot, bool usePTR, UpgradeCancelCheck cancel )
+        public static void LoadUpgradesFromWowhead(Character character, CharacterSlot slot, UpgradeCancelCheck cancel )
         {
             if (!string.IsNullOrEmpty(character.Name))
             {
@@ -2552,27 +2552,27 @@ namespace Rawr
 
                 if (slot != CharacterSlot.None)
                 {
-                    LoadUpgradesForSlot(character, slot, idealGems, usePTR, cancel);
+                    LoadUpgradesForSlot(character, slot, idealGems, cancel);
                 }
                 else
                 {
-                    LoadUpgradesForSlot(character, CharacterSlot.Head, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Neck, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Shoulders, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Back, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Chest, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Wrist, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Hands, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Waist, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Legs, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Feet, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Finger1, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Finger2, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Trinket1, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Trinket2, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.MainHand, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.OffHand, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Ranged, idealGems, usePTR, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Head, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Neck, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Shoulders, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Back, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Chest, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Wrist, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Hands, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Waist, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Legs, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Feet, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Finger1, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Finger2, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Trinket1, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Trinket2, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.MainHand, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.OffHand, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Ranged, idealGems, cancel);
                 }
             }
             else
@@ -2581,15 +2581,13 @@ namespace Rawr
             }
         }
 
-        public static void ImportItemsFromWowhead(string filter) { ImportItemsFromWowhead(filter, false); }
-        public static void ImportItemsFromWowhead(string filter, bool usePTR)
+        public static void ImportItemsFromWowhead(string filter) 
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
 
             string docUpgradeSearch = null;
             try
             {
-                string site = usePTR ? "ptr" : "www";
                 StatusMessaging.UpdateStatus("ImportWowheadFilter", "Downloading Item List");
                 WebRequestWrapper wrw = new WebRequestWrapper();
                 docUpgradeSearch = wrw.DownloadUpgradesWowhead(filter);
@@ -2618,7 +2616,7 @@ namespace Rawr
                             match = toMatch.Match(nodeList[i].Value);
                             string id = match.Value;
                             {
-                                Item item = GetItem(site, id, true);
+                                Item item = GetItem(id, true);
                                 if (item != null)
                                 {
                                     ItemCache.AddItem(item, false);
@@ -2638,7 +2636,7 @@ namespace Rawr
             }
         }
 
-        private static void LoadUpgradesForSlot(Character character, CharacterSlot slot, Dictionary<ItemSlot, int> idealGems, bool usePTR, UpgradeCancelCheck cancel )
+        private static void LoadUpgradesForSlot(Character character, CharacterSlot slot, Dictionary<ItemSlot, int> idealGems, UpgradeCancelCheck cancel )
         {
             if (cancel != null && cancel())
                 return;
@@ -2646,7 +2644,6 @@ namespace Rawr
             string docUpgradeSearch = null;
             try
             {
-                string site = usePTR ? "ptr" : "www";
                 StatusMessaging.UpdateStatus(slot.ToString(), "Downloading Upgrade List");
                 ItemInstance itemToUpgrade = character[slot];
                 if ((object)itemToUpgrade != null)
@@ -2678,7 +2675,7 @@ namespace Rawr
                                 string id = nodeList[i].Value.Substring(7);
                                 if (!ItemCache.Instance.ContainsItemId(int.Parse(id)))
                                 {
-                                    Item idealItem = GetItem(site, id, true);
+                                    Item idealItem = GetItem(id, true);
                                     if (idealItem != null)
                                     {
                                         ItemInstance idealGemmedItem = new ItemInstance(int.Parse(id), idealGems[idealItem.SocketColor1], idealGems[idealItem.SocketColor2], idealGems[idealItem.SocketColor3], itemToUpgrade.EnchantId);
