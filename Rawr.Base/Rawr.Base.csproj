@@ -255,6 +255,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>..\..\..\sgen2.exe $(TargetFileName)</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

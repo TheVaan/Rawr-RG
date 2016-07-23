@@ -390,8 +390,9 @@ namespace Rawr
             }
             return doc;
         }
-
-        public XmlDocument DownloadItemWowhead(string id) {
+		
+        public XmlDocument DownloadItemWowhead(string id)
+		{
 			XmlDocument doc = null;
             if (!string.IsNullOrEmpty(id))
 			{
@@ -820,7 +821,7 @@ namespace Rawr
 			return returnDocument;
 		}
 
-        public string GetNameFromArmory(int id, string site)
+        public string GetNameFromArmory(int id)
         {
             string name = null;
 
@@ -828,13 +829,7 @@ namespace Rawr
             {
                 WebClient webClient = CreateWebClient();
 
-                string URI = string.Format("https://arsenal.rising-gods.de/item-tooltip.xml?i={1}", site, id);    //item-info.xml would be twice bigger
-                if (site.Equals("tw"))
-                    webClient.Headers.Add("Accept-Language", "zh-tw");
-                if (site.Equals("cn"))
-                    webClient.Headers.Add("Accept-Language", "zh-cn");
-                if (site.Equals("kr"))
-                    webClient.Headers.Add("Accept-Language", "kr");
+                string URI = string.Format(NetworkSettingsProvider.ItemToolTipSheetURI, id); //item-info.xml would be twice bigger
 
                 string xml = webClient.DownloadString(URI);
                 if (!String.IsNullOrEmpty(xml) && xml.Contains("<itemTooltip>"))
@@ -851,7 +846,7 @@ namespace Rawr
             }
 
             if (name == null)
-                StatusMessaging.ReportError("Get item name", null, string.Format("Cannot get item {0} on {1} server", id, site));
+                StatusMessaging.ReportError("Get item name", null, string.Format("Cannot get item {0} from Arsenal", id));
             return name;
         }
 

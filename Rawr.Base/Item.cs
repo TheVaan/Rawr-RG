@@ -957,7 +957,7 @@ namespace Rawr
 				Item newItem = useWowhead ? Wowhead.GetItem(wowheadSite, id.ToString(), false) : Armory.GetItem(id);
                 if (newItem != null)
                 {
-                    if (!locale.Equals("en"))
+					/*if (!locale.Equals("en"))
                     {
                         WebRequestWrapper wrw = new WebRequestWrapper();
                         if (locale.Equals("zhTW"))
@@ -972,7 +972,13 @@ namespace Rawr
                             if (localItem != null)
                                 newItem.LocalizedName = localItem.Name;
                         }
-                    }
+                    }*/
+
+					WebRequestWrapper wrw = new WebRequestWrapper();
+                    Item localItem = Wowhead.GetItem(id, false, locale);
+                    if (localItem != null)
+                       newItem.LocalizedName = localItem.Name;
+               
 					if (!useWowhead && newItem.SocketBonus.ToString() == "")
 					{
 						Item oldItem = ItemCache.FindItemById(id);

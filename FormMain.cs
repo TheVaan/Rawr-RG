@@ -1634,17 +1634,17 @@ namespace Rawr
 
         public static string UpdateCacheStatusKey( CharacterSlot slot, bool bWowhead )
         {
-            return string.Format("Update {0} von {1}",
+            return string.Format("Aktualisiere {0} von {1}",
                                  slot == CharacterSlot.None ? "Alle Items" : slot.ToString(),
-                                 bWowhead ? "RG Datenbank" : "RG Arsenal"
+                                 bWowhead ? "RG-Datenbank" : "RG-Arsenal"
                 );
         }
 
         public void UpdateItemCacheArmory( CharacterSlot slot, bool bOnlyNonLocalized )
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, false), "Beginne Update");
-            StatusMessaging.UpdateStatus("Cache Item Icons", "Not Started");
+            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, false), "Starte Aktualisierung");
+            StatusMessaging.UpdateStatus("Item Symbole zwischenspeichern", "Nicht gestartet");
             StringBuilder sbChanges = new StringBuilder();
             ItemUpdater updater = new ItemUpdater(Rawr.Properties.GeneralSettings.Default.UseMultithreading, true, false, 1, UpgradeCancelPending );
             int skippedItems = 0;
@@ -1674,7 +1674,7 @@ namespace Rawr
 
             while (!updater.Done)
             {
-                StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, false), "Aktuallisiere " + (skippedItems + updater.ItemsDone) + " von " + updater.ItemsToDo + " Items");
+                StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, false), "Aktualisiere " + (skippedItems + updater.ItemsDone) + " von " + updater.ItemsToDo + " Items");
                 Thread.Sleep(1000);
             }
 
@@ -1690,8 +1690,8 @@ namespace Rawr
                     if (before != after)
                     {
                         sbChanges.AppendFormat("[{0}] {1}\r\n", item.Id, item.Name);
-                        sbChanges.AppendFormat("BEFORE: {0}\r\n", before);
-                        sbChanges.AppendFormat("AFTER: {0}\r\n\r\n", after);
+                        sbChanges.AppendFormat("Davor: {0}\r\n", before);
+                        sbChanges.AppendFormat("Danach: {0}\r\n\r\n", after);
                     }
                 }
             }
@@ -1736,8 +1736,8 @@ namespace Rawr
         public void UpdateItemCacheWowhead(CharacterSlot slot, bool bOnlyNonLocalized )
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Beginne Update");
-            StatusMessaging.UpdateStatus("Cache Item Icons", "Not Started");
+            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Starte Aktualisierung");
+            StatusMessaging.UpdateStatus("Item Symbole zwischenspeichern", "Nicht gestartet");
             StringBuilder sbChanges = new StringBuilder();
 
             bool multithreaded = Rawr.Properties.GeneralSettings.Default.UseMultithreading;
@@ -1759,7 +1759,7 @@ namespace Rawr
                         updater.AddItem(addedItems++, item);
                         if (!multithreaded)
                         {
-                            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Aktuallisiere " + (skippedItems + addedItems) + " von " + allItems.Length + " Items");
+                            StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Aktualisiere " + (skippedItems + addedItems) + " von " + allItems.Length + " Items");
                             if (UpgradeCancelPending())
                             {
                                 break;
@@ -1777,7 +1777,7 @@ namespace Rawr
 
             while (!updater.Done)
             {
-                StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Aktuallisiere " + (skippedItems + updater.ItemsDone) + " von " + updater.ItemsToDo + " Items");
+                StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, true), "Aktualisiere " + (skippedItems + updater.ItemsDone) + " von " + updater.ItemsToDo + " Items");
                 Thread.Sleep(1000);
             }
             
@@ -1793,8 +1793,8 @@ namespace Rawr
                     if (before != after)
                     {
                         sbChanges.AppendFormat("[{0}] {1}\r\n", item.Id, item.Name);
-                        sbChanges.AppendFormat("BEFORE: {0}\r\n", before);
-                        sbChanges.AppendFormat("AFTER: {0}\r\n\r\n", after);
+                        sbChanges.AppendFormat("Davor: {0}\r\n", before);
+                        sbChanges.AppendFormat("Danach: {0}\r\n\r\n", after);
                     }
                 }
             }
@@ -1817,16 +1817,16 @@ namespace Rawr
         public void ImportWowheadFilter(string filter, bool usePTR)
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus("ImportWowheadFilter", "Importiere Items von RG-Datenbank");
+            StatusMessaging.UpdateStatus("ImportRGDBFilter", "Importiere Items aus RG-Datenbank");
             Wowhead.ImportItemsFromWowhead(filter, usePTR);
             ItemCache.OnItemsChanged();
-            StatusMessaging.UpdateStatusFinished("ImportWowheadFilter");
+            StatusMessaging.UpdateStatusFinished("ImportRGDBFilter");
         }
 
         public void GetArmoryUpgrades( CharacterSlot slot )
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot, false), "Hole RG-Arsenal Updates");
+            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot, false), "Erhalte RG-Arsenal Aktualisierungen");
             Armory.LoadUpgradesFromArmory( Character, slot, UpgradeCancelPending );
             ItemCache.OnItemsChanged();
             StatusMessaging.UpdateStatusFinished(LoadUpgradesStatusKey(slot, false));
@@ -1839,16 +1839,16 @@ namespace Rawr
 
         public static string LoadUpgradesStatusKey(CharacterSlot slot, bool bWowhead)
         {
-            return string.Format("Lade {0} Upgrades von {1}",
-                                 slot == CharacterSlot.None ? "All Items" : slot.ToString(),
-                                 bWowhead ? "RG Datenbank" : "RG Arsenal"
+            return string.Format("Lade {0} Verbesserungen von {1}",
+                                 slot == CharacterSlot.None ? "Alle Items" : slot.ToString(),
+                                 bWowhead ? "RG-Datenbank" : "RG-Arsenal"
                 );
         }
 
         public void GetWowheadUpgrades(CharacterSlot slot, bool usePTR)
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot,true), "Hole RG-Datenbank Updates");
+            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot,true), "Erhalte RG-Datenbank Aktualisierungen");
             Wowhead.LoadUpgradesFromWowhead(Character, slot, usePTR, UpgradeCancelPending);
             ItemCache.OnItemsChanged();
             StatusMessaging.UpdateStatusFinished(LoadUpgradesStatusKey(slot, true));
