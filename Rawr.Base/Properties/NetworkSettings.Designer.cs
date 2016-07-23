@@ -291,7 +291,7 @@ namespace Rawr.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://db.rising-gods.dem/?items&filter={0}")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://db.rising-gods.de/?items&filter={0}")]
         public string ItemWowheadUpgradeURI {
             get {
                 return ((string)(this["ItemWowheadUpgradeURI"]));

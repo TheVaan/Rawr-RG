@@ -78,7 +78,7 @@
       <Value Profile="(Default)">https://arsenal.rising-gods.de/search.xml?searchQuery={0}&amp;searchType=items</Value>
     </Setting>
     <Setting Name="ItemWowheadUpgradeURI" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://db.rising-gods.dem/?items&amp;filter={0}</Value>
+      <Value Profile="(Default)">https://db.rising-gods.de/?items&amp;filter={0}</Value>
     </Setting>
     <Setting Name="ArmoryTalentIconURI" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://arsenal.rising-gods.de/wow-icons/_images/_talents31x31/{0}</Value>
