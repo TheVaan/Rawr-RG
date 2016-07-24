@@ -747,7 +747,6 @@ namespace Rawr
 
 		public string DownloadText(string URI)
 		{
-            Console.WriteLine(URI);
             WebClient webClient = CreateWebClient();
 			string value = null;
 			int retry = 0;
@@ -777,7 +776,6 @@ namespace Rawr
 		private XmlDocument DownloadXml(string URI) { return DownloadXml(URI, false, false); }
 		private XmlDocument DownloadXml(string URI, bool allowTable, bool isHtml)
 		{
-            Console.WriteLine(URI);
             XmlDocument returnDocument = null;
             int retry = 0;
             //Download Text has retry logic in it as well, but that just makes sure it gets a response, this
