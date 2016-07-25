@@ -1209,21 +1209,6 @@ namespace Rawr
                 checkBoxWristBlacksmithingSocket.Enabled = true;
                 if (Rawr.Properties.GeneralSettings.Default.HideProfEnchants)
                 {
-                    if(Character.HasProfession(Profession.Blacksmithing) || Character.HasProfession(Profession.Schmiedekunst))
-                    {
-                        checkBoxHandsBlacksmithingSocket.Enabled = true;
-                        checkBoxWristBlacksmithingSocket.Enabled = true;
-                        checkBoxHandsBlacksmithingSocket.Checked = true;
-                        checkBoxWristBlacksmithingSocket.Checked = true;
-                    }
-                    else
-                    {
-                        checkBoxHandsBlacksmithingSocket.Enabled = false;
-                        checkBoxWristBlacksmithingSocket.Enabled = false;
-                        checkBoxHandsBlacksmithingSocket.Checked = false;
-                        checkBoxWristBlacksmithingSocket.Checked = false;
-                    }
-                    /*
                     if (!Character.HasProfession(Profession.Blacksmithing))
                     {
                         checkBoxHandsBlacksmithingSocket.Enabled = false;
@@ -1231,7 +1216,7 @@ namespace Rawr
                         checkBoxHandsBlacksmithingSocket.Checked = false;
                         checkBoxWristBlacksmithingSocket.Checked = false;
                     }
-                    */
+                    
                     // any other profession checks go here
                 }
                 Buff.InvalidateBuffs(); // forces rebuild of buff list

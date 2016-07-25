@@ -40,7 +40,7 @@ namespace Rawr
         Gnome = 7,
         Troll = 8,
         BloodElf = 10,
-        Draenei = 11
+        Draenei = 11,
     }
 
     public enum CharacterSlot
@@ -253,6 +253,5 @@ namespace Rawr
         Tailoring = 197,
         Blacksmithing = 164,
         Mining = 186,
-        Schmiedekunst = 164
     }
 }

@@ -346,9 +346,6 @@
     <EmbeddedResource Include="DG_BossHandler.resx">
       <DependentUpon>DG_BossHandler.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEnterWowheadFilter.de.resx">
-      <DependentUpon>FormEnterWowheadFilter.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormEnterWowheadFilter.resx">
       <DependentUpon>FormEnterWowheadFilter.cs</DependentUpon>
       <SubType>Designer</SubType>

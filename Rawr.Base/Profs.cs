@@ -37,18 +37,57 @@ namespace Rawr {
         }
         public static Profession StringToProfession(string s) {
             Profession                        p = Profession.None;
-            if      (s == "Alchemy"       ) { p = Profession.Alchemy;
-            }else if(s == "Blacksmithing" ) { p = Profession.Blacksmithing;
-            }else if(s == "Enchanting"    ) { p = Profession.Enchanting;
-            }else if(s == "Engineering"   ) { p = Profession.Engineering;
-            }else if(s == "Herbalism"     ) { p = Profession.Herbalism;
-            }else if(s == "Inscription"   ) { p = Profession.Inscription;
-            }else if(s == "Jewelcrafting" ) { p = Profession.Jewelcrafting;
-            }else if(s == "Leatherworking") { p = Profession.Leatherworking;
-            }else if(s == "Mining"        ) { p = Profession.Mining;
-            }else if(s == "Skinning"      ) { p = Profession.Skinning;
-            }else if(s == "Tailoring"     ) { p = Profession.Tailoring;
-            }else if(s == "Schmiedekunst" ) { p = Profession.Schmiedekunst; }
+            switch(s)
+            {
+                case "Alchemy":
+                case "Alchemie":
+                    p = Profession.Alchemy;
+                    break;
+                case "Blacksmithing":
+                case "Schmiedekunst":
+                    p = Profession.Blacksmithing;
+                    break;
+                case "Enchanting":
+                case "Verzauberungskunst":
+                    p = Profession.Enchanting;
+                    break;
+                case "Engineering":
+                case "Ingenieurskunst":
+                    p = Profession.Engineering;
+                    break;
+                case "Herbalism":
+                case "Kräuterkunde":
+                    p = Profession.Herbalism;
+                    break;
+                case "Inscription":
+                case "Inschriftenkunde":
+                    p = Profession.Inscription;
+                    break;
+                case "Jewelcrafting":
+                case "Juwelenschleifen":
+                    p = Profession.Jewelcrafting;
+                    break;
+                case "Leatherworking":
+                case "Lederverarbeitung":
+                    p = Profession.Leatherworking;
+                    break;
+                case "Mining":
+                case "Bergbau":
+                    p = Profession.Mining;
+                    break;
+                case "Skinning":
+                case "Kürschner":
+                    p = Profession.Skinning;
+                    break;
+                case "Tailoring":
+                case "Schneiderei":
+                    p = Profession.Tailoring;
+                    break;
+                default:
+                    p = Profession.None;
+                    break;
+            }
+
             return p;
         }
         public static string ProfessionToString(Profession p) {
