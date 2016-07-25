@@ -160,7 +160,7 @@ namespace Rawr.UserControls.Options
 
 		public string DisplayName
 		{
-			get { return "Proxy Settings"; }
+			get { return "Proxy Einstellungen"; }
 		}
 
 

@@ -82,7 +82,7 @@ namespace Rawr.UserControls.Options
             {
                 case "de":
                     title = "Profil Aktualisieren";
-                    message = "Um die deutsche Lokalisierung nachzuladen müssen sie auf 'Update Item Cache from Wowhead' drücken.";
+                    message = "Um die deutsche Lokalisierung nachzuladen müssen sie auf 'Aktuallisiere Item Cache aus RG-Datenbank' drücken.";
                     break;
                 case "fr":
                     title = "Mise à jour du Profil";
@@ -154,7 +154,7 @@ namespace Rawr.UserControls.Options
 
 		public string DisplayName
 		{
-			get { return "General Settings"; }
+			get { return "Allgemeine Einstellungen"; }
 		}
 
 

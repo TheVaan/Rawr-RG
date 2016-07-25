@@ -107,7 +107,7 @@ namespace Rawr.UserControls.Options
 
 		public string DisplayName
 		{
-			get { return "Optimizer Settings"; }
+			get { return "Optimizer Einstellungen"; }
 		}
 
 

@@ -55,7 +55,7 @@
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(75, 23);
             this.butCancel.TabIndex = 13;
-            this.butCancel.Text = "Cancel";
+            this.butCancel.Text = "Abbrechen";
             this.butCancel.UseVisualStyleBackColor = true;
             // 
             // propertyGridStats

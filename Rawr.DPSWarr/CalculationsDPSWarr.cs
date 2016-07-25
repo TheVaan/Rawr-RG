@@ -228,8 +228,8 @@ namespace Rawr.DPSWarr {
         public override string GetCharacterStatsString(Character character)
         {
             StringBuilder stats = new StringBuilder();
-            stats.AppendFormat("Character:\t\t{0}@{1}-{2}\r\nRace:\t\t{3}",
-                character.Name, character.Region, character.Realm, character.Race);
+            stats.AppendFormat("Character:\t\t{0}\r\nRace:\t\t{1}",
+                character.Name, character.Race);
 
             char[] splits = {':','*'};
             Dictionary<string,string> dict = GetCharacterCalculations(character, null, false, false, true).GetAsynchronousCharacterDisplayCalculationValues();

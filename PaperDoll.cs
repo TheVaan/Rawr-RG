@@ -342,8 +342,6 @@ namespace Rawr
                     _loadingCharacter = true;
 
                     textBoxName.Text = Character.Name;
-                    textBoxRealm.Text = Character.Realm;
-                    comboBoxRegion.Text = Character.Region.ToString();
                     comboBoxRace.Text = Character.Race.ToString();
                     checkBoxEnforceGemRequirements.Checked = Character.EnforceGemRequirements;
                     {

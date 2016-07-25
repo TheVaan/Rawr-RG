@@ -415,7 +415,6 @@ namespace Rawr
 		{
 			m_characterInfo = characterInfo;
 			m_sName = sName;
-            m_sRealm = sRealm;
 			m_iLevel = (int)(characterInfo["Level"] as long?);
 
 			m_sRace = (string)characterInfo["Race"];
@@ -427,11 +426,8 @@ namespace Rawr
 			CharacterRace race = (CharacterRace)(m_characterInfo["RaceId"] as long?);
 			CharacterClass charClass = (CharacterClass)(m_characterInfo["ClassId"] as long?);
 
-			// it might be possible to get this from the Locale field, but I'd need data from the other regions
-			CharacterRegion charRegion = CharacterRegion.US;
-
-            m_character = new Character(m_sName, m_sRealm,
-			    charRegion,
+            m_character = new Character(
+                m_sName,
 			    race,
                 new BossOptions(),
 		        getGearStringBySlot(m_characterInfo, "Head", false),
@@ -532,7 +528,6 @@ namespace Rawr
 		}
 
 		string m_sName;
-        string m_sRealm;
 		string m_sRace;
 		string m_sClass;
 		int m_iLevel;

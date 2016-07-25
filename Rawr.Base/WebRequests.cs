@@ -43,7 +43,6 @@ namespace Rawr
 		
 		private static Exception _fatalError = null;
         private static Exception _error = null;
-		private Dictionary<CharacterRegion, string> _domains = new Dictionary<CharacterRegion,string>();
 
         public interface INetworkSettingsProvider
         {
@@ -89,142 +88,142 @@ namespace Rawr
 
             public int MaxHttpRequests
             {
-                get { return Rawr.Properties.NetworkSettings.Default.MaxHttpRequests; }
+                get { return Properties.NetworkSettings.Default.MaxHttpRequests; }
             }
 
             public string ArmoryTalentIconURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ArmoryTalentIconURI; }
+                get { return Properties.NetworkSettings.Default.ArmoryTalentIconURI; }
             }
 
             public bool UseDefaultProxySettings
             {
-                get { return Rawr.Properties.NetworkSettings.Default.UseDefaultProxySettings; }
+                get { return Properties.NetworkSettings.Default.UseDefaultProxySettings; }
             }
 
             public string ProxyServer
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ProxyServer; }
+                get { return Properties.NetworkSettings.Default.ProxyServer; }
             }
 
             public int ProxyPort
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ProxyPort; }
+                get { return Properties.NetworkSettings.Default.ProxyPort; }
             }
 
             public string ProxyUserName
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ProxyUserName; }
+                get { return Properties.NetworkSettings.Default.ProxyUserName; }
             }
 
             public string ProxyPassword
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ProxyPassword; }
+                get { return Properties.NetworkSettings.Default.ProxyPassword; }
             }
 
             public string ProxyDomain
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ProxyDomain; }
+                get { return Properties.NetworkSettings.Default.ProxyDomain; }
             }
 
             public string ProxyType
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ProxyType; }
+                get { return Properties.NetworkSettings.Default.ProxyType; }
             }
 
             public string UserAgent
             {
-                get { return Rawr.Properties.NetworkSettings.Default.UserAgent; }
+                get { return Properties.NetworkSettings.Default.UserAgent; }
             }
 
             public bool DownloadItemInfo
             {
-                get { return Rawr.Properties.NetworkSettings.Default.DownloadItemInfo; }
+                get { return Properties.NetworkSettings.Default.DownloadItemInfo; }
             }
 
             public bool ProxyRequiresAuthentication
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ProxyRequiresAuthentication; }
+                get { return Properties.NetworkSettings.Default.ProxyRequiresAuthentication; }
             }
 
             public bool UseDefaultAuthenticationForProxy
             {
-                get { return Rawr.Properties.NetworkSettings.Default.UseDefaultAuthenticationForProxy; }
+                get { return Properties.NetworkSettings.Default.UseDefaultAuthenticationForProxy; }
             }
 
             public string WoWItemIconURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.WoWItemIconURI; }
+                get { return Properties.NetworkSettings.Default.WoWItemIconURI; }
             }
 
             public string UserAgent_IE7
             {
-                get { return Rawr.Properties.NetworkSettings.Default.UserAgent_IE7; }
+                get { return Properties.NetworkSettings.Default.UserAgent_IE7; }
             }
 
             public string UserAgent_IE6
             {
-                get { return Rawr.Properties.NetworkSettings.Default.UserAgent_IE6; }
+                get { return Properties.NetworkSettings.Default.UserAgent_IE6; }
             }
 
             public string UserAgent_FireFox2
             {
-                get { return Rawr.Properties.NetworkSettings.Default.UserAgent_FireFox2; }
+                get { return Properties.NetworkSettings.Default.UserAgent_FireFox2; }
             }
 
             public string ClassTalentURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ClassTalentURI; }
+                get { return Properties.NetworkSettings.Default.ClassTalentURI; }
             }
 
             public string CharacterTalentURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.CharacterTalentURI; }
+                get { return Properties.NetworkSettings.Default.CharacterTalentURI; }
             }
 
             public string CharacterSheetURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.CharacterSheetURI; }
+                get { return Properties.NetworkSettings.Default.CharacterSheetURI; }
             }
 
             public string ItemToolTipSheetURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ItemToolTipSheetURI; }
+                get { return Properties.NetworkSettings.Default.ItemToolTipSheetURI; }
             }
 
             public string ItemUpgradeURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ItemUpgradeURI; }
+                get { return Properties.NetworkSettings.Default.ItemUpgradeURI; }
 			}
 
 			public string ItemWowheadURI
 			{
-				get { return Rawr.Properties.NetworkSettings.Default.ItemWowheadURI; }
+				get { return Properties.NetworkSettings.Default.ItemWowheadURI; }
 			}
 
             public string ItemWowheadUpgradeURI
 			{
-                get { return Rawr.Properties.NetworkSettings.Default.ItemWowheadUpgradeURI; }
+                get { return Properties.NetworkSettings.Default.ItemWowheadUpgradeURI; }
 			}
             
             public string QuestWowheadURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.QuestWowheadURI; }
+                get { return Properties.NetworkSettings.Default.QuestWowheadURI; }
             }
 
             public string TalentIconURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.TalentIconURI; }
+                get { return Properties.NetworkSettings.Default.TalentIconURI; }
 			}
 
             public string ItemInfoURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ItemInfoURI; }
+                get { return Properties.NetworkSettings.Default.ItemInfoURI; }
             }
 
             public string ItemSearchURI
             {
-                get { return Rawr.Properties.NetworkSettings.Default.ItemSearchURI; }
+                get { return Properties.NetworkSettings.Default.ItemSearchURI; }
             }
 
             #endregion
@@ -236,12 +235,12 @@ namespace Rawr
 
             public string RelativeItemImageCache
             {
-				get { return Rawr.Properties.CacheSettings.Default.RelativeItemImageCache.Replace('/', System.IO.Path.DirectorySeparatorChar); }
+				get { return Properties.CacheSettings.Default.RelativeItemImageCache.Replace('/', Path.DirectorySeparatorChar); }
             }
 
             public string RelativeTalentImageCache
             {
-				get { return Rawr.Properties.CacheSettings.Default.RelativeTalentImageCache.Replace('/', System.IO.Path.DirectorySeparatorChar); }
+				get { return Properties.CacheSettings.Default.RelativeTalentImageCache.Replace('/', Path.DirectorySeparatorChar); }
             }
 
             #endregion
@@ -263,18 +262,13 @@ namespace Rawr
             _proxyUserName = NetworkSettingsProvider.ProxyUserName;
             _proxyPassword = NetworkSettingsProvider.ProxyPassword;
             _proxyDomain = NetworkSettingsProvider.ProxyDomain;
-			_domains.Add(CharacterRegion.US, "www");
-			_domains.Add(CharacterRegion.EU, "eu");
-			_domains.Add(CharacterRegion.KR, "kr");
-			_domains.Add(CharacterRegion.TW, "tw");
-			_domains.Add(CharacterRegion.CN, "cn");
 		}
 
 		public string GetLatestVersionString()
 		{
-			string html = DownloadText("http://www.codeplex.com/Rawr");
-			if (html == null || !html.Contains("{Current Version: ")) return string.Empty;
-			html = html.Substring(html.IndexOf("{Current Version: ") + "{Current Version: ".Length);
+			string html = DownloadText("https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/README.md");
+			if (html == null || !html.Contains("{Aktuelle Version: ")) return string.Empty;
+			html = html.Substring(html.IndexOf("{Aktuelle Version: ") + "{Aktuelle Version: ".Length);
 			if (!html.Contains("}")) return string.Empty;
 			html = html.Substring(0, html.IndexOf("}"));
 			return html;
@@ -282,7 +276,7 @@ namespace Rawr
 
 		public string GetBetaVersionString()
 		{
-			string html = DownloadText("http://www.codeplex.com/Rawr");
+			string html = DownloadText("https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/README.md");
 			if (html == null || !html.Contains("{Beta Version: ")) return string.Empty;
 			html = html.Substring(html.IndexOf("{Beta Version: ") + "{Beta Version: ".Length);
 			if (!html.Contains("}")) return string.Empty;
@@ -292,7 +286,7 @@ namespace Rawr
 
 		public string GetRandomDidYouKnow()
 		{
-			string html = DownloadText("http://rawr.codeplex.com/Wiki/View.aspx?title=DidYouKnow");
+			/*string html = DownloadText("http://rawr.codeplex.com/Wiki/View.aspx?title=DidYouKnow");
             if (html == null || !html.Contains("-------<br />") || 
                 !(html.Contains("&nbsp;by&nbsp;<a id=\"wikiEditByLink\" href=\"http://www.codeplex.com/site/users/view/Astrylian\">Astrylian</a>") || 
                   html.Contains("&nbsp;by&nbsp;<a id=\"wikiEditByLink\" href=\"http://www.codeplex.com/site/users/view/Kavan\">Kavan</a>") ||
@@ -310,61 +304,63 @@ namespace Rawr
 				string dyk = dyks[r.Next(dyks.Length)];
 				if (!randomDyks.Contains(dyk)) randomDyks.Add(dyk);
 			}
-			return string.Join("\r\n\r\n", randomDyks.ToArray());
-		}
+			return string.Join("\r\n\r\n", randomDyks.ToArray()); */
+            return string.Empty;
+        }
 
 		public string GetKnownIssues()
 		{
-			string html = DownloadText("http://rawr.codeplex.com/Wiki/View.aspx?title=KnownIssues");
-            if (html == null || !html.Contains("-------<br />") || !(html.Contains("&nbsp;by&nbsp;<a id=\"wikiEditByLink\" href=\"http://www.codeplex.com/site/users/view/Astrylian\">Astrylian</a>") || html.Contains("&nbsp;by&nbsp;<a id=\"wikiEditByLink\" href=\"http://www.codeplex.com/site/users/view/Kavan\">Kavan</a>"))) return string.Empty;
-			html = html.Substring(html.IndexOf("-------<br />") + 13);
-			if (!html.Contains("<br />-------")) return string.Empty;
+            /*string html = DownloadText("https://github.com/TheVaan/Rawr-RG/issues");
+
+            if (html == null || !html.Contains("<title>Issues · TheVaan/Rawr-RG</title>"))
+                return string.Empty;
+
+            html = html.Substring(html.IndexOf("-------<br />") + 13);
+
+            if (!html.Contains("<br />-------"))
+                return string.Empty;
+
 			html = html.Substring(0, html.IndexOf("<br />-------"));
 			html = html.Replace("<br />", "\r\n");
-			return html;
+			return html;*/
+            return string.Empty;
 		}
 
-		public string DownloadClassTalentTree(CharacterClass characterClass)
+		/*public string DownloadClassTalentTree(CharacterClass characterClass)
 		{
 			//http://www.worldofwarcraft.com/shared/global/talents/{0}/data.js
             return DownloadText(string.Format(NetworkSettingsProvider.ClassTalentURI, characterClass.ToString().ToLower()));
-		}
+		}*/
 
-		public XmlDocument DownloadCharacterTalentTree(string characterName, CharacterRegion region, string realm)
+		public XmlDocument DownloadCharacterTalentTree(string characterName)
 		{
-			//http://{0}.wowarmory.com/character-talents.xml?r={1}&cn={2}
-			string domain = _domains[region];
+			//https://arsenal.rising-gods.de/character-talents.xml?r=Rising-Gods&cn={0}
 			XmlDocument doc = null;
 			if (!String.IsNullOrEmpty(characterName))
 			{
-                doc = DownloadXml(string.Format(NetworkSettingsProvider.CharacterTalentURI,
-													domain, realm, characterName));
+                doc = DownloadXml(string.Format(NetworkSettingsProvider.CharacterTalentURI, characterName));
 			}
 			return doc;
 		}
 
-        public XmlDocument DownloadCharacterSheet(string characterName, CharacterRegion region, string realm)
+        public XmlDocument DownloadCharacterSheet(string characterName)
 		{
-			//http://{0}.wowarmory.com/character-sheet.xml?r={1}&cn={2}
-			string domain = _domains[region];
-			XmlDocument doc = null;
+            //https://arsenal.rising-gods.de/character-sheet.xml?r=Rising-Gods&cn={0}
+            XmlDocument doc = null;
 			if (!String.IsNullOrEmpty(characterName))
 			{
-                doc = DownloadXml(string.Format(NetworkSettingsProvider.CharacterSheetURI,
-													domain, realm, characterName));
+                doc = DownloadXml(string.Format(NetworkSettingsProvider.CharacterSheetURI, characterName));
 			}
 			return doc;
 		}
 
-		public XmlDocument DownloadUpgrades(string characterName, CharacterRegion region, string realm, int itemId)
+		public XmlDocument DownloadUpgrades(string characterName, int itemId)
 		{
-			//http://{0}.wowarmory.com/search.xml?searchType=items&pr={1}&pn={2}&pi={3}
-			string domain = _domains[region];
+            //https://arsenal.rising-gods.de/search.xml?searchType=items&pr=Rising-Gods&pn={0}&pi={1}
 			XmlDocument doc = null;
 			if (!String.IsNullOrEmpty(characterName))
 			{
-                doc = DownloadXml(string.Format(NetworkSettingsProvider.ItemUpgradeURI,
-													domain, realm, characterName, itemId.ToString()));
+                doc = DownloadXml(string.Format(NetworkSettingsProvider.ItemUpgradeURI, characterName, itemId.ToString()));
 			}
 			return doc;
 		}
@@ -389,12 +385,12 @@ namespace Rawr
             XmlDocument doc = null;
             if (item.Length > 0)
             {
-                // http://{0}.wowarmory.com/search.xml?searchQuery={1}&searchType=items
-                doc = DownloadXml(string.Format(NetworkSettingsProvider.ItemSearchURI, "www", item));
+                // https://arsenal.rising-gods.de/search.xml?searchQuery={0}&searchType=items
+                doc = DownloadXml(string.Format(NetworkSettingsProvider.ItemSearchURI, item));
             }
             return doc;
         }
-
+		
         public XmlDocument DownloadItemWowhead(string id)
 		{
 			XmlDocument doc = null;
@@ -476,47 +472,63 @@ namespace Rawr
 		{
             string uri = "null";
             //string codepath = "null";
-            //try {
+            string origin = "null";
+            /*try {*/
                 //foreach (string illegalCharacter in new string[] { " ", "'" })
                 talentTree = talentTree.Replace(" ", "");
                 talentName = talentName.Replace(" ", "");
                 talentName = talentName.Replace(":", "");
                 string fullPathToSave;
 
-                if (icon != null) {
+                if (icon != null)
+                {
                     //codepath = "icon != null";
-                    string imageName = icon;
-                    fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + System.IO.Path.DirectorySeparatorChar + talentTree + System.IO.Path.DirectorySeparatorChar + imageName.Replace("/", "_"));
-                    uri = string.Format(NetworkSettingsProvider.ArmoryTalentIconURI, icon);
-                    DownloadFile(uri, fullPathToSave, CONTENT_JPG);
-                } else {
+                    string imageName = icon.Replace("/", "_").Replace(".jpg", ".gif");
+
+                    fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + Path.DirectorySeparatorChar + talentTree + Path.DirectorySeparatorChar + imageName);
+                    origin = NetworkSettingsProvider.TalentIconURI;
+                    //0 = class, 1=tree/ability - all lowercase
+                    //@"https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/ExternalResources/talents/{0}/{1}";
+                    uri = string.Format(NetworkSettingsProvider.TalentIconURI, charClass.ToString().ToLower(), imageName);
+                    DownloadFile(uri, fullPathToSave, CONTENT_GIF);
+                }
+                else
+                {
                     //codepath = "icon == null";
-                    string imageName = talentName + ".jpg";
-                    fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + System.IO.Path.DirectorySeparatorChar + talentTree + System.IO.Path.DirectorySeparatorChar + imageName);
+
+                    fullPathToSave = Path.Combine(TalentImageCachePath, charClass.ToString().ToLower() + Path.DirectorySeparatorChar + talentTree + Path.DirectorySeparatorChar + talentName + ".jpg");
+
+                    if (talentName.Equals("background"))
+                        talentName = talentTree;
+
                     if (!String.IsNullOrEmpty(talentTree) && !String.IsNullOrEmpty(talentName))
                     {
-                        //0 = class, 1=tree, 2=talentname - all lowercase
-                        //@"http://www.worldofwarcraft.com/shared/global/talents/{0}/images/{1}/{2}.jpg";
-                        //http://www.worldofwarcraft.com/shared/global/talents//wrath/druid/images/balance/brambles.jpg
-                        uri = string.Format(NetworkSettingsProvider.TalentIconURI, charClass.ToString().ToLower(),
-                                                        talentTree.ToLower(), talentName.ToLower());
+                        origin = NetworkSettingsProvider.TalentIconURI;
+                        //0 = class, 1=tree/ability - all lowercase
+                        //@"https://raw.githubusercontent.com/TheVaan/Rawr-RG/master/ExternalResources/talents/{0}/{1}";
+                        uri = string.Format(NetworkSettingsProvider.TalentIconURI, charClass.ToString().ToLower(), talentName + ".jpg");
                         DownloadFile(uri, fullPathToSave, CONTENT_JPG);
                     }
                 }
-			    if (!File.Exists(fullPathToSave))
-			    {
+                
+                if (!File.Exists(fullPathToSave))
+                {
                     fullPathToSave = null;
                 }
                 return fullPathToSave;
             /*}
             catch (Exception ex) {
-                /*Rawr.Base.ErrorBox eb = new Rawr.Base.ErrorBox("Error Downloading Talent Icon",
+                Rawr.Base.ErrorBox eb = new Rawr.Base.ErrorBox("Error Downloading Talent Icon",
                     ex.Message, "DownloadTalentIcon(...)",
-                    string.Format("\r\n- Talent Tree: {0}\r\n- Talent Name: {1}\r\n- Icon: {2}\r\n- URI: {3}\r\n- CodePath: {4}", talentTree, talentName, icon, uri, codepath),
-                    ex.StackTrace);*//*
+                    string.Format("\r\n- Talent Tree: {0}\r\n- Talent Name: {1}\r\n- Icon: {2}\r\n- Origin: {3}\r\n- URI: {4}\r\n- CodePath: {5}", talentTree, talentName, icon, origin, uri, codepath),
+                    ex.StackTrace);
                 return null;
+            }
+            finally
+            {
+                Console.WriteLine(string.Format("\r\n- Talent Tree: {0}\r\n- Talent Name: {1}\r\n- Icon: {2}\r\n- Origin: {3}\r\n- URI: {4}\r\n- CodePath: {5}", talentTree, talentName, icon, origin, uri, codepath));
             }*/
-		}
+        }
 
 		/// <summary>
 		/// Downloads the temp image for use as an icon.
@@ -735,7 +747,7 @@ namespace Rawr
 
 		public string DownloadText(string URI)
 		{
-			WebClient webClient = CreateWebClient();
+            WebClient webClient = CreateWebClient();
 			string value = null;
 			int retry = 0;
 			bool success = false;
@@ -764,7 +776,7 @@ namespace Rawr
 		private XmlDocument DownloadXml(string URI) { return DownloadXml(URI, false, false); }
 		private XmlDocument DownloadXml(string URI, bool allowTable, bool isHtml)
 		{
-			XmlDocument returnDocument = null;
+            XmlDocument returnDocument = null;
             int retry = 0;
             //Download Text has retry logic in it as well, but that just makes sure it gets a response, this
             //makes sure we get a valid XML response.
@@ -817,7 +829,7 @@ namespace Rawr
             {
                 WebClient webClient = CreateWebClient();
 
-                string URI = string.Format("https://arsenal.rising-gods.de/item-tooltip.xml?i={0}", id);    //item-info.xml would be twice bigger
+                string URI = string.Format(NetworkSettingsProvider.ItemToolTipSheetURI, id); //item-info.xml would be twice bigger
 
                 string xml = webClient.DownloadString(URI);
                 if (!String.IsNullOrEmpty(xml) && xml.Contains("<itemTooltip>"))

@@ -249,7 +249,7 @@ namespace Rawr
             }
 
 			buttonOptimize.Text = "Optimizing...";
-			buttonCancel.Text = "Cancel";
+			buttonCancel.Text = "Abbrechen";
             buttonOptimize.Enabled = buttonUpgrades.Enabled = checkBoxOverrideRegem.Enabled = checkBoxOverrideReenchant.Enabled =
                 trackBarThoroughness.Enabled = checkBoxMixology.Enabled = checkBoxOptimizeElixir.Enabled =
 				checkBoxOptimizeFood.Enabled = checkBoxOptimizeTalents.Enabled = checkBoxMutateTalents.Enabled =
@@ -588,7 +588,7 @@ namespace Rawr
             }
 
 			buttonUpgrades.Text = "Calculating...";
-			buttonCancel.Text = "Cancel";
+			buttonCancel.Text = "Abbrechen";
 			buttonOptimize.Enabled = buttonUpgrades.Enabled = checkBoxOverrideRegem.Enabled = checkBoxOverrideReenchant.Enabled =
 				trackBarThoroughness.Enabled = checkBoxMixology.Enabled = checkBoxOptimizeElixir.Enabled =
 				checkBoxOptimizeFood.Enabled = checkBoxOptimizeTalents.Enabled = checkBoxMutateTalents.Enabled =

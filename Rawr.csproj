@@ -414,9 +414,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>FormSplash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormStart.de.resx">
-      <DependentUpon>FormStart.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormStart.resx">
       <DependentUpon>FormStart.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -562,6 +559,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DefaultDataFiles\BuffSets.xml" />
+    <Content Include="DefaultDataFiles\ItemCache.xml" />
     <Content Include="DefaultDataFiles\ItemFilter.xml" />
     <Content Include="DefaultDataFiles\ItemSource.xml" />
     <Content Include="DefaultDataFiles\Talents.xml" />

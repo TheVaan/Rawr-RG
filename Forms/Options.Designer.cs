@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Network Settings");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Allgemeine Einstellungen");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Options));
             this.panel1 = new System.Windows.Forms.Panel();
             this.OK = new System.Windows.Forms.Button();
@@ -40,13 +40,13 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
-            this.panel1.Location = new System.Drawing.Point(154, 12);
+            this.panel1.Location = new System.Drawing.Point(169, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(309, 381);
+            this.panel1.Size = new System.Drawing.Size(294, 381);
             this.panel1.TabIndex = 1;
             // 
             // OK
@@ -67,14 +67,14 @@
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(75, 23);
             this.Cancel.TabIndex = 3;
-            this.Cancel.Text = "Cancel";
+            this.Cancel.Text = "Abbrechen";
             this.Cancel.UseVisualStyleBackColor = true;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // treeView1
             // 
-            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.treeView1.HideSelection = false;
             this.treeView1.ImageKey = "wi0064-32.ico";
             this.treeView1.ImageList = this.OptionsMenuImageList;
@@ -84,14 +84,14 @@
             treeNode1.Name = "Node0";
             treeNode1.SelectedImageKey = "wi0064-32.ico";
             treeNode1.StateImageKey = "(none)";
-            treeNode1.Text = "Network Settings";
+            treeNode1.Text = "Allgemeine Einstellungen";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1});
             this.treeView1.SelectedImageKey = "wi0064-32.ico";
             this.treeView1.ShowNodeToolTips = true;
             this.treeView1.ShowPlusMinus = false;
             this.treeView1.ShowRootLines = false;
-            this.treeView1.Size = new System.Drawing.Size(136, 381);
+            this.treeView1.Size = new System.Drawing.Size(151, 381);
             this.treeView1.TabIndex = 4;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 

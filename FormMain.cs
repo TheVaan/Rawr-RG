@@ -167,11 +167,11 @@ namespace Rawr
                     if (currentVersion != latestVersion)
                     {
                         _checkForUpdatesEnabled = false;
-                        DialogResult result = MessageBox.Show(string.Format("A new version of Rawr has been released, version {0}! Would you like to go to the Rawr site to download the new version?",
-                            latestVersion), "New Version Released!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        DialogResult result = MessageBox.Show(string.Format("Eine neue Version von Rawr-RG wurde veröffentlicht: Version {0}! Möchtest du zur Download-Seite weitergeleitet werden?",
+                            latestVersion), "Neue Version verfügbar!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         if (result == DialogResult.Yes)
                         {
-                            Help.ShowHelp(null, "http://rawr.codeplex.com/");
+                            Help.ShowHelp(null, "https://github.com/TheVaan/Rawr-RG/");
                         }
                     }
                 }
@@ -239,8 +239,6 @@ namespace Rawr
                     _loadingCharacter = true;
 
                     textBoxName.Text = Character.Name;
-                    textBoxRealm.Text = Character.Realm;
-                    comboBoxRegion.Text = Character.Region.ToString();
                     comboBoxRace.Text = Character.Race.ToString();
                     comboBoxProfession1.Text = Character.PrimaryProfession.ToString();
                     comboBoxProfession2.Text = Character.SecondaryProfession.ToString();
@@ -673,24 +671,6 @@ namespace Rawr
                 Enchant.SaveEnchants();
             });
 
-            if (!Properties.GeneralSettings.Default.SeenRawr3Note)
-            {
-                MessageBox.Show(
-@"We're pleased to announce that, after long last, Rawr3 has entered public beta. You're still welcome to continue using Rawr2 (that's what you're using right now), but we urge you to try out Rawr3, and enjoy all the new features and benefits. Rawr3 is a port of Rawr to Silverlight, which means:
-
-    - You can run Rawr3 in your web browser.
-    - No need to download or install anything.
-    - It runs on Mac OS X (Intel). Welcome to Rawr, Mac users!
-    - You can optionally install it locally with 2 clicks from the web version, if you want to have it locally for offline use.
-    - Lots more.
-
-So give Rawr3 a try today! Get started at: http://elitistjerks.com/rawr.php
-Please remember that it's still a beta, though, so lots of things are likely to be buggy or incomplete!",
-                "A Message from the Rawr Development Team");
-                Properties.GeneralSettings.Default.SeenRawr3Note = true;
-                Properties.GeneralSettings.Default.Save();
-            }
-
             //if (Properties.Recent.Default.SeenIntroVersion < INTRO_VERSION)
             //{
             //    Properties.Recent.Default.SeenIntroVersion = INTRO_VERSION;
@@ -987,18 +967,13 @@ Please remember that it's still a beta, though, so lots of things are likely to 
                     if (Rawr.Properties.Recent.Default.RecentChars.Contains(form.textBoxName.Text)) {
                         Rawr.Properties.Recent.Default.RecentChars.Remove(form.textBoxName.Text);
                     }
-                    if (Rawr.Properties.Recent.Default.RecentServers.Contains(form.textBoxRealm.Text)) {
-                        Rawr.Properties.Recent.Default.RecentServers.Remove(form.textBoxRealm.Text);
-                    }
                     Rawr.Properties.Recent.Default.RecentChars.Add(form.textBoxName.Text);
-                    Rawr.Properties.Recent.Default.RecentServers.Add(form.textBoxRealm.Text);
-                    Rawr.Properties.Recent.Default.RecentRegion = form.comboBoxRegion.Text;
                     //
                     StartProcessing();
                     BackgroundWorker bw = new BackgroundWorker();
                     bw.DoWork += new DoWorkEventHandler(bw_ArmoryGetCharacter);
                     bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_ArmoryGetCharacterComplete);
-                    bw.RunWorkerAsync(new string[] { form.CharacterName, form.Realm, form.ArmoryRegion.ToString() });
+                    bw.RunWorkerAsync(new string[] { form.CharacterName });
                     ret = true;
                 }
                 form.Dispose();
@@ -1009,9 +984,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         void bw_ArmoryGetCharacter(object sender, DoWorkEventArgs e)
         {
             string[] args = e.Argument as string[];
-            //just accessing the UI elements from off thread is ok, its changing them thats bad.
-            CharacterRegion region = (CharacterRegion)Enum.Parse(typeof(CharacterRegion),args[2]);
-            e.Result = this.GetCharacterFromArmory(args[1], args[0], region);
+            e.Result = this.GetCharacterFromArmory(args[0]);
             _characterPath = "";  
         }
 
@@ -1033,13 +1006,12 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
         private void reloadCurrentCharacterFromArmoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CharacterRegion region = (CharacterRegion)Enum.Parse(typeof(CharacterRegion), comboBoxRegion.SelectedItem.ToString());
-            if (String.IsNullOrEmpty(Character.Name) || String.IsNullOrEmpty(Character.Realm))
+            if (String.IsNullOrEmpty(Character.Name))
             {
                 MessageBox.Show("A valid character has not been loaded, unable to reload.", 
                     "No Character Loaded", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (MessageBox.Show("Confirm reloading " + textBoxName.Text + " from the " + textBoxRealm.Text + "@" + region + " realm ",
+            else if (MessageBox.Show("Confirm reloading " + textBoxName.Text,
                 "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 StartProcessing();
@@ -1187,29 +1159,11 @@ Please remember that it's still a beta, though, so lots of things are likely to 
             }
         }
 
-        private void comboBoxRegion_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!_loadingCharacter)
-            {
-                Character.Region = (CharacterRegion)Enum.Parse(typeof(CharacterRegion), comboBoxRegion.Text);
-                Character.OnCalculationsInvalidated();
-            }
-        }
-
         private void textBoxName_TextChanged(object sender, EventArgs e)
         {
             if (!_loadingCharacter)
             {
                 Character.Name = textBoxName.Text;
-                _unsavedChanges = true;
-            }
-        }
-
-        private void textBoxRealm_TextChanged(object sender, EventArgs e)
-        {
-            if (!_loadingCharacter)
-            {
-                Character.Realm = textBoxRealm.Text;
                 _unsavedChanges = true;
             }
         }
@@ -1541,12 +1495,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
         void bw_GetWowheadUpgrades(object sender, DoWorkEventArgs e)
         {
-            this.GetWowheadUpgrades((CharacterSlot)e.Argument, usePTRDataToolStripMenuItem.Checked);
-        }
-
-        public bool IsUsingPTR()
-        {
-            return usePTRDataToolStripMenuItem.Checked;
+            this.GetWowheadUpgrades((CharacterSlot)e.Argument);
         }
 
         private void StartProcessing()
@@ -1647,7 +1596,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
         void bw_ImportWowheadFilter(object sender, DoWorkEventArgs e)
         {
-            this.ImportWowheadFilter((string)e.Argument, usePTRDataToolStripMenuItem.Checked);
+            this.ImportWowheadFilter((string)e.Argument);
         }
 
         void bw_StatusCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -1682,7 +1631,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         {
             return string.Format("Aktualisiere {0} von {1}",
                                  slot == CharacterSlot.None ? "Alle Items" : slot.ToString(),
-                                 bWowhead ? "RG-Datenbank" : "Arsenal"
+                                 bWowhead ? "RG-Datenbank" : "RG-Arsenal"
                 );
         }
 
@@ -1692,7 +1641,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
             StatusMessaging.UpdateStatus(UpdateCacheStatusKey(slot, false), "Starte Aktualisierung");
             StatusMessaging.UpdateStatus("Item Symbole zwischenspeichern", "Nicht gestartet");
             StringBuilder sbChanges = new StringBuilder();
-            ItemUpdater updater = new ItemUpdater(Rawr.Properties.GeneralSettings.Default.UseMultithreading, true, false, 1, UpgradeCancelPending );
+            ItemUpdater updater = new ItemUpdater(Rawr.Properties.GeneralSettings.Default.UseMultithreading, true, 1, UpgradeCancelPending );
             int skippedItems = 0;
 
             // get list of the items to be updated
@@ -1787,7 +1736,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
             StringBuilder sbChanges = new StringBuilder();
 
             bool multithreaded = Rawr.Properties.GeneralSettings.Default.UseMultithreading;
-            ItemUpdater updater = new ItemUpdater(multithreaded, false, usePTRDataToolStripMenuItem.Checked, 20, UpgradeCancelPending);
+            ItemUpdater updater = new ItemUpdater(multithreaded, false, 20, UpgradeCancelPending);
             int skippedItems = 0;
 
             // get list of the items to be updated
@@ -1860,11 +1809,11 @@ Please remember that it's still a beta, though, so lots of things are likely to 
             SaveSettingsAndCaches();
         }
 
-        public void ImportWowheadFilter(string filter, bool usePTR)
+        public void ImportWowheadFilter(string filter)
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
             StatusMessaging.UpdateStatus("ImportRGDBFilter", "Importiere Items aus RG-Datenbank");
-            Wowhead.ImportItemsFromWowhead(filter, usePTR);
+            Wowhead.ImportItemsFromWowhead(filter);
             ItemCache.OnItemsChanged();
             StatusMessaging.UpdateStatusFinished("ImportRGDBFilter");
         }
@@ -1872,7 +1821,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         public void GetArmoryUpgrades( CharacterSlot slot )
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot, false), "Erhalte Arsenal Aktualisierungen");
+            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot, false), "Erhalte RG-Arsenal Aktualisierungen");
             Armory.LoadUpgradesFromArmory( Character, slot, UpgradeCancelPending );
             ItemCache.OnItemsChanged();
             StatusMessaging.UpdateStatusFinished(LoadUpgradesStatusKey(slot, false));
@@ -1886,16 +1835,16 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         public static string LoadUpgradesStatusKey(CharacterSlot slot, bool bWowhead)
         {
             return string.Format("Lade {0} Verbesserungen von {1}",
-                                 slot == CharacterSlot.None ? "All Items" : slot.ToString(),
-                                 bWowhead ? "RG-Datenbank" : "Arsenal"
+                                 slot == CharacterSlot.None ? "Alle Items" : slot.ToString(),
+                                 bWowhead ? "RG-Datenbank" : "RG-Arsenal"
                 );
         }
 
-        public void GetWowheadUpgrades(CharacterSlot slot, bool usePTR)
+        public void GetWowheadUpgrades(CharacterSlot slot)
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot,true), "Erhalte Arsenal Aktualisierungen");
-            Wowhead.LoadUpgradesFromWowhead(Character, slot, usePTR, UpgradeCancelPending);
+            StatusMessaging.UpdateStatus(LoadUpgradesStatusKey(slot,true), "Erhalte RG-Datenbank Aktualisierungen");
+            Wowhead.LoadUpgradesFromWowhead(Character, slot, UpgradeCancelPending);
             ItemCache.OnItemsChanged();
             StatusMessaging.UpdateStatusFinished(LoadUpgradesStatusKey(slot, true));
         }
@@ -1903,7 +1852,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         public Character ReloadCharacterFromArmory(Character character)
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
-            Character reload = GetCharacterFromArmory(character.Realm, character.Name, character.Region);
+            Character reload = GetCharacterFromArmory(character.Name);
             if (reload != null)
             {
                 this.Invoke(new ReloadCharacterFromArmoryUpdateDelegate(this.ReloadCharacterFromCharacterProfilerUpdate), character, reload);
@@ -1919,14 +1868,14 @@ Please remember that it's still a beta, though, so lots of things are likely to 
             character.AssignAllTalentsFromCharacter(reload, false);
         }
 
-        public Character GetCharacterFromArmory(string realm, string name, CharacterRegion region)
+        public Character GetCharacterFromArmory(string name)
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
             StatusMessaging.UpdateStatus("Get Character From Armory", " Downloading Character Definition");
             StatusMessaging.UpdateStatus("Update Item Cache", "Queued");
             StatusMessaging.UpdateStatus("Cache Item Icons", "Queued");
             string[] itemsOnChar;
-            Character character = Armory.GetCharacter(region, realm, name, out itemsOnChar);
+            Character character = Armory.GetCharacter(name, out itemsOnChar);
             StatusMessaging.UpdateStatusFinished("Get Character From Armory");
             if (itemsOnChar != null) {
                 _loadingCharacter = true; // suppress item changed event
@@ -2142,8 +2091,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
         private void reloadInvetoryFromCharacterProfilerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CharacterRegion region = (CharacterRegion)Enum.Parse(typeof(CharacterRegion), comboBoxRegion.SelectedItem.ToString());
-            if (String.IsNullOrEmpty(Character.Name) || String.IsNullOrEmpty(Character.Realm)) {
+            if (String.IsNullOrEmpty(Character.Name)) {
                 MessageBox.Show("A valid character has not been loaded, unable to reload.",
                     "No Character Loaded", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else {
@@ -2158,11 +2106,11 @@ Please remember that it's still a beta, though, so lots of things are likely to 
                         CharacterProfilerData characterList = new CharacterProfilerData(dialog.FileName);
 
                         bool found_character = false;
-                        for (int r=0; r<characterList.Realms.Count; r++)
+                        for (int r = 0; r < characterList.Realms.Count; r++)
                         {
-                            if (characterList.Realms[r].Name == this.Character._realm)
+                            if (characterList.Realms[r].Name == "Rising-Gods")
                             {
-                                for (int c=0; c<characterList.Realms[r].Characters.Count; c++)
+                                for (int c = 0; c < characterList.Realms[r].Characters.Count; c++)
                                 {
                                     if (characterList.Realms[r].Characters[c].Name == this.Character._name)
                                     {
@@ -2184,7 +2132,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
                         if (!found_character)
                         {
-                            string error_msg = string.Format("{0} of {1} was not found in the Character Profiler Data.", this.Character._name, this.Character._realm);
+                            string error_msg = string.Format("{0} of {1} was not found in the Character Profiler Data.", this.Character._name);
                             MessageBox.Show(error_msg, "Character Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -2253,7 +2201,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
             if (character.Class == CharacterClass.Hunter)
             {
                 // Pull Pet(s) Info if you are a Hunter
-                List<ArmoryPet> pets = Armory.GetPet(character.Region, character.Realm, character.Name);
+                List<ArmoryPet> pets = Armory.GetPet(character.Name);
                 if (pets != null) { character.ArmoryPets = pets; }
             }
             #endregion
@@ -2326,6 +2274,9 @@ Please remember that it's still a beta, though, so lots of things are likely to 
 
         private void itemFilteringToolStripMenuItem_Click(object sender, EventArgs e)
         { Help.ShowHelp(null, "http://www.codeplex.com/Rawr/Wiki/View.aspx?title=ItemFiltering"); }
+
+        private void rawrRGWebsiteToolStripMenuItem_Click(object sender, EventArgs e)
+        { Help.ShowHelp(null, "https://github.com/TheVaan/Rawr-RG/"); }
 
         private void rawrWebsiteToolStripMenuItem_Click(object sender, EventArgs e)
         { Help.ShowHelp(null, "http://rawr.codeplex.com/"); }
@@ -2605,10 +2556,10 @@ Please remember that it's still a beta, though, so lots of things are likely to 
         private void ShowWowhead3DModelURL(Character character, bool maleModel)
         {
             bool missingDisplayID = false;
-            StringBuilder URL = new StringBuilder("http://static.wowhead.com/modelviewer/ModelView.swf?model=");
+            StringBuilder URL = new StringBuilder("https://db.rising-gods.de/static/modelviewer/ModelView.swf?model=");
             URL.Append(character.Race.ToString().ToLower());
             URL.Append(maleModel ? "male" : "female");
-            URL.Append("&modelType=16&ha=0&hc=0&fa=0&sk=0&fh=0&fc=0&contentPath=http://static.wowhead.com/modelviewer/&blur=1&equipList=");
+            URL.Append("&modelType=16&ha=0&hc=0&fa=0&sk=0&fh=0&fc=0&contentPath=https://db.rising-gods.de/static/modelviewer/&blur=1&equipList=");
             foreach (ItemInstance item in character.GetItems())
             {
                 if (item != null && (item.Slot != ItemSlot.Neck && item.Slot != ItemSlot.Shirt && item.Slot != ItemSlot.Tabard &&
@@ -2633,12 +2584,12 @@ Please remember that it's still a beta, though, so lots of things are likely to 
             StringBuilder URL = new StringBuilder("<html><head><title>Wowhead 3D Character Model in Java</title></head><body>");
             URL.Append("<applet id=\"3dviewer-java\" code=\"org.jdesktop.applet.util.JNLPAppletLauncher\" ");
             URL.Append("width=\"600\" height=\"400\" ");
-            URL.Append("archive=\"http://static.wowhead.com/modelviewer/applet-launcher.jar,");
+            URL.Append("archive=\"https://db.rising-gods.de/static/modelviewer/applet-launcher.jar,");
             URL.Append("http://download.java.net/media/jogl/builds/archive/jsr-231-webstart-current/jogl.jar,");
             URL.Append("http://download.java.net/media/gluegen/webstart/gluegen-rt.jar,");
             URL.Append("http://download.java.net/media/java3d/webstart/release/vecmath/latest/vecmath.jar,");
-            URL.Append("http://static.wowhead.com/modelviewer/ModelView510.jar\">");
-            URL.Append("<param name=\"jnlp_href\" value=\"http://static.wowhead.com/modelviewer/ModelView.jnlp\">");
+            URL.Append("https://db.rising-gods.de/static/modelviewer/ModelView510.jar\">");
+            URL.Append("<param name=\"jnlp_href\" value=\"https://db.rising-gods.de/static/modelviewer/ModelView.jnlp\">");
             URL.Append("<param name=\"codebase_lookup\" value=\"false\">");
             URL.Append("<param name=\"cache_option\" value=\"no\">");
             URL.Append("<param name=\"subapplet.classname\" value=\"modelview.ModelViewerApplet\">");
@@ -2646,7 +2597,7 @@ Please remember that it's still a beta, though, so lots of things are likely to 
             URL.Append("<param name=\"progressbar\" value=\"true\">");
             URL.Append("<param name=\"jnlpNumExtensions\" value=\"1\">");
             URL.Append("<param name=\"jnlpExtension1\" value=\"http://download.java.net/media/jogl/builds/archive/jsr-231-webstart-current/jogl.jnlp\">");
-            URL.Append("<param name=\"contentPath\" value=\"http://static.wowhead.com/modelviewer/\">");
+            URL.Append("<param name=\"contentPath\" value=\"https://db.rising-gods.de/static/modelviewer/\">");
             URL.Append("<param name=\"model\" value=\"");
             URL.Append(character.Race.ToString().ToLower());
             URL.Append(maleModel ? "male" : "female");

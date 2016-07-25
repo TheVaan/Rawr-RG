@@ -13,10 +13,6 @@ namespace Rawr //O O . .
     {
         [XmlElement("Name")]
         public string _name;
-        [XmlElement("Realm")]
-        public string _realm;
-        [XmlElement("Region")]
-        public CharacterRegion _region = CharacterRegion.US;
         [XmlElement("Race")]
         public CharacterRace _race = CharacterRace.NightElf;
         [XmlElement("Faction")]
@@ -525,24 +521,6 @@ namespace Rawr //O O . .
         {
             get { return _name; }
             set { _name = value; }
-        }
-        [XmlIgnore]
-        public string Realm
-        {
-            get { return _realm; }
-            set { _realm = value; }
-        }
-        [XmlIgnore]
-        public CharacterRegion Region
-        {
-            get { return _region; }
-            set { _region = value; }
-        }
-        [XmlIgnore]
-        public int RegionIndex
-        {
-            get { return (int)Region; }
-            set { Region = (CharacterRegion)value; }
         }
         [XmlIgnore]
         public CharacterRace Race
@@ -2047,20 +2025,17 @@ namespace Rawr //O O . .
             _activeBuffs = new List<Buff>();
         }
 
-        public Character(string name, string realm, CharacterRegion region, CharacterRace race, BossOptions boss,
-            string head, string neck, string shoulders, string back, string chest, string shirt, string tabard,
-                string wrist, string hands, string waist, string legs, string feet, string finger1, string finger2, 
-            string trinket1, string trinket2, string mainHand, string offHand, string ranged, string projectile, 
-            string projectileBag/*, string extraWristSocket, string extraHandsSocket, string extraWaistSocket,
-            int enchantHead, int enchantShoulders, int enchantBack, int enchantChest, int enchantWrist, 
+        public Character(string name, CharacterRace race, BossOptions boss, string head, string neck, string shoulders, 
+            string back, string chest, string shirt, string tabard, string wrist, string hands, string waist, string legs, 
+            string feet, string finger1, string finger2, string trinket1, string trinket2, string mainHand, string offHand, 
+            string ranged, string projectile,  string projectileBag/*, string extraWristSocket, string extraHandsSocket, 
+            string extraWaistSocket, int enchantHead, int enchantShoulders, int enchantBack, int enchantChest, int enchantWrist, 
             int enchantHands, int enchantLegs, int enchantFeet, int enchantFinger1, int enchantFinger2, 
             int enchantMainHand, int enchantOffHand, int enchantRanged*/)
         {
             Initialize();
             IsLoading = true;
             _name = name;
-            _realm = realm;
-            _region = region;
             _race = race;
             _head = head;
             _neck = neck;
@@ -2094,7 +2069,7 @@ namespace Rawr //O O . .
             BossOptions = boss.Clone();
         }
 
-        public Character(string name, string realm, CharacterRegion region, CharacterRace race, BossOptions boss,
+        public Character(string name, CharacterRace race, BossOptions boss,
             ItemInstance head, ItemInstance neck, ItemInstance shoulders, ItemInstance back, ItemInstance chest, ItemInstance shirt, ItemInstance tabard,
                 ItemInstance wrist, ItemInstance hands, ItemInstance waist, ItemInstance legs, ItemInstance feet, ItemInstance finger1, ItemInstance finger2,
             ItemInstance trinket1, ItemInstance trinket2, ItemInstance mainHand, ItemInstance offHand, ItemInstance ranged, ItemInstance projectile,
@@ -2109,8 +2084,6 @@ namespace Rawr //O O . .
             //_trackEquippedItemChanges = trackEquippedItemChanges;
             IsLoading = true;
             _name = name;
-            _realm = realm;
-            _region = region;
             _race = race;
             Head = head;
             Neck = neck;
@@ -2141,7 +2114,7 @@ namespace Rawr //O O . .
         }
 
         // the following are special contructors used by optimizer, they assume the cached items/enchant are always used, and the underlying gemmedid/enchantid are never used
-        public Character(string name, string realm, CharacterRegion region, CharacterRace race, BossOptions boss,
+        public Character(string name, CharacterRace race, BossOptions boss,
             ItemInstance head, ItemInstance neck, ItemInstance shoulders, ItemInstance back, ItemInstance chest, ItemInstance shirt, ItemInstance tabard,
                 ItemInstance wrist, ItemInstance hands, ItemInstance waist, ItemInstance legs, ItemInstance feet, ItemInstance finger1, ItemInstance finger2, 
             ItemInstance trinket1, ItemInstance trinket2, ItemInstance mainHand, ItemInstance offHand, ItemInstance ranged, ItemInstance projectile,
@@ -2150,8 +2123,6 @@ namespace Rawr //O O . .
             Initialize();
             IsLoading = true;
             _name = name;
-            _realm = realm;
-            _region = region;
             _race = race;
             _item[(int)CharacterSlot.Head] = head;
             _item[(int)CharacterSlot.Neck] = neck;
@@ -2190,8 +2161,6 @@ namespace Rawr //O O . .
         {
             IsLoading = true;
             _name = baseCharacter._name;
-            _realm = baseCharacter._realm;
-            _region = baseCharacter._region;
             _race = baseCharacter._race;
             _currentModel = baseCharacter._currentModel;
             _calculationOptions = baseCharacter._calculationOptions;
@@ -2224,14 +2193,12 @@ namespace Rawr //O O . .
             RecalculateSetBonuses();
         }
 
-        public Character(string name, string realm, CharacterRegion region, CharacterRace race, BossOptions boss,
+        public Character(string name, CharacterRace race, BossOptions boss,
             ItemInstance[] items, List<Buff> activeBuffs, string model)
         {
             Initialize();
             IsLoading = true;
             _name = name;
-            _realm = realm;
-            _region = region;
             _race = race;
             Array.Copy(items, _item, items.Length);
 
@@ -2252,8 +2219,7 @@ namespace Rawr //O O . .
                 ItemInstance itemInstance = _item[i];
                 if (itemInstance != null) clonedItemInstances[i] = itemInstance.Clone();
             }
-            Character clone = new Character(this.Name, this.Realm, this.Region, this.Race, this.BossOptions,
-                clonedItemInstances, ActiveBuffs, CurrentModel);
+            Character clone = new Character(this.Name, this.Race, this.BossOptions, clonedItemInstances, ActiveBuffs, CurrentModel);
             clone.CalculationOptions = this.CalculationOptions;
             clone.Class = this.Class;
             clone.AssignAllTalentsFromCharacter(this, true);

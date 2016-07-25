@@ -25,30 +25,15 @@ namespace Rawr
                 if (count > 0) {
                     string[] autocomplete = new string[count];
                     Rawr.Properties.Recent.Default.RecentServers.CopyTo(autocomplete, 0);
-                    textBoxRealm.AutoCompleteCustomSource.AddRange(autocomplete);
-                    textBoxRealm.Text = Rawr.Properties.Recent.Default.RecentServers[count - 1];
                 }
             } else { Rawr.Properties.Recent.Default.RecentServers = new System.Collections.Specialized.StringCollection(); }
-            if (Rawr.Properties.Recent.Default.RecentRegion != null) {
-                comboBoxRegion.Text = Rawr.Properties.Recent.Default.RecentRegion;
-            } else { Rawr.Properties.Recent.Default.RecentRegion = "US"; }
         }
 
         public string CharacterName
         {
             get { return textBoxName.Text; }
         }
-
-        public string Realm
-        {
-            get { return textBoxRealm.Text; }
-        }
-
-        public CharacterRegion ArmoryRegion
-        {
-            get { return (CharacterRegion)Enum.Parse(typeof(CharacterRegion), comboBoxRegion.Text); }
-        }
-
+        
         private void FormEnterNameRealm_Activated(object sender, System.EventArgs e)
         {
             this.textBoxName.Focus();

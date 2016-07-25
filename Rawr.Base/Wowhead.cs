@@ -5,6 +5,7 @@ using System.Net;
 using System.IO;
 using System.Xml;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json.Linq;
 
 namespace Rawr
 {
@@ -180,7 +181,7 @@ namespace Rawr
 
         static Wowhead()
         {
-            switch (Rawr.Properties.GeneralSettings.Default.Locale)
+            switch (Properties.GeneralSettings.Default.Locale)
             {
                 case "fr":
                     _pvpTokenMap["20560"] = "Marque d'honneur de la vallée d'Alterac";
@@ -1139,7 +1140,7 @@ namespace Rawr
                                     if (sourcemore.TryGetValue("s", out tmp))
                                     {
                                         string profession = "";
-                                        switch (Rawr.Properties.GeneralSettings.Default.Locale)
+                                        switch (Properties.GeneralSettings.Default.Locale)
                                         {
                                             case "fr":
                                                 switch (tmp.ToString())
@@ -1814,7 +1815,7 @@ namespace Rawr
                     if (item.LocationInfo[0] is CraftedItem)
                     {
                         string profession = "";
-                        switch (Rawr.Properties.GeneralSettings.Default.Locale)
+                        switch (Properties.GeneralSettings.Default.Locale)
                         {
                             case "fr":
                                 switch (value)
@@ -1885,7 +1886,7 @@ namespace Rawr
 
         private static string GetZoneName(string zoneId)
         {
-            switch (Rawr.Properties.GeneralSettings.Default.Locale)
+            switch (Properties.GeneralSettings.Default.Locale)
             {
                 #region French Translations
                 case "fr": {
@@ -2486,7 +2487,7 @@ namespace Rawr
 
         public delegate bool UpgradeCancelCheck();
 
-        public static void LoadUpgradesFromWowhead(Character character, CharacterSlot slot, bool usePTR, UpgradeCancelCheck cancel )
+        public static void LoadUpgradesFromWowhead(Character character, CharacterSlot slot, UpgradeCancelCheck cancel )
         {
             if (!string.IsNullOrEmpty(character.Name))
             {
@@ -2552,27 +2553,27 @@ namespace Rawr
 
                 if (slot != CharacterSlot.None)
                 {
-                    LoadUpgradesForSlot(character, slot, idealGems, usePTR, cancel);
+                    LoadUpgradesForSlot(character, slot, idealGems, cancel);
                 }
                 else
                 {
-                    LoadUpgradesForSlot(character, CharacterSlot.Head, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Neck, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Shoulders, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Back, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Chest, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Wrist, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Hands, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Waist, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Legs, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Feet, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Finger1, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Finger2, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Trinket1, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Trinket2, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.MainHand, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.OffHand, idealGems, usePTR, cancel);
-                    LoadUpgradesForSlot(character, CharacterSlot.Ranged, idealGems, usePTR, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Head, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Neck, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Shoulders, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Back, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Chest, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Wrist, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Hands, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Waist, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Legs, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Feet, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Finger1, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Finger2, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Trinket1, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Trinket2, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.MainHand, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.OffHand, idealGems, cancel);
+                    LoadUpgradesForSlot(character, CharacterSlot.Ranged, idealGems, cancel);
                 }
             }
             else
@@ -2581,15 +2582,13 @@ namespace Rawr
             }
         }
 
-        public static void ImportItemsFromWowhead(string filter) { ImportItemsFromWowhead(filter, false); }
-        public static void ImportItemsFromWowhead(string filter, bool usePTR)
+        public static void ImportItemsFromWowhead(string filter) 
         {
             WebRequestWrapper.ResetFatalErrorIndicator();
 
             string docUpgradeSearch = null;
             try
             {
-                string site = usePTR ? "ptr" : "www";
                 StatusMessaging.UpdateStatus("ImportWowheadFilter", "Downloading Item List");
                 WebRequestWrapper wrw = new WebRequestWrapper();
                 docUpgradeSearch = wrw.DownloadUpgradesWowhead(filter);
@@ -2618,7 +2617,7 @@ namespace Rawr
                             match = toMatch.Match(nodeList[i].Value);
                             string id = match.Value;
                             {
-                                Item item = GetItem(site, id, true);
+                                Item item = GetItem(id, true);
                                 if (item != null)
                                 {
                                     ItemCache.AddItem(item, false);
@@ -2638,7 +2637,7 @@ namespace Rawr
             }
         }
 
-        private static void LoadUpgradesForSlot(Character character, CharacterSlot slot, Dictionary<ItemSlot, int> idealGems, bool usePTR, UpgradeCancelCheck cancel )
+        private static void LoadUpgradesForSlot(Character character, CharacterSlot slot, Dictionary<ItemSlot, int> idealGems, UpgradeCancelCheck cancel )
         {
             if (cancel != null && cancel())
                 return;
@@ -2646,7 +2645,6 @@ namespace Rawr
             string docUpgradeSearch = null;
             try
             {
-                string site = usePTR ? "ptr" : "www";
                 StatusMessaging.UpdateStatus(slot.ToString(), "Downloading Upgrade List");
                 ItemInstance itemToUpgrade = character[slot];
                 if ((object)itemToUpgrade != null)
@@ -2659,33 +2657,49 @@ namespace Rawr
                     ComparisonCalculationBase currentCalculation = Calculations.GetItemCalculations(itemToUpgrade, character, slot);
                     if (docUpgradeSearch != null)
                     {
-                        // at this stage have an HTML doc that has upgrades in a <div class="listview-void"> block
-                        // need to get the itemID list out and then load them and add to cache if better than itemToUpgrade
-                        int startpos = docUpgradeSearch.IndexOf("<div class=\"listview-void\">");
-                        if (startpos > 1)
-                        {
-                            int endpos = docUpgradeSearch.IndexOf("</div>", startpos);
-                            XmlDocument doc = new XmlDocument();
-                            doc.InnerXml = docUpgradeSearch.Substring(startpos, endpos - startpos + 6);
-                            XmlNodeList nodeList = doc.SelectNodes("//a/@href");
+                        if (slot.ToString().Equals("Ranged"))
+                            Console.WriteLine("Ranged");
 
-                            for (int i = 0; i < nodeList.Count; i++)
+                        int startpos = docUpgradeSearch.IndexOf("Listview({") + 9; // Start verschieben um Länge von 'Listview('
+                        docUpgradeSearch = docUpgradeSearch.Substring(startpos);
+
+                        int endpos = docUpgradeSearch.IndexOf("});") + 1; // Ende verschieben um Länge von '}'
+                        docUpgradeSearch = docUpgradeSearch.Substring(0, endpos);
+
+                        docUpgradeSearch = docUpgradeSearch.Replace("\\", ""); // An dieser Stelle zwar schon brauchbarer JSON Object Code, aber wir holen uns nur das Item Array
+                        
+                        startpos = docUpgradeSearch.IndexOf("\"data\":[{");
+
+                        if(startpos > 0)
+                        {
+                            docUpgradeSearch = docUpgradeSearch.Substring(startpos + 7); // Start verschieben um Länge von 'Listview('
+
+                            endpos = docUpgradeSearch.IndexOf("}],") + 2; // Ende verschieben um Länge von '}'
+                            docUpgradeSearch = docUpgradeSearch.Substring(0, endpos);
+
+                            if (slot.ToString().Equals("Ranged"))
+                                Console.WriteLine(docUpgradeSearch);
+
+                            JArray json = JArray.Parse(docUpgradeSearch);
+
+                            int i = 0;
+                            foreach (JObject item in json)
                             {
-                                if( cancel != null && cancel() )
+                                if (cancel != null && cancel())
                                     break;
 
-                                StatusMessaging.UpdateStatus(slot.ToString(), string.Format("Downloading definition {0} of {1} possible upgrades", i, nodeList.Count));
-                                string id = nodeList[i].Value.Substring(7);
+                                StatusMessaging.UpdateStatus(slot.ToString(), string.Format("Downloading definition {0} of {1} possible upgrades", i, json.Count));
+                                string id = (string)item["id"];
                                 if (!ItemCache.Instance.ContainsItemId(int.Parse(id)))
                                 {
-                                    Item idealItem = GetItem(site, id, true);
+                                    Item idealItem = GetItem(id, true);
                                     if (idealItem != null)
                                     {
                                         ItemInstance idealGemmedItem = new ItemInstance(int.Parse(id), idealGems[idealItem.SocketColor1], idealGems[idealItem.SocketColor2], idealGems[idealItem.SocketColor3], itemToUpgrade.EnchantId);
 
                                         Item newItem = ItemCache.AddItem(idealItem, false);
 
-                                        //This is calling OnItemsChanged and ItemCache.Add further down the call stack so if we add it to the cache first, 
+                                        // This is calling OnItemsChanged and ItemCache.Add further down the call stack so if we add it to the cache first, 
                                         // then do the compare and remove it if we don't want it, we can avoid that constant event trigger
                                         ComparisonCalculationBase upgradeCalculation = Calculations.GetItemCalculations(idealGemmedItem, character, slot);
 
@@ -2693,6 +2707,8 @@ namespace Rawr
                                             ItemCache.DeleteItem(newItem, false);
                                     }
                                 }
+
+                                i++;
                             }
                         }
                     }

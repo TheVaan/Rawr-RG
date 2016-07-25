@@ -98,13 +98,13 @@ namespace Rawr.UserControls.Options
 
 		public string DisplayName
 		{
-			get { return "Http Settings"; }
+			get { return "HTTP Einstellungen"; }
 		}
 
 
 		public string TreePosition
 		{
-			get { return Rawr.Forms.Options.NETWORK_SETTINGS +  Rawr.Forms.Options.MENU_DELIMETER + DisplayName; }
+			get { return Rawr.Forms.Options.NETWORK_SETTINGS + Rawr.Forms.Options.MENU_DELIMETER + DisplayName; }
 		}
 
 		public Image MenuIcon

@@ -367,8 +367,8 @@ namespace Rawr.Mage
         public override string GetCharacterStatsString(Character character)
         {
 			StringBuilder sb = new StringBuilder();
-			sb.AppendFormat("Character:\t\t{0}@{1}-{2}\r\nRace:\t\t{3}",
-				character.Name, character.Region, character.Realm, character.Race);
+			sb.AppendFormat("Character:\t\t{0}\r\nRace:\t\t{1}",
+				character.Name, character.Race);
 
             CalculationOptionsMage CalculationOptions = (CalculationOptionsMage)character.CalculationOptions;
 

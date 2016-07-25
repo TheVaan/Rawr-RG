@@ -3476,7 +3476,7 @@ namespace Rawr.Optimizer
                     itemInstances[i] = new ItemInstance(item, gems[0], gems[1], gems[2], items[i * 5 + 4] as Enchant);
                 }
             }
-            Character character = new Character(_character.Name, _character.Realm, _character.Region, _character.Race, _character.BossOptions,
+            Character character = new Character(_character.Name, _character.Race, _character.BossOptions,
                 itemInstances, _character.ActiveBuffs, _character.CurrentModel);
             character.CalculationOptions = _character.CalculationOptions;
             character.BossOptions = _character.BossOptions;
@@ -3636,7 +3636,7 @@ namespace Rawr.Optimizer
                 if ((object)item != null && ((object)bestCharacter[slot] == null || bestCharacter[slot].GemmedId != item.GemmedId) && !(pairSlot >= 0 && (object)bestCharacter[(CharacterSlot)pairSlot] != null && item.Item.Unique && (bestCharacter[(CharacterSlot)pairSlot].Id == item.Id || (item.Item.UniqueId != null && item.Item.UniqueId.Contains(bestCharacter[(CharacterSlot)pairSlot].Id)))))
                 {
                     itemList[(int)slot] = item;
-                    charSwap = new Character(_character.Name, _character.Realm, _character.Region, _character.Race, _character.BossOptions,
+                    charSwap = new Character(_character.Name, _character.Race, _character.BossOptions,
                         itemList, _character.ActiveBuffs, _character.CurrentModel);
                     charSwap.CalculationOptions = _character.CalculationOptions;
                     charSwap.BossOptions = _character.BossOptions;
