@@ -40,7 +40,7 @@ namespace Rawr
         Gnome = 7,
         Troll = 8,
         BloodElf = 10,
-        Draenei = 11
+        Draenei = 11,
     }
 
     public enum CharacterSlot

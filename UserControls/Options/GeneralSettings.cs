@@ -10,7 +10,7 @@ namespace Rawr.UserControls.Options
 {
 	public partial class GeneralSettings : UserControl, IOptions
 	{
-        string _locale = "en";
+        string _locale = "de";
 
         public GeneralSettings()
 		{
@@ -41,24 +41,6 @@ namespace Rawr.UserControls.Options
                 case "de":
                     rbGerman.Checked = true;
                     break;
-                case "fr":
-                    rbFrench.Checked = true;
-                    break;
-                case "es":
-                    rbSpanish.Checked = true;
-                    break;
-                case "ru":
-                    rbRussian.Checked = true;
-                    break;
-                case "zhTW":
-                    rbZhTW.Checked = true;
-                    break;
-                case "zhCN":
-                    rbZhCn.Checked = true;
-                    break;
-                case "kr":
-                    rbKr.Checked = true;
-                    break;
             }
         }
 
@@ -84,30 +66,6 @@ namespace Rawr.UserControls.Options
                     title = "Profil Aktualisieren";
                     message = "Um die deutsche Lokalisierung nachzuladen müssen sie auf 'Aktuallisiere Item Cache aus RG-Datenbank' drücken.";
                     break;
-                case "fr":
-                    title = "Mise à jour du Profil";
-                    message = "Vous devez utiliser 'Update Item Cache from Wowhead' pour mettre à jour le nom des objets en français.";
-                    break;
-                case "es":
-                    title = "Actualiza tu Perfil";
-                    message = "Debe utilizar 'Update Item Cache from Wowhead' para volver a cargar los elementos de localización para el Español.";
-                    break;
-                case "ru":
-                    title = "Обновить профиль";
-                    message = "Вы должны использовать 'Update Item Cache from Wowhead' чтобы перезагрузить пунктов для Российских локаль.";
-                    break;
-                case "zhTW":
-                    title = "更新資料";
-                    message = "本地化檔案請選擇'Update Item Cache from Wowhead'";
-                    break;
-                case "zhCN":
-                    title = "更新资料";
-                    message = "本地化档案请选择'Update Item Cache from Wowhead'";
-                    break;
-                case "kr":
-                    title = "프로필 업데이트";
-                    message = "선택하세요'Update Item Cache from Wowhead'";
-                    break;
             }
             if (!_locale.Equals("en"))
                 System.Windows.Forms.MessageBox.Show(message, title, System.Windows.Forms.MessageBoxButtons.OK);
@@ -116,6 +74,7 @@ namespace Rawr.UserControls.Options
             SpecialEffect.UpdateCalculationMode();
             //ItemCache.OnItemsChanged();
             FormMain.Instance.Character.OnCalculationsInvalidated();
+            FormMain.Instance.RefreshComponents(_locale);
 		}
 
 		public void Cancel()
@@ -178,36 +137,6 @@ namespace Rawr.UserControls.Options
         private void rbGerman_CheckedChanged(object sender, EventArgs e)
         {
             _locale = "de";
-        }
-
-        private void rbFrench_CheckedChanged(object sender, EventArgs e)
-        {
-            _locale = "fr";
-        }
-
-        private void rbSpanish_CheckedChanged(object sender, EventArgs e)
-        {
-            _locale = "es";
-        }
-
-        private void rbRussian_CheckedChanged(object sender, EventArgs e)
-        {
-            _locale = "ru";
-        }
-
-        private void rbZhTW_CheckedChanged(object sender, EventArgs e)
-        {
-            _locale = "zhTW";
-        }
-
-        private void rbZhCn_CheckedChanged(object sender, EventArgs e)
-        {
-            _locale = "zhCN";
-        }
-
-        private void rbKr_CheckedChanged(object sender, EventArgs e)
-        {
-            _locale = "kr";
         }
 
         public static event EventHandler DisplayBuffChanged;

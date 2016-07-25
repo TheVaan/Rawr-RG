@@ -482,6 +482,9 @@
       <DependentUpon>TalentTree.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Options\GeneralSettings.de.resx">
+      <DependentUpon>GeneralSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Options\GeneralSettings.resx">
       <DependentUpon>GeneralSettings.cs</DependentUpon>
       <SubType>Designer</SubType>

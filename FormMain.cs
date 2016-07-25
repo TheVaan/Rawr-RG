@@ -1216,6 +1216,7 @@ namespace Rawr
                         checkBoxHandsBlacksmithingSocket.Checked = false;
                         checkBoxWristBlacksmithingSocket.Checked = false;
                     }
+                    
                     // any other profession checks go here
                 }
                 Buff.InvalidateBuffs(); // forces rebuild of buff list
