@@ -253,5 +253,6 @@ namespace Rawr
         Tailoring = 197,
         Blacksmithing = 164,
         Mining = 186,
+        Schmiedekunst = 164
     }
 }

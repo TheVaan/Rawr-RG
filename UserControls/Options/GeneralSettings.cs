@@ -66,30 +66,6 @@ namespace Rawr.UserControls.Options
                     title = "Profil Aktualisieren";
                     message = "Um die deutsche Lokalisierung nachzuladen müssen sie auf 'Aktuallisiere Item Cache aus RG-Datenbank' drücken.";
                     break;
-                case "fr":
-                    title = "Mise à jour du Profil";
-                    message = "Vous devez utiliser 'Update Item Cache from Wowhead' pour mettre à jour le nom des objets en français.";
-                    break;
-                case "es":
-                    title = "Actualiza tu Perfil";
-                    message = "Debe utilizar 'Update Item Cache from Wowhead' para volver a cargar los elementos de localización para el Español.";
-                    break;
-                case "ru":
-                    title = "Обновить профиль";
-                    message = "Вы должны использовать 'Update Item Cache from Wowhead' чтобы перезагрузить пунктов для Российских локаль.";
-                    break;
-                case "zhTW":
-                    title = "更新資料";
-                    message = "本地化檔案請選擇'Update Item Cache from Wowhead'";
-                    break;
-                case "zhCN":
-                    title = "更新资料";
-                    message = "本地化档案请选择'Update Item Cache from Wowhead'";
-                    break;
-                case "kr":
-                    title = "프로필 업데이트";
-                    message = "선택하세요'Update Item Cache from Wowhead'";
-                    break;
             }
             if (!_locale.Equals("en"))
                 System.Windows.Forms.MessageBox.Show(message, title, System.Windows.Forms.MessageBoxButtons.OK);
@@ -98,6 +74,7 @@ namespace Rawr.UserControls.Options
             SpecialEffect.UpdateCalculationMode();
             //ItemCache.OnItemsChanged();
             FormMain.Instance.Character.OnCalculationsInvalidated();
+            FormMain.Instance.RefreshComponents(_locale);
 		}
 
 		public void Cancel()

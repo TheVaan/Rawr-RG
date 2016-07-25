@@ -47,7 +47,8 @@ namespace Rawr {
             }else if(s == "Leatherworking") { p = Profession.Leatherworking;
             }else if(s == "Mining"        ) { p = Profession.Mining;
             }else if(s == "Skinning"      ) { p = Profession.Skinning;
-            }else if(s == "Tailoring"     ) { p = Profession.Tailoring; }
+            }else if(s == "Tailoring"     ) { p = Profession.Tailoring;
+            }else if(s == "Schmiedekunst" ) { p = Profession.Schmiedekunst; }
             return p;
         }
         public static string ProfessionToString(Profession p) {
