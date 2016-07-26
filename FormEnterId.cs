@@ -20,22 +20,6 @@ namespace Rawr
                     return int.Parse(m.Groups[1].Value);
                 }
 
-                Regex wowheadptr = new Regex(@"http://ptr.wowhead.com/\?item=([-+]?\d+)");
-                m = wowheadptr.Match(input);
-
-                if (m.Success)
-                {
-                    return int.Parse(m.Groups[1].Value);
-                }
-
-                Regex thottbot = new Regex(@"http://thottbot.com/i([-+]?\d+)");
-                m = thottbot.Match(input);
-
-                if (m.Success)
-                {
-                    return int.Parse(m.Groups[1].Value);
-                }
-
                 Regex numeric = new Regex(@"([-+]?\d+)");
                 m = numeric.Match(input);
 
