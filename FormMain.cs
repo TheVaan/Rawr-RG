@@ -1006,13 +1006,32 @@ namespace Rawr
 
         private void reloadCurrentCharacterFromArmoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DialogResult result = new DialogResult();
+
             if (String.IsNullOrEmpty(Character.Name))
             {
-                MessageBox.Show("A valid character has not been loaded, unable to reload.", 
-                    "No Character Loaded", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(Rawr.Properties.GeneralSettings.Default.Locale == "de")
+                {
+                    MessageBox.Show("Ein gültiger Charakter wurde nicht geladen, nicht möglich neu zu laden.",
+                        "Kein Charakter geladen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("A valid character has not been loaded, unable to reload.",
+                        "No Character Loaded", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else if (MessageBox.Show("Confirm reloading " + textBoxName.Text,
-                "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            else if(Rawr.Properties.GeneralSettings.Default.Locale == "de")
+            {
+                result = MessageBox.Show("Bestätige neuladen " + textBoxName.Text,
+                    "Bestätigung", MessageBoxButtons.YesNo);
+            }
+            else if(Rawr.Properties.GeneralSettings.Default.Locale == "en")
+            {
+                result = MessageBox.Show("Confirm reloading " + textBoxName.Text,
+                    "Confirm", MessageBoxButtons.YesNo);
+            }
+            if (result == DialogResult.Yes)
             {
                 StartProcessing();
                 BackgroundWorker bw = new BackgroundWorker();
@@ -1112,7 +1131,17 @@ namespace Rawr
         {
             if (_unsavedChanges)
             {
-                DialogResult result = MessageBox.Show("Would you like to save the current character before closing it?", "Rawr - Save?", MessageBoxButtons.YesNoCancel);
+                DialogResult result = new DialogResult();
+
+                if (Rawr.Properties.GeneralSettings.Default.Locale == "de")
+                {
+                    result = MessageBox.Show("Möchtest du deinen aktuellen Charakter speichern, bevor du Rawr beendest?", "Rawr - Speichern?", MessageBoxButtons.YesNoCancel);
+                }
+                else
+                {
+                    result = MessageBox.Show("Would you like to save the current character before closing it?", "Rawr - Save?", MessageBoxButtons.YesNoCancel);
+                }
+                
                 switch (result)
                 {
                     case DialogResult.Yes:
@@ -1452,7 +1481,14 @@ namespace Rawr
                     (item as ToolStripMenuItem).Checked = item == sender;
                     if ((item as ToolStripMenuItem).Checked)
                     {
-                        toolStripDropDownButtonSort.Text = "Sort: " + item.Text;
+                        if(Rawr.Properties.GeneralSettings.Default.Locale == "de")
+                        {
+                            toolStripDropDownButtonSort.Text = "Sortierung: " + item.Text;
+                        }
+                        else
+                        {
+                            toolStripDropDownButtonSort.Text = "Sort: " + item.Text;
+                        }
                         sort = (ComparisonGraph.ComparisonSort)((int)item.Tag);
                     }
                 }
