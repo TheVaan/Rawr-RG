@@ -164,6 +164,16 @@
     <Compile Include="ItemLocation.cs" />
     <Compile Include="ItemUpdater.cs" />
     <Compile Include="JsonParser.cs" />
+    <Compile Include="Ressources\Localize.de-DE.Designer.cs">
+      <DependentUpon>Localize.de-DE.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Ressources\Localize.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localize.resx</DependentUpon>
+    </Compile>
     <Compile Include="Log.cs" />
     <Compile Include="Algorithms\MarkovProcess.cs" />
     <Compile Include="Optimizer.cs" />
@@ -233,6 +243,15 @@
       <DependentUpon>Graph.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\Localize.de-DE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localize.de-DE.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressources\Localize.en-US.resx" />
+    <EmbeddedResource Include="Ressources\Localize.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localize.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -251,6 +270,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

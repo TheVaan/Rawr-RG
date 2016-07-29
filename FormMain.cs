@@ -12,6 +12,7 @@ using Rawr.UserControls;
 using System.IO;
 using System.Threading;
 using System.Drawing.Imaging;
+using System.Globalization;
 
 namespace Rawr
 {
@@ -82,6 +83,10 @@ namespace Rawr
         public static FormMain Instance { get { return FormMain._instance; } }
         public FormMain()
         {
+            CultureInfo currentCultureInfo = new CultureInfo(Rawr.Properties.GeneralSettings.Default.Locale);
+            Thread.CurrentThread.CurrentCulture = currentCultureInfo;
+            Thread.CurrentThread.CurrentUICulture = currentCultureInfo;
+
             _instance = this;
             _splash.Show();
             _statusForm = new Status();

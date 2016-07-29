@@ -54,11 +54,14 @@ namespace Rawr
 				AddInfoMsg = "Processing Professions";
 				XmlNodeList nodes = docCharacter.SelectNodes("page/characterInfo/characterTab/professions/skill");
 				Profession prof1 = Profession.None, prof2 = Profession.None;
-				if(nodes.Count > 0){
+                String prof1text = "None", prof2text = "None";
+                if (nodes.Count > 0){
 					prof1 = (Profession)Int32.Parse(nodes[0].Attributes["id"].Value);
+                    prof1text = Profs.ProfessionToString(prof1);
 					if (nodes.Count > 1) { // If there's only one profession, it doesn't have a second node so we don't have to worry about setting a NONE enum
 						prof2 = (Profession)Int32.Parse(nodes[1].Attributes["id"].Value);
-					}
+                        prof2text = Profs.ProfessionToString(prof2);
+                    }
 				}
 				#endregion
 
@@ -187,12 +190,12 @@ namespace Rawr
 				
 				character.Class = charClass;
 
-				character.PrimaryProfession = prof1;
-				character.SecondaryProfession = prof2;
+				character.PrimaryProfession = Profs.StringToProfession(prof1text);
+				character.SecondaryProfession = Profs.StringToProfession(prof2text);
 				#endregion
 
 				#region Process Talents and Glyphs
-				AddInfoMsg = "Processing Talents & Glyphs";
+				AddInfoMsg = Ressources.Localize.ResourceManager.GetString("InfoMsg_Process_Talent_Glyphs");
 				XmlNode activeTalentGroup = wrw.DownloadCharacterTalentTree(character.Name)
 					.SelectSingleNode("page/characterInfo/talents/talentGroup[@active='1']");
 				if (activeTalentGroup == null)
@@ -206,54 +209,54 @@ namespace Rawr
 				{
 					case CharacterClass.Warrior:
 						character.WarriorTalents = new WarriorTalents(talentCode);
-						if (character.WarriorTalents.Devastate > 0) character.CurrentModel = "ProtWarr";
-						else character.CurrentModel = "DPSWarr";
-						break;
+						if (character.WarriorTalents.Devastate > 0) character.CurrentModel = "ProtWarr"; //Ressources.Localize.ResourceManager.GetString("Model_Protection_Warrior");
+						else character.CurrentModel = "DPSWarr"; //Ressources.Localize.ResourceManager.GetString("Model_DPS_Warrior");
+                        break;
 					case CharacterClass.Paladin:
 						character.PaladinTalents = new PaladinTalents(talentCode);
-						if (character.PaladinTalents.HolyShield > 0) character.CurrentModel = "ProtPaladin";
-						else if (character.PaladinTalents.CrusaderStrike > 0) character.CurrentModel = "Retribution";
-						else character.CurrentModel = "Healadin";
-						break;
+						if (character.PaladinTalents.HolyShield > 0) character.CurrentModel = "ProtPaladin"; //Ressources.Localize.ResourceManager.GetString("Model_Protection_Paladin");
+                        else if (character.PaladinTalents.CrusaderStrike > 0) character.CurrentModel = "Retribution"; //Ressources.Localize.ResourceManager.GetString("Model_Retribution_Paladin");
+                        else character.CurrentModel = "Healadin"; //Ressources.Localize.ResourceManager.GetString("Model_Holy_Paladin");
+                        break;
 					case CharacterClass.Hunter:
 						character.HunterTalents = new HunterTalents(talentCode);
-						character.CurrentModel = "Hunter";
-						break;
+						character.CurrentModel = "Hunter"; //Ressources.Localize.ResourceManager.GetString("Model_Hunter");
+                        break;
 					case CharacterClass.Rogue:
 						character.RogueTalents = new RogueTalents(talentCode);
-						character.CurrentModel = "Rogue";
-						break;
+						character.CurrentModel = "Rogue"; //Ressources.Localize.ResourceManager.GetString("Model_Rogue");
+                        break;
 					case CharacterClass.Priest:
 						character.PriestTalents = new PriestTalents(talentCode);
-						if (character.PriestTalents.Shadowform > 0) character.CurrentModel = "ShadowPriest";
-						else character.CurrentModel = "HealPriest";
-						break;
+						if (character.PriestTalents.Shadowform > 0) character.CurrentModel = "ShadowPriest"; //Ressources.Localize.ResourceManager.GetString("Model_Shadow_Priest");
+                        else character.CurrentModel = "HealPriest"; //Ressources.Localize.ResourceManager.GetString("Model_Heal_Priest");
+                        break;
 					case CharacterClass.Shaman:
 						character.ShamanTalents = new ShamanTalents(talentCode);
-						if (character.ShamanTalents.ElementalMastery > 0) character.CurrentModel = "Elemental";
-						else if (character.ShamanTalents.Stormstrike > 0) character.CurrentModel = "Enhance";
-						else character.CurrentModel = "RestoSham";
-						break;
+						if (character.ShamanTalents.ElementalMastery > 0) character.CurrentModel = "Elemental"; //Ressources.Localize.ResourceManager.GetString("Model_Elemental_Shaman");
+                        else if (character.ShamanTalents.Stormstrike > 0) character.CurrentModel = "Enhance"; //Ressources.Localize.ResourceManager.GetString("Model_Enhancement_Shaman");
+                        else character.CurrentModel = /*"RestoSham";*/Ressources.Localize.ResourceManager.GetString("Model_Restoration_Shaman");
+                        break;
 					case CharacterClass.Mage:
 						character.MageTalents = new MageTalents(talentCode);
-						character.CurrentModel = "Mage";
-						break;
+						character.CurrentModel = "Mage"; //Ressources.Localize.ResourceManager.GetString("Model_Mage");
+                        break;
 					case CharacterClass.Warlock:
 						character.WarlockTalents = new WarlockTalents(talentCode);
-						character.CurrentModel = "Warlock";
-						break;
+						character.CurrentModel = "Warlock"; //Ressources.Localize.ResourceManager.GetString("Model_Warlock");
+                        break;
 					case CharacterClass.Druid:
 						character.DruidTalents = new DruidTalents(talentCode);
-						if (character.DruidTalents.ProtectorOfThePack > 0) character.CurrentModel = "Bear";
-						else if (character.DruidTalents.LeaderOfThePack > 0) character.CurrentModel = "Cat";
-						else if (character.DruidTalents.MoonkinForm > 0) character.CurrentModel = "Moonkin";
-						else character.CurrentModel = "Tree";
-						break;
+						if (character.DruidTalents.ProtectorOfThePack > 0) character.CurrentModel = "Bear"; //Ressources.Localize.ResourceManager.GetString("Model_Bear_Druid");
+                        else if (character.DruidTalents.LeaderOfThePack > 0) character.CurrentModel = "Cat"; //Ressources.Localize.ResourceManager.GetString("Model_Cat_Druid");
+                        else if (character.DruidTalents.MoonkinForm > 0) character.CurrentModel = "Moonkin"; //Ressources.Localize.ResourceManager.GetString("Model_Moonkin_Druid");
+                        else character.CurrentModel = "Tree"; //Ressources.Localize.ResourceManager.GetString("Model_Tree_Druid");
+                        break;
 					case CharacterClass.DeathKnight:
 						character.DeathKnightTalents = new DeathKnightTalents(talentCode);
-						if (character.DeathKnightTalents.Anticipation > 0) character.CurrentModel = "TankDK";
-						else character.CurrentModel = "DPSDK";
-						break;
+						if (character.DeathKnightTalents.Anticipation > 0) character.CurrentModel = "TankDK"; //Ressources.Localize.ResourceManager.GetString("Model_Protection_DK");
+                        else character.CurrentModel = "DPSDK"; //Ressources.Localize.ResourceManager.GetString("Model_DPS_DK");
+                        break;
 					default:
 						break;
 				}
@@ -272,7 +275,7 @@ namespace Rawr
 				foreach (XmlNode glyph in activeTalentGroup.SelectNodes("glyphs/glyph/@name"))
 				{
 					PropertyInfo pi;
-					if (glyphProperty.TryGetValue(glyph.Value, out pi))
+					if (glyphProperty.TryGetValue(glyph.Value, out pi)) /*TODO: Glyphen auf DEutsch verfügbar machen*/
 					{
 						pi.SetValue(talents, true, null);
 					}

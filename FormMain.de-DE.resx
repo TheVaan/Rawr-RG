@@ -117,7 +117,946 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="toolStripContainer1.BottomToolStripPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxWaistBlacksmithingSocket.Text" xml:space="preserve">
+    <value>BS Sockel</value>
+  </data>
+  <data name="checkBoxWaistBlacksmithingSocket.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxHandsBlacksmithingSocket.Text" xml:space="preserve">
+    <value>BS Sockel</value>
+  </data>
+  <data name="checkBoxHandsBlacksmithingSocket.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxWristBlacksmithingSocket.Text" xml:space="preserve">
+    <value>BS Sockel</value>
+  </data>
+  <data name="checkBoxWristBlacksmithingSocket.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="calculationDisplay1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label32.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Zweiter Beruf:</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Erster Beruf:</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBoxProfession2.Items" xml:space="preserve">
+    <value>Nichts</value>
+  </data>
+  <data name="comboBoxProfession2.Items1" xml:space="preserve">
+    <value>Alchemie</value>
+  </data>
+  <data name="comboBoxProfession2.Items2" xml:space="preserve">
+    <value>Schmiedekunst</value>
+  </data>
+  <data name="comboBoxProfession2.Items3" xml:space="preserve">
+    <value>Verzauberungskunst</value>
+  </data>
+  <data name="comboBoxProfession2.Items4" xml:space="preserve">
+    <value>Ingenieurskunst</value>
+  </data>
+  <data name="comboBoxProfession2.Items5" xml:space="preserve">
+    <value>Kräuterkunde</value>
+  </data>
+  <data name="comboBoxProfession2.Items6" xml:space="preserve">
+    <value>Inschriftenkunde</value>
+  </data>
+  <data name="comboBoxProfession2.Items7" xml:space="preserve">
+    <value>Juwelenschleifen</value>
+  </data>
+  <data name="comboBoxProfession2.Items8" xml:space="preserve">
+    <value>Lederverarbeitung</value>
+  </data>
+  <data name="comboBoxProfession2.Items9" xml:space="preserve">
+    <value>Bergbau</value>
+  </data>
+  <data name="comboBoxProfession2.Items10" xml:space="preserve">
+    <value>Kürschnern</value>
+  </data>
+  <data name="comboBoxProfession2.Items11" xml:space="preserve">
+    <value>Schneiderei</value>
+  </data>
+  <data name="comboBoxProfession2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBoxProfession1.Items" xml:space="preserve">
+    <value>Nichts</value>
+  </data>
+  <data name="comboBoxProfession1.Items1" xml:space="preserve">
+    <value>Alchemie</value>
+  </data>
+  <data name="comboBoxProfession1.Items2" xml:space="preserve">
+    <value>Schmiedekunst</value>
+  </data>
+  <data name="comboBoxProfession1.Items3" xml:space="preserve">
+    <value>Verzauberungskunst</value>
+  </data>
+  <data name="comboBoxProfession1.Items4" xml:space="preserve">
+    <value>Ingenieurskunst</value>
+  </data>
+  <data name="comboBoxProfession1.Items5" xml:space="preserve">
+    <value>Kräuterkunde</value>
+  </data>
+  <data name="comboBoxProfession1.Items6" xml:space="preserve">
+    <value>Inschriftenkunde</value>
+  </data>
+  <data name="comboBoxProfession1.Items7" xml:space="preserve">
+    <value>Juwelenschleifen</value>
+  </data>
+  <data name="comboBoxProfession1.Items8" xml:space="preserve">
+    <value>Lederverarbeitung</value>
+  </data>
+  <data name="comboBoxProfession1.Items9" xml:space="preserve">
+    <value>Bergbau</value>
+  </data>
+  <data name="comboBoxProfession1.Items10" xml:space="preserve">
+    <value>Kürschnern</value>
+  </data>
+  <data name="comboBoxProfession1.Items11" xml:space="preserve">
+    <value>Schneiderei</value>
+  </data>
+  <data name="comboBoxProfession1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxEnforceGemRequirements.Text" xml:space="preserve">
+    <value>Erzwinge Sockelbedingungen*</value>
+  </data>
+  <data name="checkBoxEnforceGemRequirements.ToolTip" xml:space="preserve">
+    <value>Falls aktiv, werden Metasockel nur gezählt, wenn ihre Bedingungen erfüllt wurden.</value>
+  </data>
+  <data name="comboBoxModel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBoxClass.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBoxRace.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxName.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label19.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label21.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Klasse:</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label23.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>Rasse:</value>
+  </data>
+  <data name="label25.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Charakterdefinition</value>
+  </data>
+  <data name="groupBox3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPageStats.Text" xml:space="preserve">
+    <value>Werte</value>
+  </data>
+  <data name="tabPageStats.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="talentPicker1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPageTalents.Text" xml:space="preserve">
+    <value>Talente</value>
+  </data>
+  <data name="tabPageTalents.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buffSelector1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPageBuffs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPageOptions.Text" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="tabPageOptions.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabControlCharacter.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonBack.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonChest.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonFeet.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonFinger1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonFinger2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonHands.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonHead.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonRanged.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonLegs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonNeck.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonProjectileBag.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonProjectile.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonOffHand.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonShirt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonShoulders.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonTabard.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonTrinket1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonTrinket2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonWaist.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonMainHand.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemButtonWrist.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="itemComparison1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonStatGraph.Text" xml:space="preserve">
+    <value>Berechne</value>
+  </data>
+  <data name="buttonStatGraph.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panelStatGraph.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelRelativeStatValuesWarning.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="headToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kopf</value>
+  </data>
+  <data name="neckToolStripMenuItem.Text" xml:space="preserve">
+    <value>Hals</value>
+  </data>
+  <data name="shouldersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Schultern</value>
+  </data>
+  <data name="backToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rücken</value>
+  </data>
+  <data name="chestToolStripMenuItem.Text" xml:space="preserve">
+    <value>Brust</value>
+  </data>
+  <data name="wristsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Handgelenke</value>
+  </data>
+  <data name="handsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Hände</value>
+  </data>
+  <data name="waistToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gürtel</value>
+  </data>
+  <data name="legsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Beine</value>
+  </data>
+  <data name="feetToolStripMenuItem.Text" xml:space="preserve">
+    <value>Füße</value>
+  </data>
+  <data name="weaponToolStripMenuItem.Text" xml:space="preserve">
+    <value>Haupthand</value>
+  </data>
+  <data name="offHandToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Nebenhand</value>
+  </data>
+  <data name="idolToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fernkampf/Idol/Buchband</value>
+  </data>
+  <data name="toolStripMenuItem3.Text" xml:space="preserve">
+    <value>Projektiltasche</value>
+  </data>
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
+    <value>Projektil</value>
+  </data>
+  <data name="gearToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ausrüstung &gt;Kopf</value>
+  </data>
+  <data name="headToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Kopf</value>
+  </data>
+  <data name="shouldersToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Schultern</value>
+  </data>
+  <data name="backToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Rücken</value>
+  </data>
+  <data name="chestToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Brust</value>
+  </data>
+  <data name="wristsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Gürtel</value>
+  </data>
+  <data name="handsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Hände</value>
+  </data>
+  <data name="legsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Beine</value>
+  </data>
+  <data name="feetToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Füße</value>
+  </data>
+  <data name="fingerToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Finger</value>
+  </data>
+  <data name="toolStripMenuItem4.Text" xml:space="preserve">
+    <value>Haupthand</value>
+  </data>
+  <data name="toolStripMenuItem5.Text" xml:space="preserve">
+    <value>Nebenhand</value>
+  </data>
+  <data name="weaponToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Fernkampf/Idol/Buchband</value>
+  </data>
+  <data name="enchantsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verzauberungen &gt; Kopf</value>
+  </data>
+  <data name="normalToolStripMenuItem.Text" xml:space="preserve">
+    <value>Alle Normal</value>
+  </data>
+  <data name="redToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rot</value>
+  </data>
+  <data name="yellowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gelb</value>
+  </data>
+  <data name="blueToolStripMenuItem.Text" xml:space="preserve">
+    <value>Blau</value>
+  </data>
+  <data name="gemsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sockel &gt; Normal</value>
+  </data>
+  <data name="allBuffsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Alle Buffs</value>
+  </data>
+  <data name="currentBuffsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Aktuelle Buffs</value>
+  </data>
+  <data name="foodToolStripMenuItem.Text" xml:space="preserve">
+    <value>Essen</value>
+  </data>
+  <data name="flaskToolStripMenuItem.Text" xml:space="preserve">
+    <value>Elixiere und Fläschchen</value>
+  </data>
+  <data name="scrollsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rollen</value>
+  </data>
+  <data name="potionsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Tränke</value>
+  </data>
+  <data name="SetBonusesToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Set Boni</value>
+  </data>
+  <data name="buffsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Buffs &gt; Alle Buffs</value>
+  </data>
+  <data name="talentSpecsMenuItem.Text" xml:space="preserve">
+    <value>Talentspezialisierungen</value>
+  </data>
+  <data name="talentsMenuItem.Text" xml:space="preserve">
+    <value>Talente</value>
+  </data>
+  <data name="glyphsMenuItem.Text" xml:space="preserve">
+    <value>Glyphen</value>
+  </data>
+  <data name="currentGearEnchantsBuffsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Aktuelle Ausrüstung/Verzauberungen/Buffs</value>
+  </data>
+  <data name="directUpgradesMenuItem.Text" xml:space="preserve">
+    <value>Direkte Verbesserungen</value>
+  </data>
+  <data name="directUpgradesCostMenuItem.Text" xml:space="preserve">
+    <value>Direkte Verbesserungen / Kosten</value>
+  </data>
+  <data name="statGraphToolStripMenuItem.Text" xml:space="preserve">
+    <value>Werte-Diagramm</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripDropDownButtonSlot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
+        RUkUEZ0YRMS+DDI70MkTmzJnDc8iU8QT2mAEItnle90wHwTDyBduXnie5/rd133Q4ZKfAJqHFs9E08A8
+        zD1emDpmYXjqRlnTFIrMk8iuGkNaxWekGEaQrHecBfw+/vPXODw6hj9whN2fh/Bt/8LSRgA3cxr/DeBZ
+        9kvmTNMoHGNbIrYN+3Aj23IxgJkpds0doP3VstgmsNexhutZ9QrAms8T0zYzU5xXM46kcjsmvfvoeL2i
+        AeoUgA07T8yaaZuZKab1rzN74jgys1YB2O2gmBZzH49LODXrrJlnzEzxe9cOLH1ziMioVgCOiuIFX0CE
+        Q+/WYf+yieiCFrRp9tkwxnP7Kt5MbKGm6wfC000KwDlTXNLgEvHMkh+Db32o7fYivtQm1l9+3IBOp5P7
+        yjYPwlKNCsAluWudxgvtknb5t9oWcL/VLU2Mvd2JFq3uqs7vAtE/ceNayiMF4KiYMSjmY2O7B4Ua+NaD
+        YQGEJumRbvyG1IcfBHI12aAAXM8R57aIWTNrLLY4tfNPiCvpR1SeVeu6WWzHFD6THSDwFMDdpmUG62NJ
+        PKM4Or9ZxBxb8H8l7g5CEu8pAOfM3WanSeeS8CFHxW4zM2umbWamOCShXAH+/wNOANABIDUxWnDPAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="toolStripDropDownButtonSlot.Text" xml:space="preserve">
+    <value>Chart: Ausrüstung</value>
+  </data>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>Kopf</value>
+  </data>
+  <data name="toolStripMenuItem7.Text" xml:space="preserve">
+    <value>Hals</value>
+  </data>
+  <data name="toolStripMenuItem8.Text" xml:space="preserve">
+    <value>Schultern</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Rücken</value>
+  </data>
+  <data name="toolStripMenuItem10.Text" xml:space="preserve">
+    <value>Brust</value>
+  </data>
+  <data name="toolStripMenuItem11.Text" xml:space="preserve">
+    <value>Handgelenke</value>
+  </data>
+  <data name="toolStripMenuItem12.Text" xml:space="preserve">
+    <value>Hände</value>
+  </data>
+  <data name="toolStripMenuItem13.Text" xml:space="preserve">
+    <value>Gürtel</value>
+  </data>
+  <data name="toolStripMenuItem14.Text" xml:space="preserve">
+    <value>Beine</value>
+  </data>
+  <data name="toolStripMenuItem15.Text" xml:space="preserve">
+    <value>Füße</value>
+  </data>
+  <data name="toolStripMenuItem20.Text" xml:space="preserve">
+    <value>Haupthand</value>
+  </data>
+  <data name="toolStripMenuItem21.Text" xml:space="preserve">
+    <value>Nebenhand</value>
+  </data>
+  <data name="toolStripMenuItem22.Text" xml:space="preserve">
+    <value>Fernkampf/Idol/Buchband</value>
+  </data>
+  <data name="toolStripMenuItem23.Text" xml:space="preserve">
+    <value>Projektil</value>
+  </data>
+  <data name="toolStripMenuItem24.Text" xml:space="preserve">
+    <value>Projektiltasche</value>
+  </data>
+  <data name="toolStripDropDownButtonSubSlotGear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
+        RUkUEZ0YRMS+DDI70MkTmzJnDc8iU8QT2mAEItnle90wHwTDyBduXnie5/rd133Q4ZKfAJqHFs9E08A8
+        zD1emDpmYXjqRlnTFIrMk8iuGkNaxWekGEaQrHecBfw+/vPXODw6hj9whN2fh/Bt/8LSRgA3cxr/DeBZ
+        9kvmTNMoHGNbIrYN+3Aj23IxgJkpds0doP3VstgmsNexhutZ9QrAms8T0zYzU5xXM46kcjsmvfvoeL2i
+        AeoUgA07T8yaaZuZKab1rzN74jgys1YB2O2gmBZzH49LODXrrJlnzEzxe9cOLH1ziMioVgCOiuIFX0CE
+        Q+/WYf+yieiCFrRp9tkwxnP7Kt5MbKGm6wfC000KwDlTXNLgEvHMkh+Db32o7fYivtQm1l9+3IBOp5P7
+        yjYPwlKNCsAluWudxgvtknb5t9oWcL/VLU2Mvd2JFq3uqs7vAtE/ceNayiMF4KiYMSjmY2O7B4Ua+NaD
+        YQGEJumRbvyG1IcfBHI12aAAXM8R57aIWTNrLLY4tfNPiCvpR1SeVeu6WWzHFD6THSDwFMDdpmUG62NJ
+        PKM4Or9ZxBxb8H8l7g5CEu8pAOfM3WanSeeS8CFHxW4zM2umbWamOCShXAH+/wNOANABIDUxWnDPAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="toolStripDropDownButtonSubSlotGear.Text" xml:space="preserve">
+    <value>Kopf</value>
+  </data>
+  <data name="toolStripMenuItem25.Text" xml:space="preserve">
+    <value>Kopf</value>
+  </data>
+  <data name="toolStripMenuItem26.Text" xml:space="preserve">
+    <value>Schultern</value>
+  </data>
+  <data name="toolStripMenuItem27.Text" xml:space="preserve">
+    <value>Rücken</value>
+  </data>
+  <data name="toolStripMenuItem28.Text" xml:space="preserve">
+    <value>Brust</value>
+  </data>
+  <data name="toolStripMenuItem29.Text" xml:space="preserve">
+    <value>Handgelenke</value>
+  </data>
+  <data name="toolStripMenuItem30.Text" xml:space="preserve">
+    <value>Hände</value>
+  </data>
+  <data name="toolStripMenuItem31.Text" xml:space="preserve">
+    <value>Beine</value>
+  </data>
+  <data name="toolStripMenuItem32.Text" xml:space="preserve">
+    <value>Füße</value>
+  </data>
+  <data name="toolStripMenuItem33.Text" xml:space="preserve">
+    <value>Finger</value>
+  </data>
+  <data name="toolStripMenuItem34.Text" xml:space="preserve">
+    <value>Haupthand</value>
+  </data>
+  <data name="toolStripMenuItem35.Text" xml:space="preserve">
+    <value>Nebenhand</value>
+  </data>
+  <data name="toolStripMenuItem36.Text" xml:space="preserve">
+    <value>Fernkampf/Idol/Buchband</value>
+  </data>
+  <data name="toolStripDropDownButtonSubSlotEnchants.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
+        RUkUEZ0YRMS+DDI70MkTmzJnDc8iU8QT2mAEItnle90wHwTDyBduXnie5/rd133Q4ZKfAJqHFs9E08A8
+        zD1emDpmYXjqRlnTFIrMk8iuGkNaxWekGEaQrHecBfw+/vPXODw6hj9whN2fh/Bt/8LSRgA3cxr/DeBZ
+        9kvmTNMoHGNbIrYN+3Aj23IxgJkpds0doP3VstgmsNexhutZ9QrAms8T0zYzU5xXM46kcjsmvfvoeL2i
+        AeoUgA07T8yaaZuZKab1rzN74jgys1YB2O2gmBZzH49LODXrrJlnzEzxe9cOLH1ziMioVgCOiuIFX0CE
+        Q+/WYf+yieiCFrRp9tkwxnP7Kt5MbKGm6wfC000KwDlTXNLgEvHMkh+Db32o7fYivtQm1l9+3IBOp5P7
+        yjYPwlKNCsAluWudxgvtknb5t9oWcL/VLU2Mvd2JFq3uqs7vAtE/ceNayiMF4KiYMSjmY2O7B4Ua+NaD
+        YQGEJumRbvyG1IcfBHI12aAAXM8R57aIWTNrLLY4tfNPiCvpR1SeVeu6WWzHFD6THSDwFMDdpmUG62NJ
+        PKM4Or9ZxBxb8H8l7g5CEu8pAOfM3WanSeeS8CFHxW4zM2umbWamOCShXAH+/wNOANABIDUxWnDPAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="toolStripDropDownButtonSubSlotEnchants.Text" xml:space="preserve">
+    <value>Kopf</value>
+  </data>
+  <data name="toolStripMenuItemNormalGems.Text" xml:space="preserve">
+    <value>Alle Normal</value>
+  </data>
+  <data name="redToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Rot</value>
+  </data>
+  <data name="yellowToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Gelb</value>
+  </data>
+  <data name="blueToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Blau</value>
+  </data>
+  <data name="toolStripDropDownButtonSubSlotGems.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
+        RUkUEZ0YRMS+DDI70MkTmzJnDc8iU8QT2mAEItnle90wHwTDyBduXnie5/rd133Q4ZKfAJqHFs9E08A8
+        zD1emDpmYXjqRlnTFIrMk8iuGkNaxWekGEaQrHecBfw+/vPXODw6hj9whN2fh/Bt/8LSRgA3cxr/DeBZ
+        9kvmTNMoHGNbIrYN+3Aj23IxgJkpds0doP3VstgmsNexhutZ9QrAms8T0zYzU5xXM46kcjsmvfvoeL2i
+        AeoUgA07T8yaaZuZKab1rzN74jgys1YB2O2gmBZzH49LODXrrJlnzEzxe9cOLH1ziMioVgCOiuIFX0CE
+        Q+/WYf+yieiCFrRp9tkwxnP7Kt5MbKGm6wfC000KwDlTXNLgEvHMkh+Db32o7fYivtQm1l9+3IBOp5P7
+        yjYPwlKNCsAluWudxgvtknb5t9oWcL/VLU2Mvd2JFq3uqs7vAtE/ceNayiMF4KiYMSjmY2O7B4Ua+NaD
+        YQGEJumRbvyG1IcfBHI12aAAXM8R57aIWTNrLLY4tfNPiCvpR1SeVeu6WWzHFD6THSDwFMDdpmUG62NJ
+        PKM4Or9ZxBxb8H8l7g5CEu8pAOfM3WanSeeS8CFHxW4zM2umbWamOCShXAH+/wNOANABIDUxWnDPAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="toolStripMenuItem39.Text" xml:space="preserve">
+    <value>Alle Buffs</value>
+  </data>
+  <data name="toolStripMenuItem40.Text" xml:space="preserve">
+    <value>Aktuelle Buffs</value>
+  </data>
+  <data name="foodToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Essen</value>
+  </data>
+  <data name="flasksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Elixiere und Fläschchen</value>
+  </data>
+  <data name="scrollsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Rollen</value>
+  </data>
+  <data name="potionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tränke</value>
+  </data>
+  <data name="setBonusesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Set Boni</value>
+  </data>
+  <data name="toolStripDropDownButtonSubSlotBuffs.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
+        RUkUEZ0YRMS+DDI70MkTmzJnDc8iU8QT2mAEItnle90wHwTDyBduXnie5/rd133Q4ZKfAJqHFs9E08A8
+        zD1emDpmYXjqRlnTFIrMk8iuGkNaxWekGEaQrHecBfw+/vPXODw6hj9whN2fh/Bt/8LSRgA3cxr/DeBZ
+        9kvmTNMoHGNbIrYN+3Aj23IxgJkpds0doP3VstgmsNexhutZ9QrAms8T0zYzU5xXM46kcjsmvfvoeL2i
+        AeoUgA07T8yaaZuZKab1rzN74jgys1YB2O2gmBZzH49LODXrrJlnzEzxe9cOLH1ziMioVgCOiuIFX0CE
+        Q+/WYf+yieiCFrRp9tkwxnP7Kt5MbKGm6wfC000KwDlTXNLgEvHMkh+Db32o7fYivtQm1l9+3IBOp5P7
+        yjYPwlKNCsAluWudxgvtknb5t9oWcL/VLU2Mvd2JFq3uqs7vAtE/ceNayiMF4KiYMSjmY2O7B4Ua+NaD
+        YQGEJumRbvyG1IcfBHI12aAAXM8R57aIWTNrLLY4tfNPiCvpR1SeVeu6WWzHFD6THSDwFMDdpmUG62NJ
+        PKM4Or9ZxBxb8H8l7g5CEu8pAOfM3WanSeeS8CFHxW4zM2umbWamOCShXAH+/wNOANABIDUxWnDPAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="toolStripDropDownButtonSubSlotBuffs.Text" xml:space="preserve">
+    <value>Alle Buffs</value>
+  </data>
+  <data name="overallToolStripMenuItem.Text" xml:space="preserve">
+    <value>Insgesamt</value>
+  </data>
+  <data name="alphabeticalToolStripMenuItem.Text" xml:space="preserve">
+    <value>Alphabetisch</value>
+  </data>
+  <data name="toolStripDropDownButtonSort.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
+        RUkUEZ0YRMS+DDI70MkTmzJnDc8iU8QT2mAEItnle90wHwTDyBduXnie5/rd133Q4ZKfAJqHFs9E08A8
+        zD1emDpmYXjqRlnTFIrMk8iuGkNaxWekGEaQrHecBfw+/vPXODw6hj9whN2fh/Bt/8LSRgA3cxr/DeBZ
+        9kvmTNMoHGNbIrYN+3Aj23IxgJkpds0doP3VstgmsNexhutZ9QrAms8T0zYzU5xXM46kcjsmvfvoeL2i
+        AeoUgA07T8yaaZuZKab1rzN74jgys1YB2O2gmBZzH49LODXrrJlnzEzxe9cOLH1ziMioVgCOiuIFX0CE
+        Q+/WYf+yieiCFrRp9tkwxnP7Kt5MbKGm6wfC000KwDlTXNLgEvHMkh+Db32o7fYivtQm1l9+3IBOp5P7
+        yjYPwlKNCsAluWudxgvtknb5t9oWcL/VLU2Mvd2JFq3uqs7vAtE/ceNayiMF4KiYMSjmY2O7B4Ua+NaD
+        YQGEJumRbvyG1IcfBHI12aAAXM8R57aIWTNrLLY4tfNPiCvpR1SeVeu6WWzHFD6THSDwFMDdpmUG62NJ
+        PKM4Or9ZxBxb8H8l7g5CEu8pAOfM3WanSeeS8CFHxW4zM2umbWamOCShXAH+/wNOANABIDUxWnDPAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="toolStripDropDownButtonSort.Text" xml:space="preserve">
+    <value>Sortierung: Insgesamt</value>
+  </data>
+  <data name="toolStripDropDownButtonFilter.Text" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="copyDataToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kopiere Daten in die Zwischenablage</value>
+  </data>
+  <data name="exportToImageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exportiere in Bild...</value>
+  </data>
+  <data name="exportToCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exportiere in CSV-Datei...</value>
+  </data>
+  <data name="copyEnhSimConfigToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kopiere EnhSim-Konfiguration in die Zwischenablage</value>
+  </data>
+  <data name="copyPawnStringToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kopiere Pawn-String in die Zwischenablage</value>
+  </data>
+  <data name="toolStripButtonExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
+        RUkUEZ0YRMS+DDI70MkTmzJnDc8iU8QT2mAEItnle90wHwTDyBduXnie5/rd133Q4ZKfAJqHFs9E08A8
+        zD1emDpmYXjqRlnTFIrMk8iuGkNaxWekGEaQrHecBfw+/vPXODw6hj9whN2fh/Bt/8LSRgA3cxr/DeBZ
+        9kvmTNMoHGNbIrYN+3Aj23IxgJkpds0doP3VstgmsNexhutZ9QrAms8T0zYzU5xXM46kcjsmvfvoeL2i
+        AeoUgA07T8yaaZuZKab1rzN74jgys1YB2O2gmBZzH49LODXrrJlnzEzxe9cOLH1ziMioVgCOiuIFX0CE
+        Q+/WYf+yieiCFrRp9tkwxnP7Kt5MbKGm6wfC000KwDlTXNLgEvHMkh+Db32o7fYivtQm1l9+3IBOp5P7
+        yjYPwlKNCsAluWudxgvtknb5t9oWcL/VLU2Mvd2JFq3uqs7vAtE/ceNayiMF4KiYMSjmY2O7B4Ua+NaD
+        YQGEJumRbvyG1IcfBHI12aAAXM8R57aIWTNrLLY4tfNPiCvpR1SeVeu6WWzHFD6THSDwFMDdpmUG62NJ
+        PKM4Or9ZxBxb8H8l7g5CEu8pAOfM3WanSeeS8CFHxW4zM2umbWamOCShXAH+/wNOANABIDUxWnDPAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="lblFind.Text" xml:space="preserve">
+    <value>Finde:</value>
+  </data>
+  <data name="toolStripItemComparison.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Vergleiche</value>
+  </data>
+  <data name="groupBox4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toolStripContainer1.ContentPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toolStripContainer1.LeftToolStripPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toolStripContainer1.RightToolStripPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toolStripContainer1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="newToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAARFJREFUOE+tkNtKAlEYheel7B3qNeyNJC8ivCgjRFAwKFTSKIM8IaITdkJGS9Hx
+        XNN4GGfJHn9xxpk2c+EHi32x1/oufmFvxB5q2E0kVUUoXkLwOoviSwNUdYYN/uMsfI+Do2O+JJoWqW7n
+        JBhH4qm6loiSsyScLFPdju/81hhvQhMrVzcFqttZaEtDshHRxMpF7JnqVnRdh6LO0ekrhsBz6HUWBCKP
+        NLEym2sYjFVI7TFfcBpK0WSLttQxUWZoyb94kwZ8gf8yQbMt6nQBefiH+vcIlXeZL2CfZtjhRj9TNDsT
+        1Op95MW2e4H5cB/NIcqvXWRKX+4F5sOJnz1kKy3c5SR3AvbywhWwTzehyT4QhBXYzPbDF6Dr9QAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="newToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Neu</value>
+  </data>
+  <data name="openToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAkdJREFUOE/FkF1I02EUxv8XXXRlkRWFUGB54c0gKKK6CCmiUBTLLEjShJofVBgL
+        c360qenm5ubUlS5rm66p00ozCvuQCkUi1NSRZmpWFJViZqjk16+/LtShhHcdeHjhcJ7fec4rLLeUBjuX
+        1FYyjQ7+tpZfETKjmylVhM284bJ8hE99b6m06Repo+XpPzeFxGYTFJ2DMDPc1WZhbKhiVr8H7Uz0m3FY
+        s+lofbYk5EiMjqAoAwHSPISKYh2jg6Vu5qmvBUw44yi9qaakMANzfiqmnBSuaeXkqeLdoWUWDaPfLXPm
+        adFMlxyc0iW1CHCrSMWvL6Y5c22lZlYPHVnU2FXcLcnAYU7DblJiNV7mhiGJQp0coybBBSsxZTD8IXc2
+        dm+9gqpSHVO9SuhLd9d7sdeTCJ0yeBNLa3kotut6BLMxjZ/daviopbosm8ZHWtfQwuivw6EphMkGf8Ye
+        +/GuWIJMGuw6pcig4EeHkr6GZKrsWqZ7FNAe5TK2RorG40w2BjJWd4DhB3sYqNyGMtpHPEfuAhTokhlo
+        S+C2TUPzCzFJZ5wIOA3NYUy/DGb8+SFGavcyWLWdb2W+NF1ZzQl/7/mPNGbJaa9L4Y4tC7pToEWM++oo
+        4/UBjDzxY6hmJ/0OCZ8tW3FqPVFIt3A2+uQ8IDczngqrGue9GJr0wpwatSuoU63kfuoqypPWYY734uqF
+        zYQt3D5T+vSL6BVnyEyIIPHcMc5HBnIqdD+HD+5i324JOyQ++Hp7sWnjWtav8WCDp4c74D+XIPwBF8be
+        aT1+/VgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Öffnen</value>
+  </data>
+  <data name="loadFromArmoryToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAkdJREFUOE/FkF1I02EUxv8XXXRlkRWFUGB54c0gKKK6CCmiUBTLLEjShJofVBgL
+        c360qenm5ubUlS5rm66p00ozCvuQCkUi1NSRZmpWFJViZqjk16+/LtShhHcdeHjhcJ7fec4rLLeUBjuX
+        1FYyjQ7+tpZfETKjmylVhM284bJ8hE99b6m06Repo+XpPzeFxGYTFJ2DMDPc1WZhbKhiVr8H7Uz0m3FY
+        s+lofbYk5EiMjqAoAwHSPISKYh2jg6Vu5qmvBUw44yi9qaakMANzfiqmnBSuaeXkqeLdoWUWDaPfLXPm
+        adFMlxyc0iW1CHCrSMWvL6Y5c22lZlYPHVnU2FXcLcnAYU7DblJiNV7mhiGJQp0coybBBSsxZTD8IXc2
+        dm+9gqpSHVO9SuhLd9d7sdeTCJ0yeBNLa3kotut6BLMxjZ/daviopbosm8ZHWtfQwuivw6EphMkGf8Ye
+        +/GuWIJMGuw6pcig4EeHkr6GZKrsWqZ7FNAe5TK2RorG40w2BjJWd4DhB3sYqNyGMtpHPEfuAhTokhlo
+        S+C2TUPzCzFJZ5wIOA3NYUy/DGb8+SFGavcyWLWdb2W+NF1ZzQl/7/mPNGbJaa9L4Y4tC7pToEWM++oo
+        4/UBjDzxY6hmJ/0OCZ8tW3FqPVFIt3A2+uQ8IDczngqrGue9GJr0wpwatSuoU63kfuoqypPWYY734uqF
+        zYQt3D5T+vSL6BVnyEyIIPHcMc5HBnIqdD+HD+5i324JOyQ++Hp7sWnjWtav8WCDp4c74D+XIPwBF8be
+        aT1+/VgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="loadFromArmoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Lade aus RG-Arsenal...</value>
+  </data>
+  <data name="loadFromCharacterProfilerToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAryAAAK8gE9UvcRAAACeUlE
+        QVQ4T6WSWUiUURiG/4suurJIjUIwskQsEAMjqosQpUVNKbdCSRPKrQVDMddmXEedGdcpFXNGnUYdrSzF
+        sEIoFInQcqHE1CwoKsXUUMnt6XfEye0munjgnO+c9+HjO0cA/osNi2tJLdA6SXN13MwoI12lJ06uiV8+
+        W3d5IwIjVXiGKvwX11djSs2TRFlUito7ILIAoVab7SvCWhqrZYq1omXC4gpPe4Ur8AjNMQjo69IwPVZj
+        4PeojtlhNfoyBXXalKSNBJ5hSjxCcnELzkeoKVcyNVq5Kjz/rZDZnggqSzOoKEpDXZBEcU4id+Sx5Mui
+        RcdfmVClyWLqh8YYXhDD9MVCT/CGrBPcK5Hx62uxMdxUm2XgiT6Tep2MhxVp6NXJ6IqllKlucTc3niJl
+        LKqsGINMqChOY+JTnqHtwRYJdZVK5gelMJSymo9ibSAOeiPhXTid1T5cD3IvF9SqZMb7M+CznEdVCtqe
+        ypcurWz9bQC0ezHX6sr0M0c+lNtx5cKJcVGwXyjJlfDzvZSh1gTqdHIWBiTQHbIU7AwSg+eYa3Nnuvk4
+        E41HGak9gDTUmvPOZjmGGRQqExjpiuG+NouOl2InvRGi4BJ0+LPw6gwzL04x2XSM0ToHvlfZ0p66FT9X
+        KxxsTGwMAlVmLN3NiTzQZkJ/IrwR233tzUyLG5PPHRmrP8Sw3o4vmr30yE2RBO/Bfp9Fg/EV8tKjqSnL
+        oOdxGO3ZgpE2+SaaZZtpSNpCdbw56mgLbt/YhZ/L7oVD9pYuRkF2ShTZksukxwQSd813cbJc9HHm7MnD
+        OB2x46CdNbZWFljuNGP7NhN2mJqIuRX/YOXm30H4A70P0TsBWkcYAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="loadFromCharacterProfilerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lade aus Character &amp;Profiler</value>
+  </data>
+  <data name="upgradeListToolStripMenuItem.Text" xml:space="preserve">
+    <value>Öffne gespeicherte Upgrade Liste...</value>
+  </data>
+  <data name="saveToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAjJJREFUOE+tkt9Lk1EYx99/oftugi66rakxnIvV4C3XUJYNw4qwH2+kWZou00TF
+        yjRq/oJshUsnrVaTcFKRP8AUKRFlKlmauaIlDjXFJoLB1/OcvXlcRRfRF56bl/fzOed5ziP9lzx/FgaV
+        r3UJLd5FPHTPo6kxhLuOadTVfoH9VgDXyydRWjKOwoK3yMsdwflzfqi4JBHY1QnU1qzgb1leWYUptQuH
+        Up/yUnFJ8j5Z4ILKim/qr7+H4ND8MnZZXkCjUWA96BEC94M5Ligt+ar+Hp2f8MfgAmLMPhRcmsIBS7MQ
+        OBtmuOCi7YOKiGyEhydC2CZ7kZM9huQkpxDU3w5yQdbZERWL5Fe4zx/EZoMbijIAs9khBDXVn7lAOTWg
+        on+GO/s/YVN8Iw4feYXExDohuFE5hY52sKcEjh1/A+vRXj5tGhj1TNemkyNwN1KsLyHLdiG4UjaBNh/Y
+        DgDNrh/s3b+j/NosHyoNjHrOzPCvw/uTW2E0VgjB5cIxeB4B952rbHHCMKVlR5Ul3Ya0M0UROInB+zww
+        GMqEwJY3ymCguirMTyaIfUaMTsbg+xmMTs5Cyb2KPaYWDut2u6DXFwkBraXjDtavTQKCT+ffxLvAHALT
+        i7hQbEeswcXgJsQm3IMuPl8IMjOGWN9LHN5q9GDLDhmP23rga+9DR3c/el8PYq/ZCo2+AXEM3q6th1ab
+        IwSUkyd6+HrShtGS0DvTU9G0aWDUM51KRfDOuKxowb9FktYATrQ4xbl82G8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Speichern</value>
+  </data>
+  <data name="saveAsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Speichen als...</value>
+  </data>
+  <data name="loadBuffsToolstripMenuItem.Text" xml:space="preserve">
+    <value>Lade Buffs</value>
+  </data>
+  <data name="saveBuffsToolstripMenuItem.Text" xml:space="preserve">
+    <value>Speichere Buffs</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Beenden</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Datei</value>
+  </data>
+  <data name="editItemsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bearbeite Items...</value>
+  </data>
+  <data name="defaultGemControlToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bearbeite Edelsteinvorlagen...</value>
+  </data>
+  <data name="toolStripMenuItem6.Text" xml:space="preserve">
+    <value>Bearbeite Item-Filter...</value>
+  </data>
+  <data name="optimizeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Optimiere...</value>
+  </data>
+  <data name="itemComparisonToolStripMenuItem.Text" xml:space="preserve">
+    <value>Item-Set Vergleiche...</value>
+  </data>
+  <data name="resetItemCostToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="loadItemCostToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lade...</value>
+  </data>
+  <data name="saveItemCostToolStripMenuItem.Text" xml:space="preserve">
+    <value>Speichern...</value>
+  </data>
+  <data name="loadEmblemOfFrostItemCostToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lade Embleme des Frosts</value>
+  </data>
+  <data name="loadEmblemOfTriumphToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lade Embleme des Triumphs</value>
+  </data>
+  <data name="loadEmblemOfConquestToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lade Embleme der Eroberung</value>
+  </data>
+  <data name="loadEmblemOfValorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lade Embleme der Ehre</value>
+  </data>
+  <data name="loadEmblemOfToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lades Embleme des Heldentums</value>
+  </data>
+  <data name="itemCostToolStripMenuItem.Text" xml:space="preserve">
+    <value>Item-Kosten</value>
+  </data>
+  <data name="copyCharacterStatsToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kopiere Charakterwerte in die Zwischenablage</value>
+  </data>
+  <data name="reloadCurrentCharacterFromArmoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lade aktuellen Charakter aus RG-Arsenal neu</value>
+  </data>
+  <data name="reloadInvetoryFromCharacterProfilerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lade aktuellen Charakter aus Character Profiler neu</value>
+  </data>
+  <data name="disableAllBuffsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Deaktiviere alle Buffs</value>
+  </data>
+  <data name="loadPossibleUpgradesFromArmoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lade mögliche Verbesserungen aus RG-Arsenal</value>
+  </data>
+  <data name="loadPossibleUpgradesFromWowheadToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lade mögliche Verbesserungen aus RG-Database</value>
+  </data>
+  <data name="updateItemCacheArmoryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Aktualisiere Item Cache aus RG-Arsenal</value>
+  </data>
+  <data name="updateItemCacheWowheadToolStripMenuItem.Text" xml:space="preserve">
+    <value>Aktualisiere Item Cache aus RG-Datenbank</value>
+  </data>
+  <data name="updateFromWowheadFilterToolStripMenuItem.Text" xml:space="preserve">
+    <value>Importiere aus RG-Database Filter...</value>
+  </data>
+  <data name="maleJavaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Männlich (Java)</value>
+  </data>
+  <data name="femaleJavaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Weiblich (Java)</value>
+  </data>
+  <data name="maleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Männlich (Flash)</value>
+  </data>
+  <data name="femaleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Weiblich (Flash)</value>
+  </data>
+  <data name="view3DWowheadModelViewerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zeige 3D Model</value>
+  </data>
+  <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Optionen...</value>
+  </data>
+  <data name="startPageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Startseite</value>
+  </data>
+  <data name="donateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Spenden...</value>
+  </data>
+  <data name="rawrHelpPageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rawr Hilfeseite</value>
+  </data>
+  <data name="gemmingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sockelungen</value>
+  </data>
+  <data name="gearOptimizationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ausrüstungsoptimierung</value>
+  </data>
+  <data name="itemFilteringToolStripMenuItem.Text" xml:space="preserve">
+    <value>  Item-Filterung</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Hilfe</value>
+  </data>
+  <data name="menuStripMain.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toolStripContainer1.TopToolStripPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="statusStrip.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAUAQEAAAAEAGAAoMgAAVgAAADAwAAABABgAqBwAAH4yAAAgIAAAAQAYAKgMAAAmTwAAGBgAAAEA
@@ -560,7 +1499,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAA
 </value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Rawr Startseite</value>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

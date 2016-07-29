@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,4 +117,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ClassTalent_Paladin_Holy" xml:space="preserve">
+    <value>Holy</value>
+  </data>
+  <data name="Enchant_No" xml:space="preserve">
+    <value>No Enchant</value>
+  </data>
+  <data name="InfoMsg_Process_Talents_Glyphs" xml:space="preserve">
+    <value>Processing Talents &amp; Glyphs</value>
+  </data>
+  <data name="Model_Bear_Druid" xml:space="preserve">
+    <value>Bär</value>
+  </data>
+  <data name="Model_Cat_Druid" xml:space="preserve">
+    <value>Katze</value>
+  </data>
+  <data name="Model_DPS_DK" xml:space="preserve">
+    <value>Schaden Todesritter</value>
+  </data>
+  <data name="Model_DPS_Warrior" xml:space="preserve">
+    <value>Schaden Krieger</value>
+  </data>
+  <data name="Model_Elemental_Shaman" xml:space="preserve">
+    <value>Elementar</value>
+  </data>
+  <data name="Model_Enhancement_Shaman" xml:space="preserve">
+    <value>Verstärker</value>
+  </data>
+  <data name="Model_Heal_Priest" xml:space="preserve">
+    <value>Heilung</value>
+  </data>
+  <data name="Model_Holy_Paladin" xml:space="preserve">
+    <value>Heilig Paladin</value>
+  </data>
+  <data name="Model_Hunter" xml:space="preserve">
+    <value>Jäger</value>
+  </data>
+  <data name="Model_Mage" xml:space="preserve">
+    <value>Magier</value>
+  </data>
+  <data name="Model_Moonkin_Druid" xml:space="preserve">
+    <value>Eule</value>
+  </data>
+  <data name="Model_Protection_DK" xml:space="preserve">
+    <value>Schutz Todesritter</value>
+  </data>
+  <data name="Model_Protection_Paladin" xml:space="preserve">
+    <value>Schutz Paladin</value>
+  </data>
+  <data name="Model_Protection_Warrior" xml:space="preserve">
+    <value>Schutz Krieger</value>
+  </data>
+  <data name="Model_Restoration_Shaman" xml:space="preserve">
+    <value>Heil Schamane</value>
+  </data>
+  <data name="Model_Retribution_Paladin" xml:space="preserve">
+    <value>Vergeltung</value>
+  </data>
+  <data name="Model_Rogue" xml:space="preserve">
+    <value>Schurke</value>
+  </data>
+  <data name="Model_Shadow_Priest" xml:space="preserve">
+    <value>Schatten</value>
+  </data>
+  <data name="Model_Tree_Druid" xml:space="preserve">
+    <value>Baum</value>
+  </data>
+  <data name="Model_Warlock" xml:space="preserve">
+    <value>Hexenmeister</value>
+  </data>
+  <data name="Percentage_Seal_Damage" xml:space="preserve">
+    <value>% Seal Damage</value>
+  </data>
 </root>

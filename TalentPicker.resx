@@ -117,7 +117,391 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="talentSpecButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="talentSpecButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 0</value>
+  </data>
+  <data name="talentSpecButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 21</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="talentSpecButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="talentSpecButton.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;talentSpecButton.Name" xml:space="preserve">
+    <value>talentSpecButton</value>
+  </data>
+  <data name="&gt;&gt;talentSpecButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;talentSpecButton.Parent" xml:space="preserve">
+    <value>panelTop</value>
+  </data>
+  <data name="&gt;&gt;talentSpecButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="comboBoxTalentSpec.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="comboBoxTalentSpec.Items" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="comboBoxTalentSpec.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="comboBoxTalentSpec.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 21</value>
+  </data>
+  <data name="comboBoxTalentSpec.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;comboBoxTalentSpec.Name" xml:space="preserve">
+    <value>comboBoxTalentSpec</value>
+  </data>
+  <data name="&gt;&gt;comboBoxTalentSpec.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxTalentSpec.Parent" xml:space="preserve">
+    <value>panelTop</value>
+  </data>
+  <data name="&gt;&gt;comboBoxTalentSpec.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelTop.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 3</value>
+  </data>
+  <data name="panelTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 24</value>
+  </data>
+  <data name="panelTop.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panelTop.Name" xml:space="preserve">
+    <value>panelTop</value>
+  </data>
+  <data name="&gt;&gt;panelTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelTop.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelTop.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabPageTree3.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tabPageTree3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="talentTree3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="talentTree3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="talentTree3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 717</value>
+  </data>
+  <data name="talentTree3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;talentTree3.Name" xml:space="preserve">
+    <value>talentTree3</value>
+  </data>
+  <data name="&gt;&gt;talentTree3.Type" xml:space="preserve">
+    <value>Rawr.TalentTree, Rawr, Version=2.3.23.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;talentTree3.Parent" xml:space="preserve">
+    <value>tabPageTree3</value>
+  </data>
+  <data name="&gt;&gt;talentTree3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPageTree3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tabPageTree3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 471</value>
+  </data>
+  <data name="tabPageTree3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabPageTree3.Text" xml:space="preserve">
+    <value>Restoration</value>
+  </data>
+  <data name="&gt;&gt;tabPageTree3.Name" xml:space="preserve">
+    <value>tabPageTree3</value>
+  </data>
+  <data name="&gt;&gt;tabPageTree3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageTree3.Parent" xml:space="preserve">
+    <value>tabControlMain</value>
+  </data>
+  <data name="&gt;&gt;tabPageTree3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabPageTree1.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tabPageTree1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="talentTree1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="talentTree1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="talentTree1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 717</value>
+  </data>
+  <data name="talentTree1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;talentTree1.Name" xml:space="preserve">
+    <value>talentTree1</value>
+  </data>
+  <data name="&gt;&gt;talentTree1.Type" xml:space="preserve">
+    <value>Rawr.TalentTree, Rawr, Version=2.3.23.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;talentTree1.Parent" xml:space="preserve">
+    <value>tabPageTree1</value>
+  </data>
+  <data name="&gt;&gt;talentTree1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPageTree1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tabPageTree1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 471</value>
+  </data>
+  <data name="tabPageTree1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPageTree1.Text" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="&gt;&gt;tabPageTree1.Name" xml:space="preserve">
+    <value>tabPageTree1</value>
+  </data>
+  <data name="&gt;&gt;tabPageTree1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageTree1.Parent" xml:space="preserve">
+    <value>tabControlMain</value>
+  </data>
+  <data name="&gt;&gt;tabPageTree1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPageTree2.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tabPageTree2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="talentTree2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="talentTree2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="talentTree2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 717</value>
+  </data>
+  <data name="talentTree2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;talentTree2.Name" xml:space="preserve">
+    <value>talentTree2</value>
+  </data>
+  <data name="&gt;&gt;talentTree2.Type" xml:space="preserve">
+    <value>Rawr.TalentTree, Rawr, Version=2.3.23.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;talentTree2.Parent" xml:space="preserve">
+    <value>tabPageTree2</value>
+  </data>
+  <data name="&gt;&gt;talentTree2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPageTree2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tabPageTree2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 471</value>
+  </data>
+  <data name="tabPageTree2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPageTree2.Text" xml:space="preserve">
+    <value>Feral Combat</value>
+  </data>
+  <data name="&gt;&gt;tabPageTree2.Name" xml:space="preserve">
+    <value>tabPageTree2</value>
+  </data>
+  <data name="&gt;&gt;tabPageTree2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageTree2.Parent" xml:space="preserve">
+    <value>tabControlMain</value>
+  </data>
+  <data name="&gt;&gt;tabPageTree2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabPageGlyphs.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="grpMinorGlyph.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="grpMinorGlyph.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="grpMinorGlyph.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 5</value>
+  </data>
+  <data name="grpMinorGlyph.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 5</value>
+  </data>
+  <data name="grpMinorGlyph.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="grpMinorGlyph.Text" xml:space="preserve">
+    <value>Minor</value>
+  </data>
+  <data name="&gt;&gt;grpMinorGlyph.Name" xml:space="preserve">
+    <value>grpMinorGlyph</value>
+  </data>
+  <data name="&gt;&gt;grpMinorGlyph.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpMinorGlyph.Parent" xml:space="preserve">
+    <value>tabPageGlyphs</value>
+  </data>
+  <data name="&gt;&gt;grpMinorGlyph.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="grpMajorGlyph.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="grpMajorGlyph.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="grpMajorGlyph.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="grpMajorGlyph.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 5</value>
+  </data>
+  <data name="grpMajorGlyph.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="grpMajorGlyph.Text" xml:space="preserve">
+    <value>Major</value>
+  </data>
+  <data name="&gt;&gt;grpMajorGlyph.Name" xml:space="preserve">
+    <value>grpMajorGlyph</value>
+  </data>
+  <data name="&gt;&gt;grpMajorGlyph.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpMajorGlyph.Parent" xml:space="preserve">
+    <value>tabPageGlyphs</value>
+  </data>
+  <data name="&gt;&gt;grpMajorGlyph.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabPageGlyphs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tabPageGlyphs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 471</value>
+  </data>
+  <data name="tabPageGlyphs.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabPageGlyphs.Text" xml:space="preserve">
+    <value>Glyphs</value>
+  </data>
+  <data name="&gt;&gt;tabPageGlyphs.Name" xml:space="preserve">
+    <value>tabPageGlyphs</value>
+  </data>
+  <data name="&gt;&gt;tabPageGlyphs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageGlyphs.Parent" xml:space="preserve">
+    <value>tabControlMain</value>
+  </data>
+  <data name="&gt;&gt;tabPageGlyphs.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabControlMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabControlMain.ItemSize" type="System.Drawing.Size, System.Drawing">
+    <value>72, 21</value>
+  </data>
+  <data name="tabControlMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="tabControlMain.Padding" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 500</value>
+  </data>
+  <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabControlMain.Name" xml:space="preserve">
+    <value>tabControlMain</value>
+  </data>
+  <data name="&gt;&gt;tabControlMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControlMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControlMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="tooltipGlyph.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 524</value>
+  </data>
+  <data name="&gt;&gt;tooltipGlyph.Name" xml:space="preserve">
+    <value>tooltipGlyph</value>
+  </data>
+  <data name="&gt;&gt;tooltipGlyph.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TalentPicker</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

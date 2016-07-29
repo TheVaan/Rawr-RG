@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Resources;
 
 namespace Rawr
 {

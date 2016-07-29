@@ -90,7 +90,10 @@ namespace Rawr
         protected override void OnPaint(PaintEventArgs e)
         {
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            e.Graphics.DrawImageUnscaled(PrerenderedGraph, 0, 0 - 0);
+            if (PrerenderedGraph != null)
+            {
+                e.Graphics.DrawImageUnscaled(PrerenderedGraph, 0, 0 - 0);
+            }
         }
 
         private int _mouseRow = -1;
