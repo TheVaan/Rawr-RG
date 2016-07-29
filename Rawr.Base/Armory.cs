@@ -235,7 +235,7 @@ namespace Rawr
 						character.ShamanTalents = new ShamanTalents(talentCode);
 						if (character.ShamanTalents.ElementalMastery > 0) character.CurrentModel = "Elemental"; //Ressources.Localize.ResourceManager.GetString("Model_Elemental_Shaman");
                         else if (character.ShamanTalents.Stormstrike > 0) character.CurrentModel = "Enhance"; //Ressources.Localize.ResourceManager.GetString("Model_Enhancement_Shaman");
-                        else character.CurrentModel = /*"RestoSham";*/Ressources.Localize.ResourceManager.GetString("Model_Restoration_Shaman");
+                        else character.CurrentModel = "RestoSham"; //Ressources.Localize.ResourceManager.GetString("Model_Restoration_Shaman");
                         break;
 					case CharacterClass.Mage:
 						character.MageTalents = new MageTalents(talentCode);
