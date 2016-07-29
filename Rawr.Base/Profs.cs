@@ -91,18 +91,98 @@ namespace Rawr {
             return p;
         }
         public static string ProfessionToString(Profession p) {
-            string                                     s = "None";
-            if      (p == Profession.Alchemy       ) { s = "Alchemy";
-            }else if(p == Profession.Blacksmithing ) { s = "Blacksmithing";
-            }else if(p == Profession.Enchanting    ) { s = "Enchanting";
-            }else if(p == Profession.Engineering   ) { s = "Engineering";
-            }else if(p == Profession.Herbalism     ) { s = "Herbalism";
-            }else if(p == Profession.Inscription   ) { s = "Inscription";
-            }else if(p == Profession.Jewelcrafting ) { s = "Jewelcrafting";
-            }else if(p == Profession.Leatherworking) { s = "Leatherworking";
-            }else if(p == Profession.Mining        ) { s = "Mining";
-            }else if(p == Profession.Skinning      ) { s = "Skinning";
-            }else if(p == Profession.Tailoring     ) { s = "Tailoring"; }
+            string s = "None";
+
+            if (Rawr.Properties.GeneralSettings.Default.Locale != "de")
+            {
+                s = "None";
+                if (p == Profession.Alchemy)
+                {
+                    s = "Alchemy";
+                }
+                else if (p == Profession.Blacksmithing)
+                {
+                    s = "Blacksmithing";
+                }
+                else if (p == Profession.Enchanting)
+                {
+                    s = "Enchanting";
+                }
+                else if (p == Profession.Engineering)
+                {
+                    s = "Engineering";
+                }
+                else if (p == Profession.Herbalism)
+                {
+                    s = "Herbalism";
+                }
+                else if (p == Profession.Inscription)
+                {
+                    s = "Inscription";
+                }
+                else if (p == Profession.Jewelcrafting)
+                {
+                    s = "Jewelcrafting";
+                }
+                else if (p == Profession.Leatherworking)
+                {
+                    s = "Leatherworking";
+                }
+                else if (p == Profession.Mining)
+                {
+                    s = "Mining";
+                }
+                else if (p == Profession.Skinning)
+                {
+                    s = "Skinning";
+                }
+                else if (p == Profession.Tailoring) { s = "Tailoring"; }
+            }
+            else
+            {
+                s = "Nichts";
+                if (p == Profession.Alchemy)
+                {
+                    s = "Alchemie";
+                }
+                else if (p == Profession.Blacksmithing)
+                {
+                    s = "Schmiedekunst";
+                }
+                else if (p == Profession.Enchanting)
+                {
+                    s = "Verzauberungskunst";
+                }
+                else if (p == Profession.Engineering)
+                {
+                    s = "Ingenieurskunst";
+                }
+                else if (p == Profession.Herbalism)
+                {
+                    s = "Kräuterkunde";
+                }
+                else if (p == Profession.Inscription)
+                {
+                    s = "Inschriftenkunde";
+                }
+                else if (p == Profession.Jewelcrafting)
+                {
+                    s = "Juwelenschleifen";
+                }
+                else if (p == Profession.Leatherworking)
+                {
+                    s = "Lederverarbeitung";
+                }
+                else if (p == Profession.Mining)
+                {
+                    s = "Bergbau";
+                }
+                else if (p == Profession.Skinning)
+                {
+                    s = "Kürschner";
+                }
+                else if (p == Profession.Tailoring) { s = "Schneiderei"; }
+            }
             return s;
         }
         #endregion

@@ -51,6 +51,7 @@ namespace Rawr
         private static Dictionary<string, Type> _models = null;
         public static Dictionary<string, Type> Models
         {
+            //TODO: Models auf Deutsch initialisieren
             get
             {
                 if (_models == null)
@@ -70,7 +71,6 @@ namespace Rawr
                         try
                         {
                             Assembly assembly = Assembly.LoadFrom(file.FullName);
-
                             foreach (Type type in assembly.GetTypes())
                             {
                                 if (type.IsSubclassOf(typeof(CalculationsBase)))

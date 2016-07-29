@@ -28,8 +28,12 @@ namespace Rawr
         }
 
         public void GenerateNodes()
-        {
-            Nodes.Clear();
+        {   
+            if(Nodes != null)
+            {
+                Nodes.Clear();
+            }
+
             CheckBoxes = !EditMode;
             foreach (ItemFilterRegex regex in ItemFilter.FilterList)
             {

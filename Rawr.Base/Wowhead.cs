@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Net;
-using System.IO;
 using System.Xml;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json.Linq;
@@ -183,7 +181,8 @@ namespace Rawr
         {
             switch (Properties.GeneralSettings.Default.Locale)
             {
-                case "fr":
+                /* Deutsche Übersetzungen noch einfügen */
+                case "de":
                     _pvpTokenMap["20560"] = "Marque d'honneur de la vallée d'Alterac";
                     _pvpTokenMap["20559"] = "Marque d'honneur du bassin d'Arathi";
                     _pvpTokenMap["20558"] = "Marque d'honneur du goulet des Chanteguerres";

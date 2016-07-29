@@ -87,7 +87,7 @@ namespace Rawr.RestoSham
 
                 return new List<GemmingTemplate>()
 				{
-					new GemmingTemplate() { Model = "RestoSham", Group = "Uncommon", //Max Spellpower
+					new GemmingTemplate() { Model = "RestoSham", Group = "Uncommon", //Max Spellpower 
 						RedId = Runed[0], YellowId = Runed[0], BlueId = Runed[0], PrismaticId = Runed[0], MetaId = Ember },
 					new GemmingTemplate() { Model = "RestoSham", Group = "Uncommon", //SP Int
 						RedId = Runed[0], YellowId = Luminous[0], BlueId = Glowing[0], PrismaticId = Runed[0], MetaId = Ember },

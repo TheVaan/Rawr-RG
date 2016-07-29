@@ -4,13 +4,15 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Text;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Rawr.UserControls.Options
 {
 	public partial class GeneralSettings : UserControl, IOptions
 	{
-        string _locale = "de";
+        string _locale = "de-DE";
 
         public GeneralSettings()
 		{
@@ -35,10 +37,12 @@ namespace Rawr.UserControls.Options
             _locale = locale;
             switch (locale)
             {
-                case "en": 
+                case "en":
+                case "en-US": 
                     rbEnglish.Checked = true;
                     break;
                 case "de":
+                case "de-DE":
                     rbGerman.Checked = true;
                     break;
             }
@@ -62,22 +66,54 @@ namespace Rawr.UserControls.Options
 			Rawr.Properties.GeneralSettings.Default.Save();
             switch(_locale)
             {
-                case "de":
+                case "de-DE":
                     title = "Profil Aktualisieren";
                     message = "Um die deutsche Lokalisierung nachzuladen müssen sie auf 'Aktuallisiere Item Cache aus RG-Datenbank' drücken.";
                     break;
             }
-            if (!_locale.Equals("en"))
+            if (!_locale.Equals("en-US"))
                 System.Windows.Forms.MessageBox.Show(message, title, System.Windows.Forms.MessageBoxButtons.OK);
             OnDisplayBuffChanged();
             OnHideProfessionsChanged();
             SpecialEffect.UpdateCalculationMode();
             //ItemCache.OnItemsChanged();
             FormMain.Instance.Character.OnCalculationsInvalidated();
-            FormMain.Instance.RefreshComponents(_locale);
-		}
+            CultureInfo currentCultureInfo = new CultureInfo(_locale);
+            Thread.CurrentThread.CurrentCulture = currentCultureInfo;
+            Thread.CurrentThread.CurrentUICulture = currentCultureInfo;
+            ProcessControls(currentCultureInfo);
+        }
 
-		public void Cancel()
+        // Needed to Update all controls dependent of the choosen language - by Alacant
+        private void ProcessControls(CultureInfo currentCultureInfo)
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            foreach (Control ctrl in FormMain.Instance.Controls)
+            {
+                //resources.ApplyResources(ctrl, ctrl.Name, currentCultureInfo);
+                string text = resources.GetString(ctrl.Name + ".Text", currentCultureInfo);
+                if (text != null)
+                    ctrl.Text = text;
+
+                if (ctrl.HasChildren)
+                    ProcessSubControls(ctrl, currentCultureInfo, resources);
+            }
+        }
+
+        private void ProcessSubControls(Control ctrlcontainer, CultureInfo currentCultureInfo, System.ComponentModel.ComponentResourceManager resources)
+        {
+            foreach (Control ctrl in ctrlcontainer.Controls)
+            {
+                //resources.ApplyResources(ctrl, ctrl.Name, currentCultureInfo);
+                string text = resources.GetString(ctrl.Name + ".Text", currentCultureInfo);
+                if (text != null)
+                    ctrl.Text = text;
+                if (ctrl.HasChildren)
+                    ProcessSubControls(ctrl, currentCultureInfo, resources);
+            }
+        }
+
+        public void Cancel()
 		{
 			//NOOP;
 		}
@@ -131,12 +167,12 @@ namespace Rawr.UserControls.Options
 
         private void rbEnglish_CheckedChanged(object sender, EventArgs e)
         {
-            _locale = "en";
+            _locale = "en-US";
         }
 
         private void rbGerman_CheckedChanged(object sender, EventArgs e)
         {
-            _locale = "de";
+            _locale = "de-DE";
         }
 
         public static event EventHandler DisplayBuffChanged;
